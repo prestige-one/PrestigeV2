@@ -15,8 +15,7 @@ const AboutArea = () => {
                 <div className="po-project-media">
                     <video autoPlay muted loop playsInline preload="metadata">
                       <source src="/assets/img/v2/prestigeone_corporate_video.mp4" type="video/mp4" />
-                    </video>
-                  <div className="po-project-overlay" />
+                    </video> 
                 </div>
 
 
@@ -46,32 +45,6 @@ With a focus on customer needs, community values, and visionary design, we are a
 
                 <div>
                   <a href="#" className="btn btn-primary mt-1"><span>CONTACT US</span><span>CONTACT US</span></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="divider"></div>
-
-
-        <div className="our-partners-wrapper">
-          <div className="container">
-            <div className="row g-4 align-items-center">
-              <div className="col-12 col-md-3">
-                <h4 className="mb-0">
-                  <span className="text-primary">2337+</span> {' '}
-                  Our Trusted & Valuable Clients</h4>
-              </div>
-
-              <div className="col-12 col-md-9">
-                <div className="partners-slide ms-md-4 d-flex flex-wrap align-items-center justify-content-between">
-                  <img src="/assets/img/partner-img/1.png" alt="" />
-                  <img src="/assets/img/partner-img/2.png" alt="" />
-                  <img src="/assets/img/partner-img/3.png" alt="" />
-                  <img src="/assets/img/partner-img/4.png" alt="" />
-                  <img src="/assets/img/partner-img/3.png" alt="" />
-                  <img src="/assets/img/partner-img/5.png" alt="" />
                 </div>
               </div>
             </div>

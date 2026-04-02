@@ -15,7 +15,7 @@ const TeamArea = () => {
                 <h2 className="mb-4">Our Team Behind The Studio</h2>
                 <Link href="/team" className="btn-link">VIEW ALL 16 MEMBERS <svg xmlns="http://www.w3.org/2000/svg"
                   width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M7 17L16.2 7.8M17 17V7H7" stroke="#ECC80B" stroke-width="2" stroke-linecap="square" />
+                  <path d="M7 17L16.2 7.8M17 17V7H7" stroke="#ECC80B" strokeWidth="2" strokeLinecap="square" />
                 </svg></Link>
               </div>
             </div>

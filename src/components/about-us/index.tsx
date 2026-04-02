@@ -3,6 +3,12 @@ import Breacrumb from '@/common/Breacrumb';
 import HeaderOne from '@/layouts/headers/HeaderOne';
 import Cta2Area from '../homes/home/Cta2Area';
 import AboutArea from '../homes/home/AboutArea';
+import AboutLogoSlider from './AboutLogoSlider';
+import FounderMessageSection from './FounderMessageSection';
+import MissionVisionStatsSection from './MissionVisionStatsSection';
+import GrowingTogetherSection from './GrowingTogetherSection';
+import ManagementTeamSection from './ManagementTeamSection';
+import RoadmapTimelineSection from './RoadmapTimelineSection';
 import VideoArea from '../homes/home-2/VideoArea';
 import WorkprocessArea from '../homes/home/WorkprocessArea';
 import VideoAreaHomeOne from '../homes/home/VideoAreaHomeOne';
@@ -16,11 +22,14 @@ const Aboutus = () => {
       <HeaderOne />
       <Breacrumb title="About us" subtitle="About" />
       <AboutArea />
-      <VideoArea style_2={true} />
-      <WorkprocessArea />
-      <VideoAreaHomeOne />
-      <TeamArea />
-      <TestimonialArea />
+      <AboutLogoSlider />
+      <FounderMessageSection />
+      <MissionVisionStatsSection />
+      <GrowingTogetherSection />
+      <ManagementTeamSection />      
+      <RoadmapTimelineSection />
+      <VideoArea style_2={true} /> 
+      <VideoAreaHomeOne /> 
       <Cta2Area />
       <FooterOne />
     </>

@@ -41,7 +41,7 @@ const FooterOne = ({ style_2 }: any) => {
 
   return (
     <>
-      <footer className={`footer-wrapper ${style_2 ? 'footer-2 bg-secondary' : ''}`}>
+      <footer className="footer-wrapper">
         <div className="divider"></div>
 
         <div className="container">
