@@ -1633,7 +1633,11 @@ span.material-symbols-outlined {
 	width: 200px;
 }
 .footer-card-logo {
-  text-align: center;
+	text-align: center;
+	padding: 0 30px;
+}
+.footer-card-logo img {
+	width: 200px;
 }
 .social-nav {
 	display: flex;

@@ -49,7 +49,7 @@ const FooterOne = ({ style_2 }: any) => {
             <div className="col-12 col-lg-3">
               <div className="footer-card footer-card-logo">
                 <a href="#">
-                  <img className="dark-logo" src="/assets/img/v2/AFA-logo-400-dark.webp" alt="Prestige One Developments" />
+                  <img className="dark-logo" src="/assets/img/v2/AFA-logo-400.webp" alt="Prestige One Developments" />
                   <img className="light-logo" src="/assets/img/v2/AFA-logo-400.webp" alt="Prestige One Developments" />
                 </a>
                 <p className="mb-0">

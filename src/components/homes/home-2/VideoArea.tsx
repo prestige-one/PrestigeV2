@@ -94,7 +94,7 @@ const VideoArea = ({style_2} : any) => {
 
 
       <div className="cta-video-wrapper">
-        {style_2 ? <div className="divider"></div> : null} 
+   
         <div className="container">
           {style_2 ? null :
           <div className="video-wrap bg-img" style={{ backgroundImage: `url(/assets/img/bg-img/11.jpg)` }}>
@@ -121,22 +121,9 @@ const VideoArea = ({style_2} : any) => {
           
           }
 
-          <div className="row g-4 g-lg-5">
-            {counter_data.map((item, i) => (
-              <div key={i} className="col-12 col-md-4">
-                <div className="cta-content">
-                  <h2 className="mb-3"><span className="counter">
-                    <Count number={item.count} text="+" />
-                    </span></h2>
-                  <h4>{item.label}</h4>
-                  <p className="mb-0">{item.description}</p>
-                </div>
-              </div>
-            ))} 
-          </div>
+          
         </div>
-
-        <div className="divider"></div>
+ 
       </div>
     </>
   );

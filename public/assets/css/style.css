@@ -1238,6 +1238,12 @@ picture.jarallax-img img {
 	padding: 12px;
 	z-index: 100;
 }
+.po-project-media video {
+	border-radius: 8px;
+}
+.about-us-wrapper .our-partners-wrapper span.text-primary {
+  color: #ECC21C !important;
+}
 @media only screen and (min-width:1200px) {
   .about-us-thumbnail .top-content {
     width: 340px;

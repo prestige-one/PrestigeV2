@@ -29,8 +29,7 @@ const Aboutus = () => {
       <ManagementTeamSection />      
       <RoadmapTimelineSection />
       <VideoArea style_2={true} /> 
-      <VideoAreaHomeOne /> 
-      <Cta2Area />
+      <VideoAreaHomeOne />  
       <FooterOne />
     </>
   );
