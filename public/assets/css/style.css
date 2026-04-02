@@ -518,9 +518,6 @@ ol li {
   display: block;
   height: 60px;
 }
-.about-us-thumbnail.po-about-media {
-	height: 500px;
-}
 .section-heading h2 {
   font-size: clamp(28px, 3vw, 60px);
   font-weight: 600;
@@ -1231,12 +1228,16 @@ picture.jarallax-img img {
 .about-us-thumbnail .top-content {
 	position: absolute;
 	right: -30px;
-	bottom: -70px;
+	bottom: -100px;
 	border-radius: 20px 0px 0px 0px;
 	background: #0E0E0E;
 	width: 200px;
 	padding: 12px;
 	z-index: 100;
+}
+.about-us-wrapper h2 {
+  font-size: 2rem;
+  letter-spacing: 0;
 }
 .po-project-media video {
 	border-radius: 8px;
@@ -3760,7 +3761,7 @@ form .btn {
 }
 .cta-wrapper h2 {
   color: #0E0E0E;
-  font-size: clamp(42px, 5vw, 80px);
+  font-size: clamp(25px, 2.5vw, 50px);
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -2.4px;

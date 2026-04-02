@@ -4,7 +4,7 @@ import React from 'react';
 const Cta2Area = () => {
   return (
     <>
-      <div className="cta-wrapper">
+      <div className="cta-wrapper light-mode">
         <div className="divider"></div>
 
         <div className="container">

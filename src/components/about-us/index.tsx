@@ -27,9 +27,8 @@ const Aboutus = () => {
       <MissionVisionStatsSection />
       <GrowingTogetherSection />
       <ManagementTeamSection />      
-      <RoadmapTimelineSection />
-      <VideoArea style_2={true} /> 
-      <VideoAreaHomeOne />  
+      <RoadmapTimelineSection /> 
+      <Cta2Area />
       <FooterOne />
     </>
   );
