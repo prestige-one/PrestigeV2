@@ -20,14 +20,21 @@ const projectOptions = [
   "Seascape Villa",
 ];
 
-const FinalContactForm = () => {
+type FinalContactFormProps = {
+  defaultProject?: string;
+};
+
+const FinalContactForm = ({ defaultProject }: FinalContactFormProps) => {
+  const selectDefault =
+    defaultProject && projectOptions.includes(defaultProject) ? defaultProject : "";
+
   return (
     <form className="po-contact-form" onSubmit={(e) => e.preventDefault()}>
       <div className="po-contact-grid">
         <input type="text" placeholder="Full Name*" required />
         <input type="email" placeholder="Email Address*" required />
         <input type="tel" placeholder="Phone Number*" required />
-        <select defaultValue="" required>
+        <select defaultValue={selectDefault} required>
           <option value="" disabled>
             Project*
           </option>

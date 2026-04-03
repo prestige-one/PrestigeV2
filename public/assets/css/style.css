@@ -5443,7 +5443,10 @@ form .btn {
   border-color: rgba(26, 26, 26, 0.5);
 }
 .light-mode .footer-card .footer-nav li a {
-  color: #1A1A1A;
+  color: #fff;
+}
+.footer-wrapper .copyright {
+	color: #fff !important;
 }
 .light-mode .footer-card .footer-nav li a:hover, .light-mode .footer-card .footer-nav li a:focus {
   color: #ECC80B;

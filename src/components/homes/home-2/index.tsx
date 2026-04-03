@@ -30,7 +30,7 @@ const HomeTwo = () => {
       <FaqArea />
       <TestimonialArea />
       <BlogArea />
-      <FooterOne style_2={true} />
+      <FooterOne />
 		</>
 	);
 };

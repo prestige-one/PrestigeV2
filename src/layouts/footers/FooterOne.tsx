@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-const FooterOne = ({ style_2 }: any) => {
+const FooterOne = () => {
   const corporate = [
     "About Prestige One",
     "Invest in Prestige One",
@@ -64,7 +64,9 @@ const FooterOne = ({ style_2 }: any) => {
                 <h5 className="mb-0">CORPORATE</h5>
                 <ul className="footer-nav">
                   {corporate.map((item) => (
-                    <li key={item}><a href="#">{item}</a></li>
+                    <li key={item}>
+                      <a href={item === "Project Documents" ? "/project-documents" : "#"}>{item}</a>
+                    </li>
                   ))}
                 </ul>
               </div>

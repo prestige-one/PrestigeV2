@@ -15,7 +15,7 @@ const menu_data = [
   {
     id: 3,
     title: "Projects",
-    link: "#",
+    link: "/projects",
     has_dropdown: false,
     /*sub_menus: [
       { link: "/portfolio", title: "Portfolio", }, 

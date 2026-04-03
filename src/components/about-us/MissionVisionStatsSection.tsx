@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useMemo, useState } from "react";
 
 const missionText =
   "Prestige One Developments is committed to creating innovative and sustainable developments that enhance the quality of life for our clients. By combining superior design, high-quality materials, and exceptional service, we contribute to Dubai's reputation as a global real estate leader.";
@@ -47,7 +47,63 @@ const stats = [
   },
 ];
 
+type StatMeta = {
+  target: number; // animated numeric part (no suffix)
+  suffix: string; // e.g. "K"
+  decimals: number; // for K values
+  plus: boolean; // for "+"" values
+};
+
+const parseStatValue = (value: string): StatMeta => {
+  const plus = value.includes("+");
+  const raw = value.replace("+", "").trim();
+
+  if (raw.endsWith("K")) {
+    const numStr = raw.replace("K", "");
+    const decimals = numStr.includes(".") ? numStr.split(".")[1].length : 0;
+    return { target: parseFloat(numStr), suffix: "K", decimals, plus: false };
+  }
+
+  const decimals = raw.includes(".") ? raw.split(".")[1].length : 0;
+  return { target: parseFloat(raw), suffix: "", decimals, plus };
+};
+
+const formatStatValue = (num: number, meta: StatMeta) => {
+  if (meta.suffix === "K") return `${num.toFixed(meta.decimals)}K`;
+  if (meta.plus) return `${Math.round(num)}+`;
+  if (meta.decimals > 0) return num.toFixed(meta.decimals);
+  return `${Math.round(num)}`;
+};
+
 const MissionVisionStatsSection = () => {
+  const metas = useMemo(() => stats.map((s) => parseStatValue(s.value)), []);
+  const [displayNums, setDisplayNums] = useState<number[]>(() => metas.map(() => 0));
+
+  useEffect(() => {
+    const reduced = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+    if (reduced) {
+      setDisplayNums(metas.map((m) => m.target));
+      return;
+    }
+
+    const durationMs = 1200;
+    const start = performance.now();
+
+    const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
+
+    let raf = 0;
+    const tick = (now: number) => {
+      const t = Math.min(1, Math.max(0, (now - start) / durationMs));
+      const eased = easeOutCubic(t);
+      setDisplayNums(metas.map((m) => m.target * eased));
+
+      if (t < 1) raf = window.requestAnimationFrame(tick);
+    };
+
+    raf = window.requestAnimationFrame(tick);
+    return () => window.cancelAnimationFrame(raf);
+  }, [metas]);
+
   return (
     <section className="po-mv-stats-section">
       <div className="container">
@@ -55,7 +111,11 @@ const MissionVisionStatsSection = () => {
           <div className="po-mv-top-grid">
             <article className="po-mv-feature-card">
               <span className="po-mv-feature-icon">
-                <img src="/assets/img/v2/icons/svg-image-18.svg" alt="Mission icon" />
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="12" r="8.5" fill="none" stroke="#ffffff" strokeWidth="1.35" />
+                  <circle cx="12" cy="12" r="3.2" fill="none" stroke="#ffffff" strokeWidth="1.35" />
+                  <path d="M12 3.6V7.1M20.4 12H17M12 20.4V17M3.6 12H7.1" fill="none" stroke="#ffffff" strokeWidth="1.35" strokeLinecap="round" />
+                </svg>
               </span>
               <h3>Our mission</h3>
               <p>{missionText}</p>
@@ -63,7 +123,11 @@ const MissionVisionStatsSection = () => {
 
             <article className="po-mv-feature-card">
               <span className="po-mv-feature-icon">
-                <img src="/assets/img/v2/icons/svg-image-19.svg" alt="Vision icon" />
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M2.5 12s3.6-7 9.5-7 9.5 7 9.5 7-3.6 7-9.5 7-9.5-7-9.5-7Z" fill="none" stroke="#ffffff" strokeWidth="1.35" strokeLinejoin="round" />
+                  <circle cx="12" cy="12" r="3.2" fill="none" stroke="#ffffff" strokeWidth="1.35" />
+                  <path d="M15.6 8.6 17.6 6.6" fill="none" stroke="#ffffff" strokeWidth="1.35" strokeLinecap="round" />
+                </svg>
               </span>
               <h3>Our vision</h3>
               <p>{visionText}</p>
@@ -71,11 +135,11 @@ const MissionVisionStatsSection = () => {
           </div>
 
           <div className="po-mv-stats-grid">
-            {stats.map((item) => (
+            {stats.map((item, index) => (
               <article className="po-mv-stat-card" key={item.label}>
                 <span className="po-mv-stat-icon">{item.icon}</span>
                 <div className="po-mv-stat-copy">
-                  <h3>{item.value}</h3>
+                  <h3>{formatStatValue(displayNums[index] ?? 0, metas[index])}</h3>
                   <p>{item.label}</p>
                 </div>
               </article>

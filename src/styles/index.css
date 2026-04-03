@@ -1207,12 +1207,13 @@ h6,
 }
 
 .po-mv-feature-icon {
-  width: 48px;
-  height: 48px;
+  width: 76px;
+  height: 76px;
   border-radius: 8px;
-  background: #1f2023;
+  background: #0b0b0b;
   display: grid;
   place-items: center;
+  padding: 14px;
   margin-bottom: 0.75rem;
 }
 
@@ -1220,6 +1221,19 @@ h6,
   width: 24px;
   height: 24px;
   object-fit: contain;
+}
+
+.po-mv-feature-icon svg {
+  width: 38px;
+  height: 38px;
+  display: block;
+}
+
+.po-mv-feature-icon svg path,
+.po-mv-feature-icon svg circle,
+.po-mv-feature-icon svg line {
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .po-mv-feature-card h3 {
@@ -1623,6 +1637,25 @@ h6,
   font-size: 0.86rem !important;
 }
 
+/* Keep footer visual consistent across all pages/modes. */
+.footer-wrapper,
+.light-mode .footer-wrapper,
+.dark-mode .footer-wrapper {
+  background-color: #0e0e0e !important;
+  background-image:
+    radial-gradient(circle at 18% 24%, rgba(255, 255, 255, 0.08), transparent 36%),
+    radial-gradient(circle at 84% 14%, rgba(255, 255, 255, 0.06), transparent 34%),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.04) 0,
+      rgba(255, 255, 255, 0.04) 1px,
+      transparent 1px,
+      transparent 62px
+    );
+  background-size: cover;
+  background-position: center;
+}
+
 .footer-wrapper .footer-card h5 {
   font-size: 1.05rem !important;
 }
@@ -1864,5 +1897,967 @@ span.material-symbols-outlined {
   .po-map-tooltip img {
     width: 72px;
     height: 48px;
+  }
+}
+
+/* Projects page */
+.po-projects-hero {
+  padding: clamp(7rem, 14vw, 10rem) 0 clamp(3rem, 7vw, 4.5rem);
+  background: linear-gradient(180deg, #060606 0%, #0d0d0d 100%);
+}
+
+.po-projects-hero-inner {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.po-projects-kicker {
+  margin: 0 0 0.65rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.po-projects-hero-inner h1 {
+  margin: 0;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: clamp(2rem, 5.5vw, 4rem);
+  letter-spacing: 0.06em;
+}
+
+.po-projects-hero-inner p {
+  margin: 1rem auto 0;
+  max-width: 760px;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: clamp(0.98rem, 1.7vw, 1.22rem);
+  line-height: 1.65;
+}
+
+.po-projects-page-section {
+  background: #ffffff;
+  padding: clamp(2.2rem, 5.8vw, 4.2rem) 0 clamp(4.2rem, 8vw, 6rem);
+}
+
+.po-projects-filter-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-bottom: clamp(1.4rem, 3.2vw, 2rem);
+  justify-content: center;
+  align-items: center;
+}
+
+.po-project-filter-btn {
+  border: 1px solid #111111;
+  background: #ffffff;
+  color: #111111;
+  border-radius: 999px;
+  padding: 0.5rem 0.95rem;
+  font-size: 0.84rem;
+  font-weight: 600;
+  line-height: 1;
+  transition: 0.25s ease;
+}
+
+.po-project-filter-btn:hover,
+.po-project-filter-btn.is-active {
+  background: #111111;
+  color: #ffffff;
+}
+
+.po-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 1.8vw, 1.35rem);
+}
+
+.po-projects-list-card {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #e9e9e9;
+  background: #ffffff;
+  height: clamp(420px, 35vw, 520px);
+  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+}
+
+.po-projects-list-card > a {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: inherit;
+}
+
+.po-projects-list-card:hover {
+  transform: translateY(-4px);
+  border-color: #111111;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+}
+
+.po-projects-list-media {
+  position: relative;
+  height: calc(100% - 150px);
+  overflow: hidden;
+  background: #101010;
+  transition: height 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.po-projects-list-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1);
+  transition: transform 0.45s ease;
+}
+
+.po-projects-list-card:hover .po-projects-list-media img {
+  transform: scale(1.04);
+}
+
+.po-projects-list-content {
+  padding: 1.25rem 1.2rem 1.25rem;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #ececec;
+  background: linear-gradient(180deg, #fff 0%, #efefef 100%);
+  transition: min-height 0.4s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.35s ease, border-color 0.35s ease;
+}
+
+.po-project-location {
+  margin: 0;
+  color: #595959;
+  font-size: 0.73rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.po-projects-list-content h3 {
+  margin: 0.58rem 0 0.62rem;
+  font-size: clamp(1.12rem, 2vw, 1.42rem);
+  line-height: 1.26;
+  letter-spacing: -0.01em;
+  color: #101010;
+  transition: color 0.35s ease;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.po-project-title-line {
+  position: relative;
+  display: block;
+  width: 130px;
+  height: 1px;
+  background: #d6d6d6;
+  margin-bottom: 0.72rem;
+  overflow: hidden;
+}
+
+.po-project-title-line::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 42%;
+  background: #111111;
+  transition: width 0.42s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.po-projects-list-content > p {
+  margin: 0;
+  color: #424242;
+  font-size: 0.92rem;
+  line-height: 1.58;
+  min-height: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: max-height 0.42s ease, opacity 0.28s ease, transform 0.32s ease, margin-top 0.32s ease;
+}
+
+.po-project-read-more {
+  margin-top: auto;
+  display: inline-block;
+  width: fit-content;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-bottom: 1px solid #111111;
+  padding-bottom: 2px;
+  transition: letter-spacing 0.32s ease, border-color 0.32s ease, color 0.32s ease;
+}
+
+.po-projects-list-card:hover .po-projects-list-content {
+  background: #f5f5f5;
+  border-top-color: #cfcfcf;
+  min-height: 220px;
+}
+
+.po-projects-list-card:hover .po-projects-list-media {
+  height: calc(100% - 220px);
+}
+
+.po-projects-list-card:hover .po-project-title-line::after {
+  width: 100%;
+}
+
+.po-projects-list-card:hover .po-projects-list-content > p {
+  max-height: 4.9em;
+  opacity: 1;
+  transform: translateY(0);
+  margin-top: 0.2rem;
+}
+
+.po-projects-list-card:hover .po-project-read-more {
+  letter-spacing: 0.14em;
+}
+
+@media (max-width: 1199px) {
+  .po-projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .po-projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Project Documents page — https://prestigeone.ae/project-documents/ */
+.po-project-docs-hero {
+  padding: clamp(7rem, 14vw, 10rem) 0 clamp(3rem, 7vw, 4.5rem);
+  background: linear-gradient(180deg, #060606 0%, #0d0d0d 100%);
+}
+
+.po-project-docs-hero-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.po-project-docs-kicker {
+  margin: 0 0 0.65rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.po-project-docs-hero-inner h1 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  letter-spacing: 0.04em;
+  font-weight: 700;
+}
+
+.po-project-docs-hero-inner > p {
+  margin: 1rem auto 0;
+  max-width: 560px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  line-height: 1.65;
+}
+
+.po-project-docs-section {
+  padding: clamp(2.5rem, 6vw, 4.5rem) 0 clamp(4rem, 9vw, 6.5rem);
+  background: #fafafa;
+}
+
+.po-project-docs-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.po-project-docs-item {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.po-project-docs-item:first-child {
+  border-top: 1px solid #e0e0e0;
+}
+
+.po-project-docs-link {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  padding: 1rem 0.75rem;
+  color: #0e0e0e;
+  text-decoration: none;
+  transition: color 0.25s ease, background-color 0.25s ease;
+  border-radius: 8px;
+  margin: 0 -0.5rem;
+}
+
+.po-project-docs-link:hover {
+  color: #0e0e0e;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.po-project-docs-thumb-wrap {
+	flex-shrink: 0;
+	width: 200px;
+	height: 130px;
+	border-radius: 8px;
+	overflow: hidden;
+	background: #e8e8e8;
+	border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.po-project-docs-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.po-project-docs-link:hover .po-project-docs-thumb {
+  transform: scale(1.04);
+}
+
+.po-project-docs-title {
+  flex: 1;
+  min-width: 0;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.35;
+}
+
+.po-project-docs-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-shrink: 0;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #0e0e0e;
+  border-bottom: 1px solid #0e0e0e;
+  padding-bottom: 2px;
+  transition: letter-spacing 0.3s ease, border-color 0.25s ease;
+}
+
+.po-project-docs-link:hover .po-project-docs-cta {
+  letter-spacing: 0.16em;
+  border-color: transparent;
+}
+
+.po-project-docs-cta svg {
+  display: block;
+  transition: transform 0.28s ease;
+}
+
+.po-project-docs-link:hover .po-project-docs-cta svg {
+  transform: translate(2px, -2px);
+}
+
+@media (max-width: 575px) {
+  .po-project-docs-thumb-wrap {
+    width: 88px;
+    height: 56px;
+  }
+
+  .po-project-docs-link {
+    gap: 0.75rem;
+    padding: 0.85rem 0.5rem;
+  }
+
+  .po-project-docs-cta {
+    font-size: 0.72rem;
+  }
+}
+
+/* Hilton Residences Dubai Maritime City — project page */
+.po-hilton-hero {
+  position: relative;
+  min-height: min(92vh, 900px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: clamp(5rem, 12vw, 8rem) 1.25rem clamp(2.5rem, 6vw, 4rem);
+  color: #fff;
+  text-align: center;
+}
+
+.po-hilton-hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.po-hilton-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.po-hilton-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.35) 0%,
+    rgba(0, 0, 0, 0.5) 45%,
+    rgba(0, 0, 0, 0.82) 100%
+  );
+}
+
+.po-hilton-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 920px;
+}
+
+.po-hilton-hero-eyebrow {
+  margin: 0 0 0.75rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.po-hilton-hero-eyebrow a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+  transition: border-color 0.25s ease, color 0.25s ease;
+}
+
+.po-hilton-hero-eyebrow a:hover {
+  color: #fff;
+  border-color: #fff;
+}
+
+.po-hilton-hero h1 {
+  margin: 0;
+  font-size: clamp(1.75rem, 5vw, 3.25rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.15;
+}
+
+.po-hilton-hero-lead {
+  margin: 1rem 0 0;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.55;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.po-hilton-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: 1.75rem;
+}
+
+.po-hilton-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1.35rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.po-hilton-btn--light {
+  background: #fff;
+  color: #0e0e0e;
+}
+
+.po-hilton-btn--light:hover {
+  background: #e8e8e8;
+}
+
+.po-hilton-btn--ghost {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.55);
+}
+
+.po-hilton-btn--ghost:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.po-hilton-signature {
+  padding: clamp(3.5rem, 8vw, 5.5rem) 0;
+  background: #000;
+  color: #fff;
+  text-align: center;
+}
+
+.po-hilton-signature-title {
+  margin: 0 auto;
+  max-width: 900px;
+  font-size: clamp(1.35rem, 3.5vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.25;
+}
+
+.po-hilton-signature-text {
+  margin: 1.5rem auto 0;
+  max-width: 720px;
+  font-size: clamp(0.95rem, 1.6vw, 1.08rem);
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.po-hilton-doc-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.po-hilton-doc-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 1rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 6px;
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.po-hilton-doc-link:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.po-hilton-doc-link--emphasis {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.po-hilton-amenities {
+  padding: clamp(3.5rem, 8vw, 5.5rem) 0;
+  background: #0a0a0a;
+  color: #fff;
+}
+
+.po-hilton-section-kicker {
+  margin: 0 0 0.5rem;
+  text-align: center;
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.po-hilton-section-title {
+  margin: 0;
+  text-align: center;
+  font-size: clamp(1.5rem, 3.5vw, 2.35rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.po-hilton-section-sub {
+  margin: 1rem auto 0;
+  max-width: 560px;
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.po-hilton-masonry {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-auto-rows: minmax(220px, auto);
+  gap: 12px;
+  margin-top: 2.25rem;
+}
+
+.po-hilton-masonry-cell {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #141414;
+  min-height: 200px;
+}
+
+.po-hilton-masonry-cell:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+.po-hilton-masonry-cell--std {
+  grid-column: span 4;
+  min-height: 220px;
+}
+
+.po-hilton-masonry-cell--tall {
+  grid-column: span 4;
+  grid-row: span 2;
+  min-height: 452px;
+}
+
+.po-hilton-masonry-cell--wide {
+  grid-column: span 8;
+  min-height: 240px;
+}
+
+.po-hilton-masonry-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.po-hilton-masonry-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.75) 100%);
+  pointer-events: none;
+}
+
+.po-hilton-masonry-label {
+  position: absolute;
+  left: 0.85rem;
+  bottom: 0.85rem;
+  right: 0.85rem;
+  margin: 0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #fff;
+  z-index: 1;
+}
+
+.po-hilton-feature-trio {
+  padding: clamp(3rem, 7vw, 4.5rem) 0;
+  background: #000;
+}
+
+.po-hilton-trio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.po-hilton-trio-card {
+  margin: 0;
+  text-align: center;
+}
+
+.po-hilton-trio-media {
+  position: relative;
+  aspect-ratio: 3 / 5;
+  max-height: 420px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #1a1a1a;
+}
+
+.po-hilton-trio-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.po-hilton-trio-card h3 {
+  margin: 0.85rem 0 0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.po-hilton-interior {
+  padding: clamp(3.5rem, 8vw, 5rem) 0;
+  background: #050505;
+  color: #fff;
+}
+
+.po-hilton-interior-title {
+  margin: 0 0 2rem;
+  text-align: center;
+  font-size: clamp(1.35rem, 3vw, 2rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.po-hilton-interior-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.po-hilton-interior-figure {
+  margin: 0;
+}
+
+.po-hilton-interior-img-wrap {
+  border-radius: 8px;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  background: #1a1a1a;
+}
+
+.po-hilton-interior-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.po-hilton-interior-figure figcaption {
+  margin-top: 0.65rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.po-hilton-surroundings {
+  padding: clamp(3.5rem, 9vw, 6rem) 0;
+  background: #000;
+  color: #fff;
+  text-align: center;
+}
+
+.po-hilton-surroundings-title {
+  margin: 0 auto;
+  max-width: 900px;
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.3;
+}
+
+.po-hilton-surroundings-text {
+  margin: 1.25rem auto 0;
+  max-width: 720px;
+  font-size: clamp(0.95rem, 1.6vw, 1.08rem);
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.po-hilton-advantages {
+  padding: clamp(3rem, 7vw, 4.5rem) 0;
+  background: #0a0a0a;
+  color: #fff;
+}
+
+.po-hilton-advantages-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.po-hilton-advantage-card {
+  padding: 1.25rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.po-hilton-advantage-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1.35;
+}
+
+.po-hilton-advantage-card p {
+  margin: 0;
+  font-size: 0.86rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.po-hilton-sh {
+  padding: clamp(3rem, 7vw, 4.5rem) 0;
+  background: #000;
+  color: #fff;
+}
+
+.po-hilton-sh--hospitals {
+  padding-top: 0;
+}
+
+.po-hilton-sh-title {
+  margin: 0 0 1.5rem;
+  font-size: clamp(1.1rem, 2.5vw, 1.65rem);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.po-hilton-sh-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.po-hilton-sh-grid--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.po-hilton-sh-card {
+  margin: 0;
+  padding: 1.35rem 1.25rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.po-hilton-sh-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.35;
+}
+
+.po-hilton-sh-card p {
+  margin: 0;
+  font-size: 0.86rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.po-hilton-construction {
+  padding: clamp(2.5rem, 6vw, 3.5rem) 0;
+  background: linear-gradient(180deg, #0d0d0d 0%, #000 100%);
+  color: #fff;
+}
+
+.po-hilton-construction-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.po-hilton-construction-title {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.po-hilton-construction-meta {
+  margin: 0.35rem 0 0;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.po-hilton-register {
+  padding: clamp(3.5rem, 8vw, 5rem) 0;
+  background: #fafafa;
+  color: #0e0e0e;
+}
+
+.po-hilton-register-title {
+  margin: 0;
+  text-align: center;
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  font-weight: 700;
+}
+
+.po-hilton-register-lead {
+  margin: 0.75rem auto 2rem;
+  max-width: 520px;
+  text-align: center;
+  font-size: 0.98rem;
+  color: #444;
+}
+
+.po-hilton-register .po-contact-form {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+@media (max-width: 991px) {
+  .po-hilton-masonry-cell--tall,
+  .po-hilton-masonry-cell--std,
+  .po-hilton-masonry-cell--wide {
+    grid-column: span 6;
+    grid-row: auto;
+    min-height: 220px;
+  }
+
+  .po-hilton-masonry-cell--tall {
+    min-height: 360px;
+  }
+
+  .po-hilton-trio-grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .po-hilton-interior-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .po-hilton-advantages-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .po-hilton-sh-grid,
+  .po-hilton-sh-grid--3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 575px) {
+  .po-hilton-masonry-cell--tall,
+  .po-hilton-masonry-cell--std,
+  .po-hilton-masonry-cell--wide {
+    grid-column: span 12;
+  }
+
+  .po-hilton-advantages-grid {
+    grid-template-columns: 1fr;
   }
 }

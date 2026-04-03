@@ -1,7 +1,7 @@
 
 "use client";
 
-import React, { useCallback, useRef } from "react";
+import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
@@ -51,24 +51,6 @@ const projectSlides = [
 const HeroArea = () => {
   const sliderRef = useRef<HTMLDivElement | null>(null);
 
-  const syncVideoPlayback = useCallback(() => {
-    const root = sliderRef.current;
-    if (!root) return;
-
-    const videos = root.querySelectorAll<HTMLVideoElement>(".po-hero-video");
-    videos.forEach((video) => {
-      const isActive = video.closest(".swiper-slide")?.classList.contains("swiper-slide-active");
-      if (isActive) {
-        if (video.paused) {
-          void video.play().catch(() => {});
-        }
-      } else {
-        video.pause();
-        video.currentTime = 0;
-      }
-    });
-  }, []);
-
   return (
     <section className="po-hero-slider" ref={sliderRef}>
       <Swiper
@@ -78,9 +60,6 @@ const HeroArea = () => {
         autoplay={{ delay: 4500, disableOnInteraction: false }}
         //pagination={{ el: ".po-hero-pagination", type: "fraction" }}
         navigation={{ prevEl: ".po-hero-prev", nextEl: ".po-hero-next" }}
-        onInit={syncVideoPlayback}
-        onSlideChange={syncVideoPlayback}
-        onTransitionEnd={syncVideoPlayback}
         className="po-hero-swiper"
       >
         {projectSlides.map((slide) => (
@@ -90,7 +69,7 @@ const HeroArea = () => {
               style={slide.mediaType === "image" ? { backgroundImage: `url(${slide.mediaSrc})` } : undefined}
             >
               {slide.mediaType === "video" && (
-                <video className="po-hero-video" muted loop playsInline preload="metadata">
+                <video className="po-hero-video" muted loop autoPlay playsInline preload="auto">
                   <source src={slide.mediaSrc} type="video/mp4" />
                 </video>
               )}

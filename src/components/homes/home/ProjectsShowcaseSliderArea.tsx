@@ -24,7 +24,7 @@ const projects = [
     title: "Hilton Residences Dubai Maritime City",
     description: "Life at Hilton Residences by Prestige One is a balance of elegance and ease.",
     media: "/assets/img/v2/project-featured-images/HILTON-NIGHT-VIEW-1.webp",
-    link: "https://prestigeone.ae/projects/hilton-residences-dubai-maritime-city/",
+    link: "/projects/hilton-residences-dubai-maritime-city",
   },
   {
     title: "Berkeley Square North",
