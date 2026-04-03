@@ -1,6 +1,5 @@
- 
-import Breacrumb from '@/common/Breacrumb';
-import HeaderOne from '@/layouts/headers/HeaderOne';
+import PageHero from "@/common/PageHero";
+import HeaderOne from "@/layouts/headers/HeaderOne";
 import Cta2Area from '../homes/home/Cta2Area';
 import AboutArea from '../homes/home/AboutArea';
 import AboutLogoSlider from './AboutLogoSlider';
@@ -20,7 +19,11 @@ const Aboutus = () => {
   return (
     <>
       <HeaderOne />
-      <Breacrumb title="About us" subtitle="About" />
+      <PageHero
+        kicker="Prestige One Developments"
+        title="About Us"
+        description="Discover our story, values, and the people shaping exceptional living experiences in Dubai and beyond."
+      />
       <AboutArea />
       <AboutLogoSlider />
       <FounderMessageSection />

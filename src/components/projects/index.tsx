@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import PageHero from "@/common/PageHero";
 import HeaderOne from "@/layouts/headers/HeaderOne";
 import FooterOne from "@/layouts/footers/FooterOne";
 
@@ -156,18 +157,11 @@ const ProjectsPage = () => {
     <>
       <HeaderOne />
 
-      <section className="po-projects-hero">
-        <div className="container">
-          <div className="po-projects-hero-inner text-center">
-            <p className="po-projects-kicker">Prestige One Developments</p>
-            <h1>Our Projects</h1>
-            <p>
-              Choose from a collection of landmark developments by Prestige One, bringing together exceptional architecture and
-              refined living.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        kicker="Prestige One Developments"
+        title="Our Projects"
+        description="Choose from a collection of landmark developments by Prestige One, bringing together exceptional architecture and refined living."
+      />
 
       <section className="po-projects-page-section">
         <div className="container">
@@ -190,10 +184,10 @@ const ProjectsPage = () => {
                 <article key={project.title} className="po-projects-list-card">
                   <a href={project.link} target="_blank" rel="noreferrer">
                     <div className="po-projects-list-media">
+                      <span className="po-project-location-tag">{project.location}</span>
                       <img src={project.thumbnail} alt={project.title} />
                     </div>
                     <div className="po-projects-list-content">
-                      <p className="po-project-location">{project.location}</p>
                       <h3>{project.title}</h3>
                       <span className="po-project-title-line" aria-hidden="true" />
                       <p>{project.description}</p>

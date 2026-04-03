@@ -76,7 +76,7 @@ const HeroArea = () => {
               <div className="po-hero-overlay" />
               <div className="container h-100">
                 <div className="po-hero-content">
-                  <h1>{slide.title}</h1>
+                  <h2>{slide.title}</h2>
                   {slide.description && <p>{slide.description}</p>}
                 </div>
               </div>

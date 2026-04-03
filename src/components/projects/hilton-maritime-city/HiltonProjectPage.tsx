@@ -1,10 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import { useCallback, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import HeaderOne from "@/layouts/headers/HeaderOne";
 import FooterOne from "@/layouts/footers/FooterOne";
 import FinalContactForm from "@/components/homes/home/FinalContactForm";
+import {
+  parseHiltonAmenityVideosTxt,
+  type HiltonAmenityVideoRow,
+} from "@/lib/parseHiltonAmenityVideosTxt";
 
 const HERO_IMG =
   "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/14144431/HILTON-NIGHT-VIEW-1.webp";
@@ -24,72 +28,82 @@ const MORE_DETAILS = "https://hiltonresidencesdubaimaritimecity.ae/";
 const CONSTRUCTION_UPDATES =
   "https://prestigeone.ae/construction-update-hilton-residences-by-prestige-one/";
 
-/** Short prestigeone.ae clips for motion; posters keep Hilton / project visuals. */
-const amenityMasonry: {
-  label: string;
-  video: string;
-  poster: string;
-  size: "tall" | "wide" | "std";
-}[] = [
+/** Default list if `/data/hilton-amenities-videos.txt` is missing or empty. */
+const FALLBACK_AMENITY_VIDEOS: HiltonAmenityVideoRow[] = [
   {
     label: "Outdoor Cinema",
     video:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/16133840/sanctuary-teaserx.mp4",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2022/08/26080805/1115750_Cinema_Man_1280x720-1.mp4",
     poster: HERO_IMG,
-    size: "tall",
-  },
-  {
-    label: "Infinity Skyline Pool",
-    video:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/24175446/waterway-by-prestige-one.mp4",
-    poster: HERO_IMG_ALT,
-    size: "std",
-  },
-  {
-    label: "Multi-Sports Court",
-    video:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/24154314/The-Boulevard-Marketing-Video.mp4",
-    poster:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/24094547/harbour-1.webp",
-    size: "std",
-  },
-  {
-    label: "Prestige Fitness Center",
-    video:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/11/20110936/HD_Size_Parkway_Event_Launch-2.mp4",
-    poster:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/27164232/Front-Exterior-3-scaled.webp",
-    size: "tall",
-  },
-  {
-    label: "Running Track",
-    video:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/24175733/The-Place-by-prestige-optimized.mp4",
-    poster: HERO_IMG,
-    size: "wide",
+    videoWidth: 1280,
+    videoHeight: 720,
   },
   {
     label: "Outdoor Kids’ Play Area",
-    video:
-      "https://s3.me-central-1.amazonaws.com/files/prestigeone.ae/wp-content/uploads/2026/03/24175459/SEASIDE_by-prestige.mp4",
-    poster:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/24094547/harbour-1.webp",
-    size: "std",
+    video: "https://prestigeone.ae/wp-content/uploads/2022/08/5080670_Caucasian_Girl_1280x720.mp4",
+    poster: HERO_IMG,
+    videoWidth: 1280,
+    videoHeight: 720,
   },
   {
     label: "BBQ Deck",
-    video:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/11/20125930/The-One-Compressed-1.mp4",
-    poster: HERO_IMG_ALT,
-    size: "std",
+    video: "https://prestigeone.ae/wp-content/uploads/2022/08/1104331_1080p_4k_1280x720.mp4",
+    poster: HERO_IMG,
+    videoWidth: 1280,
+    videoHeight: 720,
+  },
+  {
+    label: "Fitness Center",
+    video: "https://prestigeone.ae/wp-content/uploads/2022/08/4730225_Fitness_Workout_1280x720.mp4",
+    poster: HERO_IMG,
+    videoWidth: 1280,
+    videoHeight: 720,
   },
   {
     label: "City View",
     video:
-      "https://s3.me-central-1.amazonaws.com/files/prestigeone.ae/wp-content/uploads/2024/09/25091708/cleanend_1920x1080_P1_VISTA-Property-Video.mp4",
-    poster:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/14144431/HILTON-NIGHT-VIEW-1.webp",
-    size: "std",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/16103247/city-view.mp4",
+    poster: HERO_IMG,
+    videoWidth: 1920,
+    videoHeight: 1080,
+  },
+  {
+    label: "Infinity Skyline Pool",
+    video:
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/12/25145038/Skyline-Infinity-Pool.mp4",
+    poster: HERO_IMG_ALT,
+    videoWidth: 1920,
+    videoHeight: 1080,
+  },
+  {
+    label: "Multi-Sports Court",
+    video: "https://prestigeone.ae/wp-content/uploads/2022/08/1115557_Hobbies_Tennis_1280x720.mp4",
+    poster: HERO_IMG,
+    videoWidth: 1280,
+    videoHeight: 720,
+  },
+  {
+    label: "Running Track",
+    video: "https://prestigeone.ae/wp-content/uploads/2022/08/1115348_Woman_Indoor_1280x720.mp4",
+    poster: HERO_IMG,
+    videoWidth: 1280,
+    videoHeight: 720,
+  },
+  {
+    label: "Indoor Play Area",
+    video:
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/16103831/Coworkers_play-ping-pong.mp4",
+    poster: HERO_IMG_ALT,
+    videoWidth: 1920,
+    videoHeight: 1080,
+  },
+  {
+    label: "Transportation",
+    video:
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/16111538/transport1.mp4",
+    poster: HERO_IMG,
+    videoWidth: 1920,
+    videoHeight: 1080,
   },
 ];
 
@@ -180,57 +194,59 @@ const hospitals = [
   },
 ];
 
-function MasonryVideoTile({
-  label,
-  video,
-  poster,
-  size,
-}: {
-  label: string;
-  video: string;
-  poster: string;
-  size: "tall" | "wide" | "std";
-}) {
+function AmenityVideoTile({ label, video, poster, videoWidth, videoHeight }: HiltonAmenityVideoRow) {
   const ref = useRef<HTMLVideoElement>(null);
+  const posterSrc = poster || HERO_IMG;
 
-  const play = useCallback(() => {
-    void ref.current?.play();
-  }, []);
-
-  const reset = useCallback(() => {
+  useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    el.pause();
-    el.currentTime = 0;
-  }, []);
+    el.muted = true;
+    void el.play().catch(() => {});
+  }, [video]);
 
   return (
-    <div
-      className={`po-hilton-masonry-cell po-hilton-masonry-cell--${size}`}
-      tabIndex={0}
-      onMouseEnter={play}
-      onMouseLeave={reset}
-      onFocus={play}
-      onBlur={reset}
-    >
-      <video
-        ref={ref}
-        className="po-hilton-masonry-video"
-        poster={poster}
-        muted
-        loop
-        playsInline
-        preload="metadata"
+    <article className="po-hilton-amenity-tile">
+      <span className="po-hilton-amenity-top-label">{label}</span>
+      <div
+        className="po-hilton-amenity-tile-media"
+        style={{ aspectRatio: `${videoWidth} / ${videoHeight}` }}
       >
-        <source src={video} type="video/mp4" />
-      </video>
-      <div className="po-hilton-masonry-scrim" aria-hidden="true" />
-      <p className="po-hilton-masonry-label">{label}</p>
-    </div>
+        <video
+          ref={ref}
+          className="po-hilton-amenity-tile-video"
+          poster={posterSrc}
+          muted
+          loop
+          playsInline
+          autoPlay
+          preload="auto"
+        >
+          <source src={video} type="video/mp4" />
+        </video>
+        <div className="po-hilton-amenity-tile-scrim" aria-hidden="true" />
+      </div>
+    </article>
   );
 }
 
 const HiltonProjectPage = () => {
+  const [amenityVideos, setAmenityVideos] = useState<HiltonAmenityVideoRow[]>(FALLBACK_AMENITY_VIDEOS);
+
+  useEffect(() => {
+    let cancelled = false;
+    void fetch("/data/hilton-amenities-videos.txt")
+      .then((res) => (res.ok ? res.text() : Promise.reject(new Error("no txt"))))
+      .then((text) => {
+        const parsed = parseHiltonAmenityVideosTxt(text);
+        if (!cancelled && parsed.length > 0) setAmenityVideos(parsed);
+      })
+      .catch(() => {});
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
   return (
     <>
       <HeaderOne />
@@ -267,48 +283,61 @@ const HiltonProjectPage = () => {
             the skyline, and the rhythm of a city alive with possibility. It is a life shaped by impeccable design, enriched
             by thoughtful amenities, and elevated by the trusted Hilton name.
           </p>
-          <div className="po-hilton-doc-links">
-            <a href={PDF.brochure} target="_blank" rel="noopener noreferrer" className="po-hilton-doc-link">
-              <span>Brochure</span>
-              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+          <div className="po-hilton-doc-bar" role="group" aria-label="Project downloads and links">
+            <a href={PDF.brochure} target="_blank" rel="noopener noreferrer" className="po-hilton-doc-btn">
+              <span className="po-hilton-doc-btn-text">Brochure</span>
+              <svg className="po-hilton-doc-btn-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
                 <path
                   fill="none"
                   stroke="currentColor"
-                  strokeWidth="1.5"
-                  d="M12 3v12M8 11l4 4 4-4M5 21h14"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12 4v11m0 0l-4-4m4 4l4-4M5 19h14"
                 />
               </svg>
             </a>
-            <a href={PDF.projectDoc} target="_blank" rel="noopener noreferrer" className="po-hilton-doc-link">
-              <span>Project document</span>
-              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <a href={PDF.projectDoc} target="_blank" rel="noopener noreferrer" className="po-hilton-doc-btn">
+              <span className="po-hilton-doc-btn-text">Project document</span>
+              <svg className="po-hilton-doc-btn-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
                 <path
                   fill="none"
                   stroke="currentColor"
-                  strokeWidth="1.5"
-                  d="M12 3v12M8 11l4 4 4-4M5 21h14"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12 4v11m0 0l-4-4m4 4l4-4M5 19h14"
                 />
               </svg>
             </a>
-            <a href={PDF.factSheet} target="_blank" rel="noopener noreferrer" className="po-hilton-doc-link">
-              <span>Fact sheet</span>
-              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <a href={PDF.factSheet} target="_blank" rel="noopener noreferrer" className="po-hilton-doc-btn">
+              <span className="po-hilton-doc-btn-text">Fact sheet</span>
+              <svg className="po-hilton-doc-btn-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
                 <path
                   fill="none"
                   stroke="currentColor"
-                  strokeWidth="1.5"
-                  d="M12 3v12M8 11l4 4 4-4M5 21h14"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12 4v11m0 0l-4-4m4 4l4-4M5 19h14"
                 />
               </svg>
             </a>
-            <a href={MORE_DETAILS} target="_blank" rel="noopener noreferrer" className="po-hilton-doc-link po-hilton-doc-link--emphasis">
-              <span>More details</span>
-              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <a
+              href={MORE_DETAILS}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="po-hilton-doc-btn po-hilton-doc-btn--muted"
+            >
+              <span className="po-hilton-doc-btn-text">More details</span>
+              <svg className="po-hilton-doc-btn-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
                 <path
                   fill="none"
                   stroke="currentColor"
-                  strokeWidth="1.5"
-                  d="M7 17L17 7M17 7H9M17 7V15"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M7 17L17 7M17 7H9M17 7v8"
                 />
               </svg>
             </a>
@@ -317,18 +346,19 @@ const HiltonProjectPage = () => {
       </section>
 
       <section className="po-hilton-amenities" aria-labelledby="hilton-amenities-heading">
-        <div className="container">
+        <div className="container po-hilton-amenities-intro">
           <p className="po-hilton-section-kicker">Hilton Residences</p>
           <h2 id="hilton-amenities-heading" className="po-hilton-section-title">
             Amenities
           </h2>
           <p className="po-hilton-section-sub">
-            A curated collection of spaces — hover tiles to preview motion. Designed for wellness, leisure, and everyday
-            luxury.
+            A curated collection of spaces for wellness, leisure, and everyday luxury.
           </p>
-          <div className="po-hilton-masonry">
-            {amenityMasonry.map((item) => (
-              <MasonryVideoTile key={item.label} {...item} />
+        </div>
+        <div className="po-hilton-amenities-fullbleed">
+          <div className="po-hilton-amenities-masonry">
+            {amenityVideos.map((item, index) => (
+              <AmenityVideoTile key={`${item.label}-${index}`} {...item} />
             ))}
           </div>
         </div>
