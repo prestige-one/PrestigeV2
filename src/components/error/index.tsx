@@ -3,13 +3,13 @@ import React from 'react';
 import Link from 'next/link';
 import Breacrumb from '@/common/Breacrumb';
 import Cta2Area from '../homes/home/Cta2Area';
-import HeaderOne from '@/layouts/headers/HeaderOne';
-import FooterOne from '@/layouts/footers/FooterOne';
+import SiteHeader from '@/layouts/SiteHeader';
+import SiteFooterBlock from '@/layouts/SiteFooterBlock';
 
 const ErrorArea = () => {
   return (
     <>
-      <HeaderOne />
+      <SiteHeader />
       <Breacrumb title="Error" subtitle="Error" />
       <div className="error-content text-center">
         <div className="divider"></div>
@@ -34,7 +34,7 @@ const ErrorArea = () => {
         <div className="divider"></div>
       </div>
       <Cta2Area />
-      <FooterOne />
+      <SiteFooterBlock />
 
     </>
   );

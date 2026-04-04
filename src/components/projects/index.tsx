@@ -2,8 +2,8 @@
 
 import { useMemo, useState } from "react";
 import PageHero from "@/common/PageHero";
-import HeaderOne from "@/layouts/headers/HeaderOne";
-import FooterOne from "@/layouts/footers/FooterOne";
+import SiteHeader from "@/layouts/SiteHeader";
+import SiteFooterBlock from "@/layouts/SiteFooterBlock";
 
 type ProjectItem = {
   title: string;
@@ -155,7 +155,7 @@ const ProjectsPage = () => {
 
   return (
     <>
-      <HeaderOne />
+      <SiteHeader />
 
       <PageHero
         kicker="Prestige One Developments"
@@ -201,7 +201,7 @@ const ProjectsPage = () => {
         </div>
       </section>
 
-      <FooterOne />
+      <SiteFooterBlock />
     </>
   );
 };

@@ -1,5 +1,5 @@
 import PageHero from "@/common/PageHero";
-import HeaderOne from "@/layouts/headers/HeaderOne";
+import SiteHeader from "@/layouts/SiteHeader";
 import Cta2Area from '../homes/home/Cta2Area';
 import AboutArea from '../homes/home/AboutArea';
 import AboutLogoSlider from './AboutLogoSlider';
@@ -13,12 +13,12 @@ import WorkprocessArea from '../homes/home/WorkprocessArea';
 import VideoAreaHomeOne from '../homes/home/VideoAreaHomeOne';
 import TeamArea from '../homes/home-2/TeamArea';
 import TestimonialArea from '../homes/home-2/TestimonialArea';
-import FooterOne from '@/layouts/footers/FooterOne';
+import SiteFooterBlock from '@/layouts/SiteFooterBlock';
 
 const Aboutus = () => {
   return (
     <>
-      <HeaderOne />
+      <SiteHeader />
       <PageHero
         kicker="Prestige One Developments"
         title="About Us"
@@ -30,9 +30,8 @@ const Aboutus = () => {
       <MissionVisionStatsSection />
       <GrowingTogetherSection />
       <ManagementTeamSection />      
-      <RoadmapTimelineSection /> 
-      <Cta2Area />
-      <FooterOne />
+      <RoadmapTimelineSection />  
+      <SiteFooterBlock />
     </>
   );
 };

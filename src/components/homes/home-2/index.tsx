@@ -11,13 +11,13 @@ import PriceArea from "./PriceArea";
 import FaqArea from "./FaqArea";
 import TestimonialArea from "./TestimonialArea";
 import BlogArea from "./BlogArea";
-import FooterOne from "@/layouts/footers/FooterOne";
-import HeaderOne from "@/layouts/headers/HeaderOne";
+import SiteFooterBlock from "@/layouts/SiteFooterBlock";
+import SiteHeader from "@/layouts/SiteHeader";
 
 const HomeTwo = () => {
 	return (
 		<>
-			<HeaderOne style_2={true} />
+			<SiteHeader style_2 />
       <HeroArea />
       <VideoArea />
       <MissionArea />
@@ -30,7 +30,7 @@ const HomeTwo = () => {
       <FaqArea />
       <TestimonialArea />
       <BlogArea />
-      <FooterOne />
+      <SiteFooterBlock />
 		</>
 	);
 };

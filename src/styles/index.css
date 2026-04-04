@@ -22,7 +22,7 @@ input,
 textarea,
 button,
 label {
-  font-family: var(--font-golos-text), sans-serif !important;
+  font-family: var(--font-plus-jakarta), sans-serif !important;
 }
 
 h1,
@@ -34,21 +34,32 @@ h6,
 .section-heading h2,
 .hero-content h2,
 .po-hero-content h2,
+.po-destination-hero-title,
 .navbar-nav li > a,
 .btn,
 .footer-card h5 {
   font-family: var(--font-plus-jakarta), sans-serif !important;
 }
 
+/* Top of page: glass over content (home video hero, etc.) */
 .header-area,
 .header-area::after,
-.header-area.sticky-on,
 .light-mode .header-area,
-.light-mode .header-area::after,
-.light-mode .header-area.sticky-on {
+.light-mode .header-area::after {
   background: rgba(255, 255, 255, 0.11) !important;
-  -webkit-backdrop-filter: blur(14px);
-          backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  border-bottom: 1px solid rgba(14, 14, 14, 0.08);
+}
+
+/* Scrolled: solid white bar, dark nav (logo uses invert below — SVGs are white-filled) */
+.header-area.sticky-on,
+.header-area.sticky-on::after,
+.light-mode .header-area.sticky-on,
+.light-mode .header-area.sticky-on::after {
+  background: #ffffff !important;
+  -webkit-backdrop-filter: none;
+          backdrop-filter: none;
   border-bottom: 1px solid rgba(14, 14, 14, 0.08);
 }
 
@@ -73,12 +84,13 @@ h6,
   background: transparent !important;
 }
 
-/* Keep the logo visible on glass header */
-.header-area .navbar-brand img.dark-logo {
-  filter: invert(1) brightness(0);
+/* Logo SVGs use white fills; invert to black on light backgrounds */
+.header-area.sticky-on .navbar-brand img {
+  filter: invert(1) brightness(0) !important;
 }
-.header-area.sticky-on  .navbar-brand img {
-	filter: invert(100%) brightness(0%);
+
+.header-area.header-on-light-surface:not(.sticky-on) .navbar-brand img {
+  filter: invert(1) brightness(0) !important;
 }
 .btn-primary {
   background-color: var(--po-black) !important;
@@ -100,12 +112,37 @@ h6,
   min-height: 560px;
   background-color: #000; 
 }
-.header-area.sticky-on .navbar a.btn-primary {
+/*.header-area.sticky-on .navbar a.btn-primary {
 	color: #fff !important;
-}
+}*/
 .header-area.sticky-on .navbar a {
 	color: #000 !important;
 }
+
+/* Routes with a light hero under the header at scroll 0: same glass bar as home, dark nav + inverted logo */
+.header-area.header-on-light-surface .navbar-nav li > a,
+.header-area.header-on-light-surface .navbar-toggler,
+.header-area.header-on-light-surface .navbar-nav li .dropdown-toggler,
+.header-area.header-on-light-surface .navbar-nav li.vorix-dd .dropdown-toggler {
+  color: #0e0e0e !important;
+}
+
+.header-area.header-on-light-surface .navbar-nav li > a:hover,
+.header-area.header-on-light-surface .navbar-nav li > a:focus,
+.header-area.header-on-light-surface .navbar-nav li .vorix-dd-menu li > a:hover,
+.header-area.header-on-light-surface .navbar-nav li .vorix-dd-menu li > a:focus {
+  color: #313131 !important;
+}
+
+.header-area.header-on-light-surface .navbar-nav li .vorix-dd-menu {
+  background-color: #f6f5f3;
+  border: 1px solid rgba(26, 26, 26, 0.2);
+}
+
+.header-area.header-on-light-surface .navbar-nav li .vorix-dd-menu li > a {
+  color: #0e0e0e !important;
+}
+
 .po-hero-swiper,
 .po-hero-swiper .swiper-wrapper,
 .po-hero-swiper .swiper-slide {
@@ -199,6 +236,755 @@ h6,
   font-family: var(--font-plus-jakarta), sans-serif;
   font-size: 13px;
   letter-spacing: 1px;
+}
+
+/* --- Destination pages (shared: po-destination-*) --- */
+.po-destination-page {
+  background: #ffffff;
+}
+
+.po-destination-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 560px;
+  background: #0a0a0a;
+}
+
+.po-destination-hero-media {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.po-destination-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.11) 45%, rgba(0, 0, 0, 0.38) 100%);
+}
+
+.po-destination-hero-frame {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding-top: clamp(5.5rem, 14vh, 7.5rem);
+  padding-bottom: clamp(2rem, 5vh, 3rem);
+}
+
+.po-destination-hero-title-wrap {
+  display: flex;
+  flex: 1;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem 1rem 2rem;
+}
+
+.po-destination-hero-title {
+  margin: 0;
+  max-width: 18ch;
+  font-size: clamp(1.65rem, 4.2vw, 3.15rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #ffffff !important;
+}
+
+.po-contact-detail-strip {
+  padding: clamp(2.75rem, 6vw, 4rem) 0 clamp(2.25rem, 4vw, 3rem);
+  background: #ffffff;
+}
+
+.po-contact-detail-heading {
+  margin: 0 0 clamp(1.25rem, 2.5vw, 1.75rem);
+  text-align: center;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #0e0e0e;
+}
+
+.po-contact-detail-panel {
+  border: 1px solid #e6e6e6;
+  border-radius: 8px;
+  padding: clamp(1rem, 2.2vw, 1.35rem);
+  background: #ffffff;
+}
+
+.po-contact-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(0.85rem, 2vw, 1.15rem);
+}
+
+.po-contact-detail-social {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.65rem 1rem;
+  margin: clamp(1.15rem, 2.5vw, 1.5rem) 0 0;
+  padding: clamp(1.15rem, 2.5vw, 1.5rem) 0 0;
+  border-top: 1px solid #ececec;
+  list-style: none;
+}
+
+.po-contact-detail-social-item {
+  margin: 0;
+  padding: 0;
+}
+
+.po-contact-detail-social-link {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 6px;
+  background: #f8f8f8;
+  border: 1px solid #e8e8e8;
+  color: #313131;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.po-contact-detail-social-link:hover {
+  background: #313131;
+  color: #ffffff !important;
+  border-color: #313131;
+  transform: translateY(-2px);
+}
+
+.po-contact-detail-social-svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.po-contact-detail-card {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: clamp(0.85rem, 2vw, 1.1rem);
+  margin: 0;
+  padding: clamp(1rem, 2.2vw, 1.25rem) clamp(1rem, 2vw, 1.2rem);
+  background: #f8f8f8;
+  border: 1px solid #e8e8e8;
+  border-radius: 6px;
+  min-width: 0;
+}
+
+.po-contact-detail-card-icon-wrap {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+}
+
+.po-contact-detail-card-icon {
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+
+.po-contact-detail-card-text {
+  min-width: 0;
+  flex: 1;
+}
+
+.po-contact-detail-card-label {
+  margin: 0 0 0.35rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #0e0e0e;
+  line-height: 1.25;
+}
+
+.po-contact-detail-card-value {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.45;
+  color: #555555;
+}
+
+.po-contact-detail-card-value--link {
+  color: #444444;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.po-contact-detail-card-value--link:hover {
+  color: #0e0e0e;
+  border-bottom-color: rgba(14, 14, 14, 0.3);
+}
+
+.po-destination-intro {
+  padding: clamp(2.75rem, 6.5vw, 4.25rem) 0;
+  background: #ffffff;
+  color: #313131;
+}
+
+.po-destination-intro-text {
+  margin: 0 auto;
+  max-width: 52rem;
+  font-size: clamp(0.95rem, 1.35vw, 1.06rem);
+  line-height: 1.78;
+  text-align: center;
+  color: #313131;
+}
+
+.po-destination-nearby {
+  padding: clamp(3.5rem, 8vw, 5.5rem) 0;
+  background: #313131;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+.po-destination-nearby-intro {
+  margin-bottom: clamp(1.25rem, 3vw, 2rem);
+}
+
+h2.po-destination-section-title {
+  margin: 0;
+  text-align: center;
+  font-size: clamp(1.5rem, 3.5vw, 2.35rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.po-destination-section-lead {
+  margin: 1rem auto 0;
+  max-width: 36rem;
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.po-destination-nearby-tile .po-project-page-amenity-tile-scrim {
+  z-index: 1;
+}
+
+.po-destination-nearby-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  padding: clamp(0.65rem, 1.8vw, 0.85rem) clamp(0.65rem, 2vw, 1rem);
+  margin: 0;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.42);
+  -webkit-backdrop-filter: blur(16px);
+          backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(255, 255, 255, 0.42);
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.06);
+}
+
+@supports not ((-webkit-backdrop-filter: blur(12px)) or (backdrop-filter: blur(12px))) {
+  .po-destination-nearby-caption {
+    background: rgba(248, 248, 248, 0.94);
+  }
+}
+
+.po-destination-nearby-caption-text {
+	margin: 0;
+	font-size: clamp(0.72rem, 1.05vw, 0.82rem);
+	font-weight: 500;
+	letter-spacing: 0.09em;
+	text-transform: uppercase;
+	color: #fff;
+	line-height: 1.4;
+}
+
+.po-destination-nearby-caption-time {
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  opacity: 0.88;
+}
+
+.po-destination-nearby-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.po-destination-access {
+  padding: clamp(3.25rem, 7vw, 5rem) 0;
+  background: #ffffff;
+  color: #313131;
+}
+
+.po-destination-access-heading {
+  margin: 0;
+  text-align: center;
+  font-size: clamp(1.35rem, 3.2vw, 2rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #0e0e0e;
+}
+
+.po-destination-access-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.15rem, 2.5vw, 1.75rem);
+  margin-top: clamp(1.75rem, 3.5vw, 2.5rem);
+}
+
+.po-destination-access-card {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #f8f8f8;
+  border: 1px solid #e8e8e8;
+  box-shadow: 0 8px 28px rgba(14, 14, 14, 0.06);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .po-destination-access-card {
+    transition:
+      box-shadow 0.25s ease,
+      transform 0.25s ease,
+      border-color 0.25s ease;
+  }
+
+  .po-destination-access-card:hover {
+    border-color: #d4d4d4;
+    box-shadow: 0 14px 40px rgba(14, 14, 14, 0.1);
+    transform: translateY(-3px);
+  }
+}
+
+.po-destination-access-media {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: #1a1a1a;
+  overflow: hidden;
+}
+
+.po-destination-access-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.po-destination-access-media-scrim {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.35) 100%);
+}
+
+.po-destination-access-card-body {
+  padding: clamp(1.15rem, 2.5vw, 1.45rem) clamp(1.15rem, 2.5vw, 1.5rem) clamp(1.25rem, 2.8vw, 1.6rem);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.po-destination-access-card-title {
+  margin: 0;
+  font-size: clamp(1rem, 1.6vw, 1.12rem);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+  color: #0e0e0e;
+}
+
+.po-destination-access-card-text {
+  margin: 0;
+  font-size: clamp(0.88rem, 1.2vw, 0.95rem);
+  line-height: 1.7;
+  color: #4a4a4a;
+}
+
+@media (max-width: 767px) {
+  .po-destination-access-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.po-construction-page {
+  background: #313131;
+  overflow-x: clip;
+}
+
+.po-construction-hero {
+  background: #ffffff;
+  padding: clamp(12.5rem, 15vh, 11.5rem) 0 clamp(10rem, 16vw, 13.5rem);
+  border-bottom: 1px solid #ececec;
+}
+
+.po-construction-hero-inner {
+  max-width: 46rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.po-construction-kicker {
+  margin: 0 0 0.65rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #888888;
+}
+
+.po-construction-title {
+  margin: 0;
+  font-size: clamp(1.5rem, 3.4vw, 2.15rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.15;
+  color: #0e0e0e;
+}
+
+.po-construction-intro {
+  margin: 1.1rem 0 0;
+  font-size: clamp(0.92rem, 1.3vw, 1.02rem);
+  line-height: 1.7;
+  color: #555555;
+}
+
+.po-construction-cards-shell {
+  margin-top: clamp(-9.25rem, -12vw, -5.5rem);
+  padding: 0 0 clamp(3.75rem, 8vw, 5.5rem);
+  position: relative;
+  z-index: 1;
+}
+
+.po-construction-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.35rem);
+}
+
+.po-construction-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.2);
+  text-align: left;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .po-construction-card {
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+
+  .po-construction-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.26);
+  }
+}
+
+.po-construction-card-media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background: #1a1a1a;
+  overflow: hidden;
+}
+
+.po-construction-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.po-construction-card-body {
+  padding: clamp(1.15rem, 2.4vw, 1.45rem) clamp(1.15rem, 2.2vw, 1.35rem) clamp(1.25rem, 2.6vw, 1.5rem);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0.75rem;
+}
+
+.po-construction-card-title {
+  margin: 0;
+  font-size: clamp(1rem, 1.4vw, 1.08rem);
+  font-weight: 700;
+  line-height: 1.3;
+  color: #1a2b48;
+}
+
+.po-construction-card-desc {
+  margin: 0;
+  font-size: 0.86rem;
+  line-height: 1.6;
+  color: #666666;
+}
+
+.po-construction-card-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.po-construction-card-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: #3a3a3a;
+}
+
+.po-construction-card-check {
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
+  margin-top: 0.1em;
+  color: #0e0e0e;
+}
+
+.po-construction-card-btn {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #ffffff !important;
+  background: #313131;
+  border: 1px solid #313131;
+  border-radius: 6px;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.po-construction-card-btn:hover {
+  background: #1f1f1f;
+  border-color: #1f1f1f;
+  color: #ffffff;
+}
+
+.po-construction-card-btn:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+@media (max-width: 1199px) {
+  .po-construction-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 575px) {
+  .po-construction-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .po-construction-cards-shell {
+    margin-top: clamp(-2.75rem, -9vw, -3.5rem);
+  }
+}
+
+.po-destination-invest {
+  background: #313131;
+  overflow-x: clip;
+}
+
+.po-destination-invest-header {
+	background: #ffffff;
+	padding: clamp(3rem, 7vw, 4.5rem) 0 clamp(13.25rem, 10vw, 6rem);
+	border-top: 1px solid #dbdbdb;
+}
+
+.po-destination-invest-header-inner {
+  max-width: 44rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.po-destination-invest-kicker {
+  margin: 0 0 0.65rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #888888;
+}
+
+.po-destination-invest-title {
+  margin: 0;
+  font-size: clamp(1.35rem, 3vw, 2.05rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  color: #0e0e0e;
+}
+
+.po-destination-invest-intro {
+  margin: 1.05rem 0 0;
+  font-size: clamp(0.9rem, 1.25vw, 1.02rem);
+  line-height: 1.65;
+  color: #5a5a5a;
+}
+
+.po-destination-invest-cards-shell {
+	margin-top: clamp(-9.5rem, -10vw, -5rem);
+	padding: 0 0 clamp(3.75rem, 8vw, 5.25rem);
+	position: relative;
+	z-index: 1;
+}
+
+.po-destination-invest-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.35rem);
+}
+
+.po-destination-invest-card {
+  background: #f7f7f7;
+  border: 1px solid #e4e4e4;
+  border-radius: 8px;
+  padding: clamp(1.25rem, 2.5vw, 1.65rem);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.18);
+  text-align: left;
+}
+
+.po-destination-invest-card-title {
+  margin: 0 0 0.65rem;
+  font-size: clamp(0.95rem, 1.35vw, 1.06rem);
+  font-weight: 700;
+  line-height: 1.3;
+  color: #0e0e0e;
+}
+
+.po-destination-invest-card-desc {
+  margin: 0 0 1rem;
+  font-size: 0.86rem;
+  line-height: 1.65;
+  color: #555555;
+}
+
+.po-destination-invest-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.po-destination-invest-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: #3a3a3a;
+}
+
+.po-destination-invest-check {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  margin-top: 0.12em;
+  color: #0e0e0e;
+}
+
+@media (max-width: 1199px) {
+  .po-destination-invest-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 575px) {
+  .po-destination-invest-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .po-destination-invest-cards-shell {
+    margin-top: clamp(-2.5rem, -8vw, -3.25rem);
+  }
+}
+
+.po-destination-tail {
+  padding: clamp(2.5rem, 5vw, 3.75rem) 0;
+  background: #f8f8f8;
+  color: #313131;
+}
+
+.po-destination-tail-text {
+	margin: 0;
+	text-align: center;
+	font-size: clamp(1.6rem, 1.8vw, 2rem);
+	line-height: 1.65;
+	font-family: var(--font-plus-jakarta), sans-serif !important;
+	font-weight: 600;
+}
+
+.po-destination-tail-link {
+  font-weight: 600;
+  color: #313131;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.po-destination-tail-link:hover {
+  color: #000000;
+}
+
+@media (max-width: 1199px) {
+  .po-contact-detail-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 575px) {
+  .po-contact-detail-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .po-logo-slider {
@@ -1652,7 +2438,7 @@ h6,
 .footer-wrapper,
 .light-mode .footer-wrapper,
 .dark-mode .footer-wrapper {
-  background-color: #0e0e0e !important;
+  /*background-color: #0e0e0e !important;
   background-image:
     radial-gradient(circle at 18% 24%, rgba(255, 255, 255, 0.08), transparent 36%),
     radial-gradient(circle at 84% 14%, rgba(255, 255, 255, 0.06), transparent 34%),
@@ -1664,7 +2450,7 @@ h6,
       transparent 62px
     );
   background-size: cover;
-  background-position: center;
+  background-position: center;*/
 }
 
 .footer-wrapper .footer-card h5 {
@@ -1700,6 +2486,11 @@ span.material-symbols-outlined {
 	margin: 0 auto;
 	width: 200px;
 }
+.footer-wrapper {
+	background: url(/assets/img/v2/web-banner-2k.webp) no-repeat;
+	background-size: cover;
+	background-position: center top;
+}
 .footer-card-logo {
 	text-align: center;
 	padding: 0 30px;
@@ -1730,7 +2521,10 @@ span.material-symbols-outlined {
   background: #fff;
   color: #000;
 }
-.footer-wrapper .container {
+.footer-card-logo p {
+  color: #fff !important;
+}
+.footer-wrapper .container:not(.footer-copyright-wrapper) {
 	max-width: 1500px;
 }
 .footer-card .footer-nav li a:hover, .footer-card .footer-nav li a:focus {
@@ -2324,8 +3118,11 @@ span.material-symbols-outlined {
   }
 }
 
-/* Hilton Residences Dubai Maritime City — project page */
-.po-hilton-hero {
+/*
+ * Shared Prestige One “project detail” page layout (reuse on Hilton, Sanctuary, etc.).
+ * All selectors use the po-project-page-* prefix — do not fork per-project class names.
+ */
+.po-project-page-hero {
   position: relative;
   min-height: min(92vh, 900px);
   display: flex;
@@ -2336,51 +3133,51 @@ span.material-symbols-outlined {
   text-align: center;
 }
 
-.po-hilton-hero-media {
+.po-project-page-hero-media {
   position: absolute;
   inset: 0;
   z-index: 0;
 }
 
-.po-hilton-hero-media img {
+.po-project-page-hero-media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-.po-hilton-hero-overlay {
+.po-project-page-hero-overlay {
 	position: absolute;
 	inset: 0;
 	background: linear-gradient( 180deg, rgba(0, 0, 0, 0.11) 0%, rgba(0, 0, 0, 0.05) 45%, rgba(0, 0, 0, 0.41) 100% );
 }
 
-.po-hilton-hero-content {
+.po-project-page-hero-content {
   position: relative;
   z-index: 1;
   max-width: 920px;
 }
 
-.po-hilton-hero-eyebrow {
+.po-project-page-hero-eyebrow {
   margin: 0 0 0.75rem;
   font-size: 0.78rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
 
-.po-hilton-hero-eyebrow a {
+.po-project-page-hero-eyebrow a {
   color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
   border-bottom: 1px solid rgba(255, 255, 255, 0.35);
   transition: border-color 0.25s ease, color 0.25s ease;
 }
 
-.po-hilton-hero-eyebrow a:hover {
+.po-project-page-hero-eyebrow a:hover {
   color: #fff;
   border-color: #fff;
 }
 
-.po-hilton-hero h1 {
+.po-project-page-hero h1 {
   color: #ffffff;
   margin: 0;
   font-size: clamp(1.75rem, 5vw, 3.25rem);
@@ -2389,7 +3186,7 @@ span.material-symbols-outlined {
   line-height: 1.15;
 }
 
-.po-hilton-hero-lead {
+.po-project-page-hero-lead {
   margin: 1rem 0 0;
   font-size: clamp(1rem, 2vw, 1.2rem);
   color: rgba(255, 255, 255, 0.9);
@@ -2399,7 +3196,7 @@ span.material-symbols-outlined {
   margin-right: auto;
 }
 
-.po-hilton-hero-actions {
+.po-project-page-hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
@@ -2407,7 +3204,7 @@ span.material-symbols-outlined {
   margin-top: 1.75rem;
 }
 
-.po-hilton-btn {
+.po-project-page-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -2422,34 +3219,34 @@ span.material-symbols-outlined {
   transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
 }
 
-.po-hilton-btn--light {
+.po-project-page-btn--light {
   background: #fff;
   color: #0e0e0e;
 }
 
-.po-hilton-btn--light:hover {
+.po-project-page-btn--light:hover {
   background: #e8e8e8;
 }
 
-.po-hilton-btn--ghost {
+.po-project-page-btn--ghost {
   background: transparent;
   color: #fff;
   border-color: rgba(255, 255, 255, 0.55);
 }
 
-.po-hilton-btn--ghost:hover {
+.po-project-page-btn--ghost:hover {
   border-color: #fff;
   background: rgba(255, 255, 255, 0.08);
 }
 
-.po-hilton-signature {
+.po-project-page-signature {
   padding: clamp(3.5rem, 8vw, 5.5rem) 0;
   background: #ffffff;
   color: #000000;
   text-align: center;
 }
 
-.po-hilton-signature-title {
+.po-project-page-signature-title {
   margin: 0 auto;
   max-width: 900px;
   font-size: clamp(1.35rem, 3.5vw, 2.25rem);
@@ -2459,7 +3256,7 @@ span.material-symbols-outlined {
   line-height: 1.25;
 }
 
-.po-hilton-signature-text {
+.po-project-page-signature-text {
   margin: 1.5rem auto 0;
   max-width: 720px;
   font-size: clamp(0.95rem, 1.6vw, 1.08rem);
@@ -2467,7 +3264,7 @@ span.material-symbols-outlined {
   color: rgba(0, 0, 0, 0.88);
 }
 
-.po-hilton-doc-bar {
+.po-project-page-doc-bar {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0.65rem;
@@ -2480,7 +3277,7 @@ span.material-symbols-outlined {
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
 }
 
-.po-hilton-doc-btn {
+.po-project-page-doc-btn {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -2495,12 +3292,12 @@ span.material-symbols-outlined {
 	transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.po-hilton-doc-btn:hover {
+.po-project-page-doc-btn:hover {
   border-color: #b0b0b0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
-.po-hilton-doc-btn-text {
+.po-project-page-doc-btn-text {
 	font-size: 14px;
 	font-weight: 700;
 	letter-spacing: 0.12em;
@@ -2510,45 +3307,45 @@ span.material-symbols-outlined {
 	font-family: var(--font-plus-jakarta), sans-serif !important;
 }
 
-.po-hilton-doc-btn-icon {
+.po-project-page-doc-btn-icon {
   flex-shrink: 0;
   color: #111111;
 }
 
-.po-hilton-doc-btn--muted {
+.po-project-page-doc-btn--muted {
   background: #ececec;
   border-color: #d0d0d0;
 }
 
-.po-hilton-doc-btn--muted:hover {
+.po-project-page-doc-btn--muted:hover {
   background: #e2e2e2;
   border-color: #bdbdbd;
 }
 
-.po-hilton-amenities {
+.po-project-page-amenities {
   padding: clamp(3.5rem, 8vw, 5.5rem) 0;
-  background: #e4e2dc;
-  color: #141414;
+  background: #313131;
+  color: #ffffff;
   overflow-x: hidden;
 }
 
-.po-hilton-amenities .po-hilton-section-kicker {
-  color: rgba(0, 0, 0, 0.42);
+.po-project-page-amenities .po-project-page-section-kicker {
+  color: rgba(236, 236, 236, 0.93);
 }
 
-.po-hilton-amenities .po-hilton-section-title {
-  color: #0e0e0e;
+.po-project-page-amenities .po-project-page-section-title {
+  color: #ffffff;
 }
 
-.po-hilton-amenities .po-hilton-section-sub {
-  color: rgba(0, 0, 0, 0.62);
+.po-project-page-amenities .po-project-page-section-sub {
+  color: rgba(236, 236, 236, 0.93);
 }
 
-.po-hilton-amenities-intro {
+.po-project-page-amenities-intro {
   margin-bottom: clamp(1.25rem, 3vw, 2rem);
 }
 
-.po-hilton-amenities-fullbleed {
+.po-project-page-amenities-fullbleed {
   width: 100vw;
   max-width: 100vw;
   margin-left: calc(50% - 50vw);
@@ -2556,49 +3353,65 @@ span.material-symbols-outlined {
   box-sizing: border-box;
 }
 
-/* True masonry: columns flow top-to-bottom (reference layout ~5 cols). */
-.po-hilton-amenities-masonry {
-  column-count: 5;
-  column-gap: 12px;
+/* Amenities: flex wrap + centered last row (2 / 3 / 1 items on final row). */
+.po-project-page-amenities-masonry {
+  --amenity-cols: 4;
+  --amenity-gap: clamp(1.25rem, 2.4vw, 2rem);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--amenity-gap);
 }
 
-.po-hilton-amenity-tile {
-  break-inside: avoid;
-  margin-bottom: 12px;
+.po-project-page-amenity-tile {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 0;
+  flex: 0 0 calc(
+    (100% - (var(--amenity-cols) - 1) * var(--amenity-gap)) / var(--amenity-cols)
+  );
+  width: calc(
+    (100% - (var(--amenity-cols) - 1) * var(--amenity-gap)) / var(--amenity-cols)
+  );
+  max-width: calc(
+    (100% - (var(--amenity-cols) - 1) * var(--amenity-gap)) / var(--amenity-cols)
+  );
+  min-width: 0;
+  box-sizing: border-box;
 }
 
-.po-hilton-amenity-top-label {
-  position: relative;
-  z-index: 2;
-  margin-bottom: -0.55rem;
-  padding: 0.42rem 0.8rem;
-  max-width: calc(100% - 0.5rem);
-  background: #f4f0e8;
-  border: 1px solid rgba(0, 0, 0, 0.09);
-  border-radius: 4px;
-  font-size: 0.6rem;
-  font-weight: 700;
-  letter-spacing: 0.11em;
-  text-transform: uppercase;
-  text-align: center;
-  color: #111111;
-  line-height: 1.35;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+.po-project-page-amenity-top-label {
+	position: relative;
+	z-index: 2;
+	margin-bottom: -1.4rem;
+	padding: 0.8rem 2rem;
+	max-width: calc(100% - 0.5rem);
+	background: #f4f0e8;
+	border: 1px solid rgba(0, 0, 0, 0.09);
+	border-radius: 4px;
+	font-size: 0.8rem;
+	font-weight: 500;
+	letter-spacing: 0.11em;
+	text-transform: uppercase;
+	text-align: center;
+	color: #111111;
+	line-height: 1.35;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
 }
 
-.po-hilton-amenity-tile-media {
+.po-project-page-amenity-tile-media {
   position: relative;
   width: 100%;
   overflow: hidden;
   border-radius: 6px;
   background: #1a1a1a;
   box-shadow: 0 6px 22px rgba(0, 0, 0, 0.12);
+  aspect-ratio: 3 / 4;
+  min-height: clamp(220px, 28vw, 340px);
 }
 
-.po-hilton-amenity-tile-video {
+.po-project-page-amenity-tile-video {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -2607,14 +3420,14 @@ span.material-symbols-outlined {
   display: block;
 }
 
-.po-hilton-amenity-tile-scrim {
+.po-project-page-amenity-tile-scrim {
   position: absolute;
   inset: 0;
   pointer-events: none;
   background: linear-gradient(180deg, transparent 55%, rgba(0, 0, 0, 0.22) 100%);
 }
 
-.po-hilton-section-kicker {
+.po-project-page-section-kicker {
   margin: 0 0 0.5rem;
   text-align: center;
   font-size: 0.78rem;
@@ -2623,7 +3436,7 @@ span.material-symbols-outlined {
   color: rgba(255, 255, 255, 0.55);
 }
 
-.po-hilton-section-title {
+.po-project-page-section-title {
   margin: 0;
   text-align: center;
   font-size: clamp(1.5rem, 3.5vw, 2.35rem);
@@ -2632,7 +3445,7 @@ span.material-symbols-outlined {
   text-transform: uppercase;
 }
 
-.po-hilton-section-sub {
+.po-project-page-section-sub {
   margin: 1rem auto 0;
   max-width: 560px;
   text-align: center;
@@ -2641,23 +3454,23 @@ span.material-symbols-outlined {
   color: rgba(255, 255, 255, 0.72);
 }
 
-.po-hilton-feature-trio {
+.po-project-page-feature-trio {
   padding: clamp(3rem, 7vw, 4.5rem) 0;
   background: #000;
 }
 
-.po-hilton-trio-grid {
+.po-project-page-trio-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10px;
 }
 
-.po-hilton-trio-card {
+.po-project-page-trio-card {
   margin: 0;
   text-align: center;
 }
 
-.po-hilton-trio-media {
+.po-project-page-trio-media {
   position: relative;
   aspect-ratio: 3 / 5;
   max-height: 420px;
@@ -2666,13 +3479,13 @@ span.material-symbols-outlined {
   background: #1a1a1a;
 }
 
-.po-hilton-trio-media img {
+.po-project-page-trio-media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.po-hilton-trio-card h3 {
+.po-project-page-trio-card h3 {
   margin: 0.85rem 0 0;
   font-size: 0.72rem;
   font-weight: 700;
@@ -2681,13 +3494,13 @@ span.material-symbols-outlined {
   color: #fff;
 }
 
-.po-hilton-interior {
+.po-project-page-interior {
   padding: clamp(3.5rem, 8vw, 5rem) 0;
   background: #050505;
   color: #fff;
 }
 
-.po-hilton-interior-title {
+.po-project-page-interior-title {
   margin: 0 0 2rem;
   text-align: center;
   font-size: clamp(1.35rem, 3vw, 2rem);
@@ -2696,190 +3509,635 @@ span.material-symbols-outlined {
   text-transform: uppercase;
 }
 
-.po-hilton-interior-grid {
+.po-project-page-interior-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
 }
 
-.po-hilton-interior-figure {
+.po-project-page-interior-figure {
   margin: 0;
 }
 
-.po-hilton-interior-img-wrap {
+.po-project-page-interior-img-wrap {
   border-radius: 8px;
   overflow: hidden;
   aspect-ratio: 3 / 4;
   background: #1a1a1a;
 }
 
-.po-hilton-interior-img-wrap img {
+.po-project-page-interior-img-wrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.po-hilton-interior-figure figcaption {
+.po-project-page-interior-figure figcaption {
   margin-top: 0.65rem;
   font-size: 0.8rem;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.85);
 }
 
-.po-hilton-surroundings {
-  padding: clamp(3.5rem, 9vw, 6rem) 0;
-  background: #000;
-  color: #fff;
+/* Project page — image gallery (caption bar + lightbox), shared across developments */
+.po-project-page-gallery-section {
+  padding: clamp(3.5rem, 8vw, 5.25rem) 0;
+  background: #ffffff;
+  color: #000000;
+}
+
+.po-project-page-gallery-section--compact {
+  padding-top: clamp(2.5rem, 6vw, 3.5rem);
+}
+
+.po-project-page-gallery-title {
+  margin: 0 0 0.65rem;
   text-align: center;
-}
-
-.po-hilton-surroundings-title {
-  margin: 0 auto;
-  max-width: 900px;
-  font-size: clamp(1.25rem, 3vw, 2rem);
+  font-size: clamp(1.35rem, 3vw, 2rem);
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  line-height: 1.3;
 }
 
-.po-hilton-surroundings-text {
-  margin: 1.25rem auto 0;
-  max-width: 720px;
-  font-size: clamp(0.95rem, 1.6vw, 1.08rem);
-  line-height: 1.75;
-  color: rgba(255, 255, 255, 0.88);
+.po-project-page-gallery-title--sm {
+  font-size: clamp(1.15rem, 2.5vw, 1.65rem);
+  letter-spacing: 0.1em;
 }
 
-.po-hilton-advantages {
-  padding: clamp(3rem, 7vw, 4.5rem) 0;
-  background: #0a0a0a;
-  color: #fff;
+.po-project-page-gallery-lead {
+  margin: 0 auto 2rem;
+  max-width: 560px;
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(0, 0, 0);
 }
 
-.po-hilton-advantages-grid {
+.po-project-page-gallery-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+.po-project-page-gallery-card {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.po-project-page-gallery-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+.po-project-page-gallery-card:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+.po-project-page-gallery-card-inner {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #1a1a1a;
+  aspect-ratio: 4 / 5;
+}
+
+.po-project-page-gallery-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s ease;
+}
+
+.po-project-page-gallery-card:hover .po-project-page-gallery-card-img {
+  transform: scale(1.03);
+}
+
+.po-project-page-gallery-caption-bar {
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem;
+  padding: 0.65rem 0.85rem;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+.po-project-page-gallery-caption-text {
+	font-size: 0.9rem;
+	font-weight: 500;
+	color: #111111;
+	letter-spacing: 0.02em;
+	line-height: 1.35;
+	flex: 1 1;
+	min-width: 0;
+}
+
+.po-project-page-gallery-view-btn {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  background: #1a1a1a;
+  border-radius: 8px;
+  color: #ffffff;
+}
+
+.po-project-page-gallery-eye-svg {
+  display: block;
+}
+
+.po-project-page-building-wide {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  background: #000;
+}
+
+.po-project-page-building-wide-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.po-project-page-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1080;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.po-project-page-lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: rgba(0, 0, 0, 0.88);
+  cursor: pointer;
+}
+
+.po-project-page-lightbox-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: min(96vw, 1200px);
+  width: 100%;
   margin-top: 2rem;
 }
 
-.po-hilton-advantage-card {
-  padding: 1.25rem 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+.po-project-page-lightbox-stage {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.po-project-page-lightbox-img {
+  max-width: 100%;
+  max-height: min(78vh, 820px);
+  width: auto;
+  height: auto;
+  object-fit: contain;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.03);
 }
 
-.po-hilton-advantage-card h3 {
-  margin: 0 0 0.5rem;
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  line-height: 1.35;
-}
-
-.po-hilton-advantage-card p {
+.po-project-page-lightbox-caption {
   margin: 0;
-  font-size: 0.86rem;
-  line-height: 1.55;
-  color: rgba(255, 255, 255, 0.78);
-}
-
-.po-hilton-sh {
-  padding: clamp(3rem, 7vw, 4.5rem) 0;
-  background: #000;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 600;
   color: #fff;
+  max-width: 42rem;
+  line-height: 1.45;
 }
 
-.po-hilton-sh--hospitals {
-  padding-top: 0;
+.po-project-page-lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-size: 1.75rem;
+  line-height: 1;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: background 0.2s ease;
 }
 
-.po-hilton-sh-title {
-  margin: 0 0 1.5rem;
-  font-size: clamp(1.1rem, 2.5vw, 1.65rem);
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+.po-project-page-lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.po-project-page-lightbox-nav {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  font-size: 1.75rem;
+  line-height: 1;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.po-project-page-lightbox-nav:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.55);
+}
+
+@media (max-width: 767px) {
+  .po-project-page-lightbox-inner {
+    flex-direction: column;
+    margin-top: 3rem;
+  }
+
+  .po-project-page-lightbox-nav--prev {
+    order: 2;
+  }
+
+  .po-project-page-lightbox-stage {
+    order: 1;
+    width: 100%;
+  }
+
+  .po-project-page-lightbox-nav--next {
+    order: 3;
+  }
+
+  .po-project-page-lightbox-nav {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.po-project-page-surroundings-intro {
+  padding: clamp(3.25rem, 8vw, 5.5rem) 0;
+  background: linear-gradient(180deg, #f4f1eb 0%, #ffffff 55%, #fafafa 100%);
+  color: #0e0e0e;
   text-align: center;
 }
 
-.po-hilton-sh-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
-  border-left: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.po-hilton-sh-grid--3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.po-hilton-sh-card {
-  margin: 0;
-  padding: 1.35rem 1.25rem;
-  border-right: 1px solid rgba(255, 255, 255, 0.15);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.po-hilton-sh-card h3 {
-  margin: 0 0 0.5rem;
-  font-size: 0.88rem;
+.po-project-page-surroundings-intro-title {
+  margin: 0 auto;
+  max-width: 920px;
+  font-size: clamp(1.2rem, 2.8vw, 1.85rem);
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
   line-height: 1.35;
+  color: #111111;
 }
 
-.po-hilton-sh-card p {
+.po-project-page-surroundings-intro-text {
+  margin: 1.35rem auto 0;
+  max-width: 720px;
+  font-size: clamp(0.95rem, 1.55vw, 1.06rem);
+  line-height: 1.75;
+  color: #3d3d3d;
+}
+
+.po-project-page-place-strip {
+	position: relative;
+	width: 100%;
+	min-height: min(90vh, 620px);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color: #1a2a42;
+	background-attachment: fixed;
+}
+
+.po-project-page-place-strip-gradient {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.po-project-page-place-strip--text-left .po-project-page-place-strip-gradient {
+  background: linear-gradient(
+    90deg,
+    rgba(16, 38, 72, 0.94) 0%,
+    rgba(16, 38, 72, 0.55) 40%,
+    transparent 72%
+  );
+}
+
+.po-project-page-place-strip--text-right .po-project-page-place-strip-gradient {
+  background: linear-gradient(
+    270deg,
+    rgba(16, 38, 72, 0.94) 0%,
+    rgba(16, 38, 72, 0.55) 40%,
+    transparent 72%
+  );
+}
+
+.po-project-page-place-strip-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  min-height: min(90vh, 620px);
+  padding-top: clamp(2rem, 5vw, 3.5rem);
+  padding-bottom: clamp(2rem, 5vw, 3.5rem);
+}
+
+.po-project-page-place-strip--text-left .po-project-page-place-strip-inner {
+  justify-content: flex-start;
+}
+
+.po-project-page-place-strip--text-right .po-project-page-place-strip-inner {
+  justify-content: flex-end;
+}
+
+.po-project-page-place-copy {
+	max-width: min(100%, 33rem);
+	padding: 5rem 3rem;
+	border: 1px dashed rgba(255, 255, 255, 0.82);
+	border-radius: 4px;
+	color: #ffffff;
+	text-align: left;
+	box-sizing: border-box;
+}
+
+.po-project-page-place-copy h3 {
+  margin: 0 0 0.65rem;
+  font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1.25;
+  color: #ffffff;
+}
+
+.po-project-page-place-copy p {
   margin: 0;
-  font-size: 0.86rem;
+  font-size: 0.92rem;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(255, 255, 255, 0.95);
 }
 
-.po-hilton-construction {
-  padding: clamp(2.5rem, 6vw, 3.5rem) 0;
-  background: linear-gradient(180deg, #0d0d0d 0%, #000 100%);
+.po-project-page-nearby {
+  padding: clamp(3.25rem, 7vw, 5rem) 0;
+  background: #f8f8f8;
+  color: #1a2b48;
+}
+
+.po-project-page-nearby-block--follow {
+  margin-top: clamp(2.5rem, 5vw, 3.75rem);
+  padding-top: clamp(2rem, 4vw, 3rem);
+  border-top: 1px solid rgba(26, 43, 72, 0.1);
+}
+
+.po-project-page-nearby-title {
+  margin: 0 0 clamp(1.5rem, 3vw, 2rem);
+  font-size: clamp(0.95rem, 2vw, 1.2rem);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-align: center;
+  color: #1a2b48;
+}
+
+.po-project-page-nearby-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+.po-project-page-nearby-card {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(0.85rem, 2vw, 1.15rem);
+  margin: 0;
+  padding: clamp(1.15rem, 2.5vw, 1.65rem) clamp(1.1rem, 2vw, 1.5rem);
+  background: #ffffff;
+  border: 1px solid rgba(26, 43, 72, 0.08);
+  border-radius: 2px;
+  box-shadow: 0 4px 24px rgba(26, 43, 72, 0.06);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .po-project-page-nearby-card {
+    transition:
+      transform 0.22s ease,
+      box-shadow 0.22s ease,
+      border-color 0.22s ease;
+  }
+
+  .po-project-page-nearby-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(26, 43, 72, 0.14);
+    box-shadow: 0 12px 36px rgba(26, 43, 72, 0.12);
+  }
+}
+
+.po-project-page-nearby-card-rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 0.65rem;
+  padding-top: 0.15rem;
+}
+
+.po-project-page-nearby-card-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: #ebebeb;
+}
+
+.po-project-page-nearby-card-icon-wrap svg {
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+
+.po-project-page-nearby-card-index {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: #d1d1d1;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  line-height: 1;
+  user-select: none;
+}
+
+.po-project-page-nearby-card-body {
+  min-width: 0;
+  flex: 1;
+}
+
+.po-project-page-nearby-card-body h3 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(0.88rem, 1.35vw, 0.98rem);
+  font-weight: 700;
+  line-height: 1.35;
+  color: #1a2b48;
+}
+
+.po-project-page-nearby-card-body p {
+  margin: 0;
+  font-size: clamp(0.84rem, 1.2vw, 0.92rem);
+  line-height: 1.6;
+  color: #666666;
+}
+
+.po-project-page-map {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  background: #e5e5e5;
+}
+
+.po-project-page-map iframe {
+  display: block;
+  width: 100%;
+  height: 500px;
+  min-height: 500px;
+  border: 0;
+}
+
+.po-project-page-construction {
+  position: relative;
+  padding: clamp(2.75rem, 6.5vw, 4rem) 0;
+  background: #313131;
   color: #fff;
+  overflow: hidden;
 }
 
-.po-hilton-construction-inner {
+.po-project-page-construction::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.07;
+  background-image: repeating-linear-gradient(
+    -36deg,
+    transparent,
+    transparent 5px,
+    rgba(255, 255, 255, 0.35) 5px,
+    rgba(255, 255, 255, 0.35) 6px
+  );
+}
+
+.po-project-page-construction-inner {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: clamp(1.25rem, 3vw, 2rem);
 }
 
-.po-hilton-construction-title {
-  margin: 0;
-  font-size: 1.35rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
+.po-project-page-construction-title {
+	margin: 0;
+	max-width: min(100%, 38rem);
+	font-size: clamp(1.35rem, 3.2vw, 2rem);
+	font-weight: 700;
+	line-height: 1.25;
+	letter-spacing: -0.02em;
+	color: #ffffff !important;
 }
 
-.po-hilton-construction-meta {
-  margin: 0.35rem 0 0;
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.65);
+.po-project-page-construction-cta {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	padding: 0.9rem 1.5rem;
+	font-size: 0.94rem;
+	font-weight: 600;
+	line-height: 1.2;
+	color: #313131;
+	background: #ffffff;
+	border: none;
+	border-radius: 5px;
+	text-decoration: none;
+	flex-shrink: 0;
+	font-family: var(--font-plus-jakarta), sans-serif !important;
 }
 
-.po-hilton-register {
+.po-project-page-construction-cta svg {
+  flex-shrink: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .po-project-page-construction-cta {
+    transition:
+      background 0.2s ease,
+      color 0.2s ease,
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .po-project-page-construction-cta:hover {
+    background: #f2f2f2;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.po-project-page-construction-cta:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}
+
+.po-project-page-register {
   padding: clamp(3.5rem, 8vw, 5rem) 0;
   background: #fafafa;
   color: #0e0e0e;
 }
 
-.po-hilton-register-title {
+.po-project-page-register-title {
   margin: 0;
   text-align: center;
   font-size: clamp(1.5rem, 3vw, 2.1rem);
   font-weight: 700;
 }
 
-.po-hilton-register-lead {
+.po-project-page-register-lead {
   margin: 0.75rem auto 2rem;
   max-width: 520px;
   text-align: center;
@@ -2887,57 +4145,88 @@ span.material-symbols-outlined {
   color: #444;
 }
 
-.po-hilton-register .po-contact-form {
+.po-project-page-register .po-contact-form {
   max-width: 720px;
   margin: 0 auto;
 }
 
 @media (max-width: 1199px) {
-  .po-hilton-amenities-masonry {
-    column-count: 3;
+  .po-project-page-amenities-masonry {
+    --amenity-cols: 3;
+    --amenity-gap: clamp(1.1rem, 2vw, 1.65rem);
   }
 }
 
 @media (max-width: 991px) {
-  .po-hilton-doc-bar {
+  .po-project-page-doc-bar {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .po-hilton-amenities-masonry {
-    column-count: 2;
+  .po-project-page-amenities-masonry {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(1rem, 2.5vw, 1.5rem);
   }
 
-  .po-hilton-trio-grid {
+  .po-project-page-trio-grid {
     grid-template-columns: 1fr;
     max-width: 420px;
     margin: 0 auto;
   }
 
-  .po-hilton-interior-grid {
+  .po-project-page-interior-grid {
     grid-template-columns: 1fr;
   }
 
-  .po-hilton-advantages-grid {
+  .po-project-page-gallery-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .po-project-page-nearby-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .po-hilton-sh-grid,
-  .po-hilton-sh-grid--3 {
-    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 575px) {
-  .po-hilton-doc-bar {
+  .po-project-page-doc-bar {
     grid-template-columns: 1fr;
     padding: 0.65rem;
   }
 
-  .po-hilton-amenities-masonry {
-    column-count: 1;
+  .po-project-page-amenities-masonry {
+    --amenity-cols: 1;
+    --amenity-gap: 1.25rem;
   }
 
-  .po-hilton-advantages-grid {
+  .po-project-page-amenity-tile-media {
+    min-height: 240px;
+    aspect-ratio: 4 / 3;
+  }
+
+  .po-project-page-place-strip {
+    min-height: 420px;
+  }
+
+  .po-project-page-place-strip-inner {
+    min-height: 420px;
+    justify-content: center !important;
+    align-items: flex-end;
+    padding-bottom: 1.75rem;
+  }
+
+  .po-project-page-place-strip--text-left .po-project-page-place-strip-gradient,
+  .po-project-page-place-strip--text-right .po-project-page-place-strip-gradient {
+    background: linear-gradient(0deg, rgba(16, 38, 72, 0.92) 0%, rgba(16, 38, 72, 0.4) 48%, transparent 72%);
+  }
+
+  .po-project-page-place-copy {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .po-project-page-nearby-grid {
     grid-template-columns: 1fr;
   }
 }

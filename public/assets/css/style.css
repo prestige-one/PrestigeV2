@@ -1,6 +1,6 @@
 /* ---------------------
    [Master Stylesheet]
-   Template Name: Vorix - Creative Digital Agency HTML Template
+   Developer: Sumith Harshan | sumith.harshan@gmail.com
    Version: 1.0.0
 --------------------- */
 /* ---------------------
@@ -118,7 +118,7 @@ body,
 html {
   color: #C8C8CD;
   scroll-behavior: smooth;
-  font-family: "Poppins", sans-serif;
+  font-family: var(--font-plus-jakarta), sans-serif !important;
   background-color: #0E0E0E;
   overflow-x: hidden;
 }
@@ -5303,14 +5303,14 @@ form .btn {
   color: #0E0E0E;
 }
 .light-mode .header-area .navbar-nav li .vorix-dd-menu {
-  background-color: #F6F5F3;
+  background-color: #000000;
   border: 1px solid rgba(26, 26, 26, 0.2);
 }
 .light-mode .header-area .navbar-nav li .vorix-dd-menu li > a {
-  color: #0E0E0E;
+  color: #ffffff !important; 
 }
 .light-mode .header-area .navbar-nav li .vorix-dd-menu li > a:hover, .light-mode .header-area .navbar-nav li .vorix-dd-menu li > a:focus {
-  color: #ECC80B;
+  color: #ffffff !important;
 }
 .light-mode .header-area.sticky-on {
   -webkit-box-shadow: 0 1rem 3rem rgba(15, 30, 150, 0.175);
@@ -5318,6 +5318,17 @@ form .btn {
 }
 .light-mode .hero-content .hero-subtitle {
   color: #1A1A1A;
+}
+.header-area .btn.btn-primary {
+	background: #fff !important;
+	color: #000 !important;
+}
+.header-area.sticky-on .navbar a.btn-primary {
+	color: #000 !important;
+	border: 2px solid #000 !important;
+}
+.header-area.header-on-light-surface .btn.btn-primary {
+	border: 2px solid #000 !important;
 }
 .light-mode .hero-content.home2 h2,
 .light-mode .hero-content.home2 h6 {

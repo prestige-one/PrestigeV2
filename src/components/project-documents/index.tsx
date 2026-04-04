@@ -1,7 +1,7 @@
 "use client";
 
-import HeaderOne from "@/layouts/headers/HeaderOne";
-import FooterOne from "@/layouts/footers/FooterOne";
+import SiteHeader from "@/layouts/SiteHeader";
+import SiteFooterBlock from "@/layouts/SiteFooterBlock";
 
 /** Document hubs from https://prestigeone.ae/project-documents/ */
 const documentItems = [
@@ -73,7 +73,7 @@ const documentItems = [
 const ProjectDocumentsPage = () => {
   return (
     <>
-      <HeaderOne />
+      <SiteHeader />
 
       <section className="po-project-docs-hero">
         <div className="container">
@@ -129,7 +129,7 @@ const ProjectDocumentsPage = () => {
         </div>
       </section>
 
-      <FooterOne />
+      <SiteFooterBlock />
     </>
   );
 };

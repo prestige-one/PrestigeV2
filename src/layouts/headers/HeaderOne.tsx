@@ -6,7 +6,13 @@ import useSticky from '@/hooks/use-sticky';
 import Link from 'next/link';
 import { useEffect, useState } from "react";
 
-const HeaderOne = ({style_2} :any) => {
+type HeaderOneProps = {
+  style_2?: boolean;
+  /** Use when the first screen below the header is light (e.g. white hero). Keeps logo + nav dark at scroll top without changing global header behavior. */
+  onLightSurface?: boolean;
+};
+
+const HeaderOne = ({ style_2, onLightSurface }: HeaderOneProps) => {
   const [theme] = useState(() => {
     if (typeof window !== "undefined") {
       return localStorage.getItem("theme") || "light-mode";
@@ -56,7 +62,9 @@ const HeaderOne = ({style_2} :any) => {
 
   return (
     <>
-      <header className={`header-area ${sticky && "sticky-on"} ${menuOpen ? 'mobile-menu-open' : ''}`}>
+      <header
+        className={`header-area ${sticky ? "sticky-on" : ""} ${onLightSurface ? "header-on-light-surface" : ""} ${menuOpen ? "mobile-menu-open" : ""}`}
+      >
         <nav className="navbar navbar-expand-lg">
           <div className="container">
 
