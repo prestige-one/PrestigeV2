@@ -1,5 +1,6 @@
 "use client";
 
+import { COMPANY_CONTACT } from "@/data/company-contact";
 import React, { useMemo, useState } from "react";
 
 type TabKey = "mission" | "vision";
@@ -53,13 +54,13 @@ const MissionVisionTabsArea = () => {
                 <div className="col-12 col-md-12">
                   <p className="po-values-tab-text">{content.text}</p>
                   <div className="po-about-actions-row">
-                    <a className="btn po-dual-btn po-dual-btn-dark" href="tel:80077378443">
-                      <span>Call: 800 PRESTIGE</span>
-                      <span>Call: 800 7737 8443</span>
+                    <a className="btn po-dual-btn po-dual-btn-dark" href={COMPANY_CONTACT.phoneTel}>
+                      <span>Call us</span>
+                      <span>{COMPANY_CONTACT.phoneDisplay}</span>
                     </a>
-                    <a className="btn po-dual-btn po-dual-btn-light" href="mailto:info@prestigeone.ae">
-                      <span>Email Us</span>
-                      <span>info@prestigeone.ae</span>
+                    <a className="btn po-dual-btn po-dual-btn-light" href={COMPANY_CONTACT.emailMailto}>
+                      <span>Email us</span>
+                      <span>{COMPANY_CONTACT.email}</span>
                     </a>
                   </div>
                 </div>                

@@ -1,11 +1,11 @@
 "use client";
 
+import ListPageExploreArrow from "@/common/ListPageExploreArrow";
 import SiteHeader from "@/layouts/SiteHeader";
 import SiteFooterBlock from "@/layouts/SiteFooterBlock";
 
 type ConstructionUpdateItem = {
   href: string;
-  /** Path segment after domain, e.g. construction-update-seaside-by-prestige-one */
   pathSlug: string;
   image: string;
 };
@@ -77,8 +77,6 @@ const CONSTRUCTION_UPDATES: ConstructionUpdateItem[] = [
   },
 ];
 
-const CARD_BULLETS = ["Latest site photography & progress notes", "Key milestones and handover insights"] as const;
-
 const INTRO_COPY =
   "Track how Prestige One communities take shape across Dubai. Choose a project below for dedicated construction updates, imagery, and timelines on the main Prestige One site.";
 
@@ -91,52 +89,22 @@ function titleFromConstructionSlug(pathSlug: string) {
     .join(" ");
 }
 
-function ConstructionCheckIcon() {
-  return (
-    <svg className="po-construction-card-check" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-      <path
-        d="M13.5 4.5L6.5 11.5L2.5 7.5"
-        stroke="currentColor"
-        strokeWidth="1.75"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
 function ConstructionUpdateCard({ item }: { item: ConstructionUpdateItem }) {
   const title = titleFromConstructionSlug(item.pathSlug);
 
   return (
-    <article className="po-construction-card">
-      <div className="po-construction-card-media">
+    <article className="po-list-item-card item-card">
+      <div className="po-list-item-media item-card-image">
         <img src={item.image} alt="" loading="lazy" />
       </div>
-      <div className="po-construction-card-body">
-        <h3 className="po-construction-card-title">{title}</h3>
-        <p className="po-construction-card-desc">
+      <div className="po-list-item-body item-card-content">
+        <h3 className="po-list-item-title">{title}</h3>
+        <p className="po-list-item-desc">
           Follow construction progress, major milestones, and quality milestones for this Prestige One development.
         </p>
-        {/*<ul className="po-construction-card-list">
-          {CARD_BULLETS.map((line) => (
-            <li key={line} className="po-construction-card-list-item">
-              <ConstructionCheckIcon />
-              <span>{line}</span>
-            </li>
-          ))}
-        </ul> */}
-        <a className="po-construction-card-btn" href={item.href} target="_blank" rel="noopener noreferrer">
+        <a className="po-list-item-btn" href={item.href} target="_blank" rel="noopener noreferrer">
           <span>Explore more</span>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-            <path
-              d="M5 11L11 5M11 5H6M11 5V10"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
+          <ListPageExploreArrow />
         </a>
       </div>
     </article>
@@ -148,19 +116,19 @@ export default function ConstructionUpdatesPage() {
     <>
       <SiteHeader />
       <main>
-        <section className="po-construction-page" aria-labelledby="construction-updates-heading">
-          <div className="po-construction-hero">
-            <div className="container po-construction-hero-inner">
-              <p className="po-construction-kicker">Prestige One Developments</p>
-              <h1 id="construction-updates-heading" className="po-construction-title">
+        <section className="po-list-page" aria-labelledby="construction-updates-heading">
+          <div className="po-list-page-hero">
+            <div className="container po-list-page-hero-inner">
+              <p className="po-list-page-kicker">Prestige One Developments</p>
+              <h1 id="construction-updates-heading" className="po-list-page-title">
                 Construction updates
               </h1>
-              <p className="po-construction-intro">{INTRO_COPY}</p>
+              <p className="po-list-page-intro">{INTRO_COPY}</p>
             </div>
           </div>
-          <div className="po-construction-cards-shell" aria-label="Projects with construction updates">
+          <div className="po-list-page-cards-shell" aria-label="Projects with construction updates">
             <div className="container">
-              <div className="po-construction-grid">
+              <div className="po-list-page-grid list-page-grid">
                 {CONSTRUCTION_UPDATES.map((item) => (
                   <ConstructionUpdateCard key={item.pathSlug} item={item} />
                 ))}

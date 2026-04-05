@@ -3,11 +3,15 @@
 import { usePathname } from "next/navigation";
 import HeaderOne from "@/layouts/headers/HeaderOne";
 
-const ROUTES_WITH_LIGHT_HERO_TOP = ["/construction-updates"] as const;
+/** Entire subtree: light hero below header (dark nav + dark logo at scroll top). */
+const LIGHT_HERO_ROUTE_PREFIXES = ["/construction-updates", "/broker-registration"] as const;
+/** Listing pages only — sub-routes (e.g. project detail, DMC destination) often use a dark hero; keep default light nav there. */
+const LIGHT_HERO_ROUTE_EXACT = ["/projects", "/our-destinations"] as const;
 
 function routeNeedsLightTopNav(pathname: string | null): boolean {
   if (!pathname) return false;
-  return ROUTES_WITH_LIGHT_HERO_TOP.some(
+  if ((LIGHT_HERO_ROUTE_EXACT as readonly string[]).includes(pathname)) return true;
+  return LIGHT_HERO_ROUTE_PREFIXES.some(
     (prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`),
   );
 }

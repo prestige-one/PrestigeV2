@@ -1,5 +1,6 @@
 "use client";
 
+import { COMPANY_CONTACT } from "@/data/company-contact";
 import DubaiDestinationsMap from "./DubaiDestinationsMap";
 import FinalContactForm from "./FinalContactForm";
 
@@ -23,15 +24,15 @@ const FinalContactSection = () => {
                 </div>
                 <div className="po-final-contact-head po-final-contact-head-right">
                   <div className="po-final-contact-meta">
-                    <a href="mailto:info@prestigeone.ae">
+                    <a href={COMPANY_CONTACT.emailMailto}>
                       Email
                       <br />
-                      info@prestigeone.ae
+                      {COMPANY_CONTACT.email}
                     </a>
-                    <a href="tel:80077378443">
+                    <a href={COMPANY_CONTACT.phoneTel}>
                       Hotline
                       <br />
-                      800 PRESTIGE (77378443)
+                      {COMPANY_CONTACT.phoneDisplay}
                     </a>
                   </div>
                 </div>

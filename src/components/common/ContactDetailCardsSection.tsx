@@ -1,17 +1,15 @@
 import type { ReactNode } from "react";
 
-const STROKE = "#1a1a1a";
-
 function IconPin({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
       <path
         d="M12 21s7-4.35 7-11a7 7 0 10-14 0c0 6.65 7 11 7 11z"
-        stroke={STROKE}
+        stroke="currentColor"
         strokeWidth="1.5"
         strokeLinejoin="round"
       />
-      <circle cx="12" cy="10" r="2.25" stroke={STROKE} strokeWidth="1.5" />
+      <circle cx="12" cy="10" r="2.25" stroke="currentColor" strokeWidth="1.5" />
     </svg>
   );
 }
@@ -21,7 +19,7 @@ function IconPhone({ className }: { className?: string }) {
     <svg className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
       <path
         d="M6.5 3h3l1.5 5.5-2 1.1a11 11 0 006.4 6.4l1.1-2L22 15.5v3a2 2 0 01-2 2c-9.4 0-17-7.6-17-17a2 2 0 012-2z"
-        stroke={STROKE}
+        stroke="currentColor"
         strokeWidth="1.5"
         strokeLinejoin="round"
       />
@@ -32,8 +30,8 @@ function IconPhone({ className }: { className?: string }) {
 function IconEmail({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-      <rect x="3" y="5" width="18" height="14" rx="2" stroke={STROKE} strokeWidth="1.5" />
-      <path d="M3 7l9 6 9-6" stroke={STROKE} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M3 7l9 6 9-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
@@ -41,10 +39,10 @@ function IconEmail({ className }: { className?: string }) {
 function IconGlobe({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-      <circle cx="12" cy="12" r="9" stroke={STROKE} strokeWidth="1.5" />
+      <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.5" />
       <path
         d="M3 12h18M12 3c2.8 4 4.2 7.2 4.2 9s-1.4 5-4.2 9c-2.8-4-4.2-7.2-4.2-9s1.4-5 4.2-9z"
-        stroke={STROKE}
+        stroke="currentColor"
         strokeWidth="1.5"
         strokeLinejoin="round"
       />
@@ -144,18 +142,22 @@ export default function ContactDetailCardsSection({
   items,
   ariaLabel = "Contact information",
   showSocial = false,
+  className,
 }: {
   headingId?: string;
   heading?: string;
   items: ContactDetailCardItem[];
   ariaLabel?: string;
   showSocial?: boolean;
+  /** Appended to `po-contact-detail-strip` (shared modifiers, e.g. `po-contact-detail-strip--hero-glass`). */
+  className?: string;
 }) {
   const hasHeading = Boolean(heading);
+  const stripClass = ["po-contact-detail-strip", className].filter(Boolean).join(" ");
 
   return (
     <section
-      className="po-contact-detail-strip"
+      className={stripClass}
       {...(hasHeading ? { "aria-labelledby": headingId } : { "aria-label": ariaLabel })}
     >
       <div className="container">

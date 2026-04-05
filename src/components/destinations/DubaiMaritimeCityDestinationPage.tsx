@@ -5,6 +5,7 @@ import { useEffect, useRef } from "react";
 import ContactDetailCardsSection, {
   type ContactDetailCardItem,
 } from "@/components/common/ContactDetailCardsSection";
+import { COMPANY_CONTACT } from "@/data/company-contact";
 import SiteFooterBlock from "@/layouts/SiteFooterBlock";
 import SiteHeader from "@/layouts/SiteHeader";
 
@@ -17,14 +18,14 @@ const DESTINATION_CONTACT_ITEMS: ContactDetailCardItem[] = [
   {
     icon: "phone",
     label: "Phone:",
-    value: "800 77378443",
-    href: "tel:80077378443",
+    value: COMPANY_CONTACT.phoneDisplay,
+    href: COMPANY_CONTACT.phoneTel,
   },
   {
     icon: "email",
     label: "Email:",
-    value: "info@prestigeone.ae",
-    href: "mailto:info@prestigeone.ae",
+    value: COMPANY_CONTACT.email,
+    href: COMPANY_CONTACT.emailMailto,
   },
   {
     icon: "globe",
@@ -296,7 +297,10 @@ export default function DubaiMaritimeCityDestinationPage() {
     <>
       <SiteHeader />
       <main className="po-destination-page">
-        <section className="po-destination-hero" aria-labelledby="destination-hero-title">
+        <section
+          className="po-destination-hero po-destination-hero--with-contact-rail"
+          aria-labelledby="destination-hero-title"
+        >
           <div
             className="po-destination-hero-media"
             style={{ backgroundImage: `url(${HERO_BG})` }}
@@ -311,9 +315,14 @@ export default function DubaiMaritimeCityDestinationPage() {
               </h1>
             </div>
           </div>
+          <div className="po-destination-hero-bottom-rail">
+            <ContactDetailCardsSection
+              items={DESTINATION_CONTACT_ITEMS}
+              showSocial
+              className="po-contact-detail-strip--hero-glass"
+            />
+          </div>
         </section>
-
-        <ContactDetailCardsSection items={DESTINATION_CONTACT_ITEMS} showSocial />
 
         <section className="po-destination-intro" aria-label="About Dubai Maritime City">
           <div className="container">

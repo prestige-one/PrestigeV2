@@ -1,5 +1,21 @@
+export type MenuInnerItem = { link: string; title: string };
 
-const menu_data = [
+export type MenuSubItem = {
+  link: string;
+  title: string;
+  has_inner_dropdown?: boolean;
+  inner_submenu?: MenuInnerItem[];
+};
+
+export type MenuItem = {
+  id: number;
+  title: string;
+  link: string;
+  has_dropdown: boolean;
+  sub_menus?: MenuSubItem[];
+};
+
+const menu_data: MenuItem[] = [
   {
     id: 1,
     title: "Home",

@@ -23,12 +23,12 @@ function FooterNavLink({ label, href }: FooterNavItem) {
 const corporate: FooterNavItem[] = [
   { label: "About Prestige One", href: "/about-us" },
   { label: "Invest in Prestige One", href: "#" },
-  { label: "Broker Registration", href: "#" },
+  { label: "Broker Registration", href: "/broker-registration" },
   { label: "Project Documents", href: "/project-documents" },
-  { label: "Privacy Policy", href: "#" },
-  { label: "Terms & Conditions", href: "#" },
-  { label: "Marketing Terms & Conditions", href: "#" },
-  { label: "Corporate Social Responsibility", href: "#" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Terms & Conditions", href: "/terms-conditions" },
+  { label: "Marketing Terms & Conditions", href: "/marketing-terms-conditions" },
+  { label: "Corporate Social Responsibility", href: "/corporate-social-responsibility" },
 ];
 
 const areas: FooterNavItem[] = [

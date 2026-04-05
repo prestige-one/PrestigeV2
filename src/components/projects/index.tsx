@@ -1,7 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import PageHero from "@/common/PageHero";
+import ListItemExploreLink from "@/common/ListItemExploreLink";
+import ListPageExploreArrow from "@/common/ListPageExploreArrow";
 import SiteHeader from "@/layouts/SiteHeader";
 import SiteFooterBlock from "@/layouts/SiteFooterBlock";
 
@@ -144,6 +145,9 @@ const projects: ProjectItem[] = [
   },
 ];
 
+const INTRO_COPY =
+  "Choose from a collection of landmark developments by Prestige One, bringing together exceptional architecture and refined living.";
+
 const ProjectsPage = () => {
   const locations = useMemo(() => ["All", ...Array.from(new Set(projects.map((item) => item.location)))], []);
   const [activeLocation, setActiveLocation] = useState("All");
@@ -157,49 +161,54 @@ const ProjectsPage = () => {
     <>
       <SiteHeader />
 
-      <PageHero
-        kicker="Prestige One Developments"
-        title="Our Projects"
-        description="Choose from a collection of landmark developments by Prestige One, bringing together exceptional architecture and refined living."
-      />
-
-      <section className="po-projects-page-section">
-        <div className="container">
-          <div className="po-projects-filter-wrap">
-            {locations.map((location) => (
-              <button
-                key={location}
-                type="button"
-                className={`po-project-filter-btn ${activeLocation === location ? "is-active" : ""}`}
-                onClick={() => setActiveLocation(location)}
-              >
-                {location}
-              </button>
-            ))}
+      <main>
+        <section className="po-list-page" aria-labelledby="projects-list-heading">
+          <div className="po-list-page-hero">
+            <div className="container po-list-page-hero-inner">
+              <p className="po-list-page-kicker">Prestige One Developments</p>
+              <h1 id="projects-list-heading" className="po-list-page-title">
+                Our projects
+              </h1>
+              <p className="po-list-page-intro">{INTRO_COPY}</p>
+              <div className="po-projects-filter-wrap po-list-page-filter-wrap">
+                {locations.map((location) => (
+                  <button
+                    key={location}
+                    type="button"
+                    className={`po-project-filter-btn ${activeLocation === location ? "is-active" : ""}`}
+                    onClick={() => setActiveLocation(location)}
+                  >
+                    {location}
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
 
-          <div className="po-projects-grid">
-            {filteredProjects.map((project) => {
-              return (
-                <article key={project.title} className="po-projects-list-card">
-                  <a href={project.link} target="_blank" rel="noreferrer">
-                    <div className="po-projects-list-media">
-                      <span className="po-project-location-tag">{project.location}</span>
-                      <img src={project.thumbnail} alt={project.title} />
+          <div className="po-list-page-cards-shell" aria-label="Project listings">
+            <div className="container">
+              <div className="po-list-page-grid list-page-grid">
+                {filteredProjects.map((project) => (
+                  <article key={project.title} className="po-list-item-card item-card">
+                    <div className="po-list-item-media item-card-image">
+                      <span className="po-list-item-tag">{project.location}</span>
+                      <img src={project.thumbnail} alt={project.title} loading="lazy" />
                     </div>
-                    <div className="po-projects-list-content">
-                      <h3>{project.title}</h3>
-                      <span className="po-project-title-line" aria-hidden="true" />
-                      <p>{project.description}</p>
-                      <span className="po-project-read-more">Read More</span>
+                    <div className="po-list-item-body item-card-content">
+                      <h3 className="po-list-item-title">{project.title}</h3>
+                      <p className="po-list-item-desc">{project.description}</p>
+                      <ListItemExploreLink href={project.link}>
+                        <span>Explore more</span>
+                        <ListPageExploreArrow />
+                      </ListItemExploreLink>
                     </div>
-                  </a>
-                </article>
-              );
-            })}
+                  </article>
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </main>
 
       <SiteFooterBlock />
     </>

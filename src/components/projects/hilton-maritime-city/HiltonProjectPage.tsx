@@ -207,6 +207,43 @@ const hospitals = [
   },
 ];
 
+function ResourcePdfIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" width="26" height="26" aria-hidden>
+      <path
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinejoin="round"
+        d="M8.5 3.5h7l3 3V20a1 1 0 01-1 1h-9a1 1 0 01-1-1v-16a1 1 0 011-1z"
+      />
+      <path d="M8.5 3.5v4H14" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <path
+        d="M12 11v6m0 0l-2.5-2.5M12 17l2.5-2.5"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+function ResourceExternalIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" width="26" height="26" aria-hidden>
+      <path
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M7 17L17 7M17 7H9M17 7v8"
+      />
+    </svg>
+  );
+}
+
 function AmenityVideoTile({ label, video, poster }: HiltonAmenityVideoRow) {
   const ref = useRef<HTMLVideoElement>(null);
   const posterSrc = poster || HERO_IMG;
@@ -286,6 +323,41 @@ const HiltonProjectPage = () => {
         </div>
       </section>
 
+      <section className="po-project-page-resource-strip" aria-label="Project resources">
+        <div className="container">
+          <div className="po-project-page-resource-grid" role="group">
+            <a href={PDF.brochure} target="_blank" rel="noopener noreferrer" className="po-project-page-resource-link">
+              <ResourcePdfIcon className="po-project-page-resource-icon" />
+              <span className="po-project-page-resource-copy">
+                <span className="po-project-page-resource-kicker">Download</span>
+                <span className="po-project-page-resource-value">Brochure</span>
+              </span>
+            </a>
+            <a href={PDF.projectDoc} target="_blank" rel="noopener noreferrer" className="po-project-page-resource-link">
+              <ResourcePdfIcon className="po-project-page-resource-icon" />
+              <span className="po-project-page-resource-copy">
+                <span className="po-project-page-resource-kicker">Download</span>
+                <span className="po-project-page-resource-value">Project document</span>
+              </span>
+            </a>
+            <a href={PDF.factSheet} target="_blank" rel="noopener noreferrer" className="po-project-page-resource-link">
+              <ResourcePdfIcon className="po-project-page-resource-icon" />
+              <span className="po-project-page-resource-copy">
+                <span className="po-project-page-resource-kicker">Download</span>
+                <span className="po-project-page-resource-value">Fact sheet</span>
+              </span>
+            </a>
+            <a href={MORE_DETAILS} target="_blank" rel="noopener noreferrer" className="po-project-page-resource-link">
+              <ResourceExternalIcon className="po-project-page-resource-icon" />
+              <span className="po-project-page-resource-copy">
+                <span className="po-project-page-resource-kicker">Visit</span>
+                <span className="po-project-page-resource-value">More details</span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+
       <section id="signature" className="po-project-page-signature">
         <div className="container">
           <h2 className="po-project-page-signature-title">The Signature of Grace Rising in Dubai Maritime City</h2>
@@ -294,65 +366,6 @@ const HiltonProjectPage = () => {
             the skyline, and the rhythm of a city alive with possibility. It is a life shaped by impeccable design, enriched
             by thoughtful amenities, and elevated by the trusted Hilton name.
           </p>
-          <div className="po-project-page-doc-bar" role="group" aria-label="Project downloads and links">
-            <a href={PDF.brochure} target="_blank" rel="noopener noreferrer" className="po-project-page-doc-btn">
-              <span className="po-project-page-doc-btn-text">Brochure</span>
-              <svg className="po-project-page-doc-btn-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-                <path
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.6"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M12 4v11m0 0l-4-4m4 4l4-4M5 19h14"
-                />
-              </svg>
-            </a>
-            <a href={PDF.projectDoc} target="_blank" rel="noopener noreferrer" className="po-project-page-doc-btn">
-              <span className="po-project-page-doc-btn-text">Project document</span>
-              <svg className="po-project-page-doc-btn-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-                <path
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.6"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M12 4v11m0 0l-4-4m4 4l4-4M5 19h14"
-                />
-              </svg>
-            </a>
-            <a href={PDF.factSheet} target="_blank" rel="noopener noreferrer" className="po-project-page-doc-btn">
-              <span className="po-project-page-doc-btn-text">Fact sheet</span>
-              <svg className="po-project-page-doc-btn-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-                <path
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.6"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M12 4v11m0 0l-4-4m4 4l4-4M5 19h14"
-                />
-              </svg>
-            </a>
-            <a
-              href={MORE_DETAILS}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="po-project-page-doc-btn po-project-page-doc-btn--muted"
-            >
-              <span className="po-project-page-doc-btn-text">More details</span>
-              <svg className="po-project-page-doc-btn-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-                <path
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.6"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M7 17L17 7M17 7H9M17 7v8"
-                />
-              </svg>
-            </a>
-          </div>
         </div>
       </section>
 

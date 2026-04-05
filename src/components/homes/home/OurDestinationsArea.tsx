@@ -1,9 +1,7 @@
 "use client";
 
-import { useRef } from "react";
-import { Autoplay, EffectCreative, Mousewheel } from "swiper/modules";
+import { Autoplay, EffectCreative } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import type { Swiper as SwiperType } from "swiper";
 
 const destinations = [
   {
@@ -49,18 +47,13 @@ const destinations = [
 ];
 
 const OurDestinationsArea = () => {
-  const swiperRef = useRef<SwiperType | null>(null);
-
   return (
     <section className="po-destinations-section">
       {/* <div className="po-destinations-head text-center">
         <h2>Our Destinations</h2>
       </div> */}
       <Swiper
-        modules={[Autoplay, Mousewheel, EffectCreative]}
-        onSwiper={(swiper) => {
-          swiperRef.current = swiper;
-        }}
+        modules={[Autoplay, EffectCreative]}
         direction="vertical"
         effect="creative"
         creativeEffect={{
@@ -74,12 +67,11 @@ const OurDestinationsArea = () => {
           },
           limitProgress: 2,
         }}
-        grabCursor
+        simulateTouch={false}
         loop={false}
         speed={1150}
         slidesPerView={1}
         autoplay={{ delay: 2800, disableOnInteraction: false, stopOnLastSlide: true, pauseOnMouseEnter: false }}
-        mousewheel={{ enabled: true, releaseOnEdges: true, thresholdDelta: 14, sensitivity: 1 }}
         className="po-destinations-swiper"
       >
         {destinations.map((item) => (
