@@ -1885,7 +1885,7 @@ h2.po-destination-section-title {
   max-width: 46rem;
   font-size: clamp(0.95rem, 1.25vw, 1.05rem);
   line-height: 1.75;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(0, 0, 0, 0.9);
 }
 
 .po-destination-project-spotlight-cta {
