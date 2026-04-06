@@ -19,7 +19,7 @@ const documentItems = [
   {
     title: "Seaside Project Documents",
     href: "https://prestigeone.ae/project-documents/seaside-spa-tcs/",
-    thumbnail: "/assets/img/v2/project-featured-images/seaside-banner-1.jpg",
+    thumbnail: "/assets/img/v2/project-featured-images/seaside-featured-image.webp",
   },
   {
     title: "Place Project Documents",

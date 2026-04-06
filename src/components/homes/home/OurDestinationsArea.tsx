@@ -1,5 +1,7 @@
-"use client";
+﻿"use client";
 
+import type { CSSProperties } from "react";
+import Link from "next/link";
 import { Autoplay, EffectCreative } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -16,17 +18,17 @@ const destinations = [
   },
   {
     title: "Dubai Islands",
-    link: "https://prestigeone.ae/dubai-islands/",
+    link: "/our-destinations/dubai-islands",
     image: "/assets/img/v2/our-destinations/dubai-Islands.webp",
   },
   {
     title: "Jumeirah Village Circle",
-    link: "https://prestigeone.ae/jumeirah-village-circle/",
+    link: "/our-destinations/jumeirah-village-circle",
     image: "/assets/img/v2/our-destinations/jumeirah-village-circle-jvc.webp",
   },
   {
     title: "Dubai Sports City",
-    link: "https://prestigeone.ae/dubai-sports-city/",
+    link: "/our-destinations/dubai-sports-city",
     image: "/assets/img/v2/our-destinations/dubai-sport-city.webp",
   },
   {
@@ -36,7 +38,7 @@ const destinations = [
   },
   {
     title: "Barsha Heights",
-    link: "https://prestigeone.ae/barsha-heights/",
+    link: "/our-destinations/barsha-heights",
     image: "/assets/img/v2/our-destinations/barsha-heights.webp",
   },
   {
@@ -74,15 +76,15 @@ const OurDestinationsArea = () => {
         autoplay={{ delay: 2800, disableOnInteraction: false, stopOnLastSlide: true, pauseOnMouseEnter: false }}
         className="po-destinations-swiper"
       >
-        {destinations.map((item) => (
-          <SwiperSlide key={item.title}>
-            <a
-              className="po-destination-slide"
-              href={item.link}
-              target="_blank"
-              rel="noreferrer"
-              style={{ backgroundImage: `url(${item.image})` }}
-            >
+        {destinations.map((item) => {
+          const external = item.link.startsWith("http");
+          const slideProps = {
+            className: "po-destination-slide",
+            href: item.link,
+            style: { backgroundImage: `url(${item.image})` } as CSSProperties,
+          };
+          const inner = (
+            <>
               <div className="po-destination-overlay" />
               <div className="container h-100">
                 <div className="po-destination-content">
@@ -90,12 +92,24 @@ const OurDestinationsArea = () => {
                   <h2>{item.title}</h2>
                 </div>
               </div>
-            </a>
-          </SwiperSlide>
-        ))}
+            </>
+          );
+          return (
+            <SwiperSlide key={item.title}>
+              {external ? (
+                <a {...slideProps} target="_blank" rel="noopener noreferrer">
+                  {inner}
+                </a>
+              ) : (
+                <Link {...slideProps}>{inner}</Link>
+              )}
+            </SwiperSlide>
+          );
+        })}
       </Swiper>
     </section>
   );
 };
 
 export default OurDestinationsArea;
+

@@ -762,6 +762,42 @@ h6,
   color: #313131;
 }
 
+.po-destination-intro-copy .po-destination-intro-text + .po-destination-intro-text {
+  margin-top: 1.25rem;
+}
+
+.po-destination-intro-points {
+  margin: 1.85rem auto 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem 1rem;
+  max-width: 62rem;
+}
+
+.po-destination-intro-point {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #111111;
+  font-size: 0.94rem;
+  font-weight: 500;
+}
+
+@media (max-width: 991px) {
+  .po-destination-intro-points {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 575px) {
+  .po-destination-intro-points {
+    grid-template-columns: 1fr;
+  }
+}
+
 .po-destination-nearby {
   padding: clamp(3.5rem, 8vw, 5.5rem) 0;
   background: #313131;
@@ -1474,6 +1510,23 @@ h2.po-destination-section-title {
   accent-color: #ffffff;
 }
 
+.po-broker-reg-form-error {
+  margin: 0.4rem 0 0;
+  font-size: 0.78rem;
+  line-height: 1.35;
+  color: #ff8f8f;
+}
+
+.po-broker-reg-form-submit-error {
+  margin: 0 0 1rem;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid rgba(255, 143, 143, 0.55);
+  border-radius: 6px;
+  background: rgba(255, 82, 82, 0.12);
+  color: #ffd6d6;
+  font-size: 0.84rem;
+}
+
 .po-broker-reg-form-actions {
   margin-top: 0;
   margin-bottom: 0;
@@ -1629,6 +1682,16 @@ h2.po-destination-section-title {
   margin-right: 10px;
 }
 
+.po-broker-reg-page--light .po-broker-reg-form-error {
+  color: #a11e1e;
+}
+
+.po-broker-reg-page--light .po-broker-reg-form-submit-error {
+  border-color: rgba(161, 30, 30, 0.35);
+  background: rgba(161, 30, 30, 0.08);
+  color: #5a0a0a;
+}
+
 .po-broker-reg-page--light .po-broker-reg-form-actions-panel {
   background-color: #ffffff;
   border: 1px solid #e2e2e2;
@@ -1721,7 +1784,7 @@ h2.po-destination-section-title {
 
 .po-destination-invest-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(1rem, 2vw, 1.35rem);
 }
 
@@ -1732,6 +1795,16 @@ h2.po-destination-section-title {
   padding: clamp(1.25rem, 2.5vw, 1.65rem);
   box-shadow: 0 14px 40px rgba(0, 0, 0, 0.18);
   text-align: left;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.po-destination-invest-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 0, 0, 0.12);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.22);
 }
 
 .po-destination-invest-card-title {
@@ -1789,6 +1862,87 @@ h2.po-destination-section-title {
   .po-destination-invest-cards-shell {
     margin-top: clamp(-2.5rem, -8vw, -3.25rem);
   }
+}
+
+/* Barsha Heights — Prestige One project spotlight */
+.po-destination-project-spotlight {
+  padding: clamp(3rem, 7vw, 5rem) 0;
+  background: #0a0a0a;
+  color: #ffffff;
+}
+
+.po-destination-project-spotlight-title {
+  margin: 0 0 1rem;
+  font-size: clamp(1.15rem, 2.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.3;
+}
+
+.po-destination-project-spotlight-lead {
+  margin: 0 0 1.75rem;
+  max-width: 46rem;
+  font-size: clamp(0.95rem, 1.25vw, 1.05rem);
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.po-destination-project-spotlight-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+}
+
+.po-destination-project-spotlight-cta:hover {
+  opacity: 0.88;
+}
+
+.po-destination-project-spotlight-cta-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: #ffffff;
+}
+
+.po-destination-project-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.po-destination-access-media-fallback {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(80% 80% at 78% 18%, rgba(255, 255, 255, 0.18), transparent 65%),
+    linear-gradient(135deg, #1c1c1c 0%, #0e0e0e 55%, #050505 100%);
+}
+
+.po-destination-wide-video {
+  width: 100%;
+  margin: 0;
+  background: #0a0a0a;
+}
+
+.po-destination-wide-video-el {
+  width: 100%;
+  height: clamp(340px, 46vw, 900px);
+  display: block;
+  object-fit: cover;
 }
 
 .po-destination-tail {
@@ -3767,6 +3921,103 @@ span.material-symbols-outlined {
     inset 0 -1px 0 rgba(255, 255, 255, 0.06),
     0 1px 2px rgba(0, 0, 0, 0.2);
   transform: translateY(0);
+}
+
+/* Investments page */
+.po-investments-section {
+  padding: clamp(2.4rem, 5vw, 4rem) 0 clamp(4rem, 8vw, 6rem);
+  background: #f3f4f6;
+}
+
+.po-investments-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.po-investment-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  overflow: hidden;
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.po-investment-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(110deg, rgba(99, 102, 241, 0.04), rgba(56, 189, 248, 0.08));
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.po-investment-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(99, 102, 241, 0.35);
+  box-shadow: 0 24px 45px rgba(15, 23, 42, 0.12);
+}
+
+.po-investment-card:hover::after {
+  opacity: 1;
+}
+
+.po-investment-card-media-wrap {
+  aspect-ratio: 16 / 9;
+  background: #0f172a;
+  overflow: hidden;
+}
+
+.po-investment-card-media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition:
+    transform 0.45s ease,
+    filter 0.45s ease;
+}
+
+.po-investment-card:hover .po-investment-card-media {
+  transform: scale(1.04);
+  filter: saturate(1.05);
+}
+
+.po-investment-card-body {
+  padding: 1rem 1.05rem 1.15rem;
+}
+
+.po-investment-card-title {
+  margin: 0;
+  font-size: clamp(1.02rem, 2vw, 1.22rem);
+  line-height: 1.35;
+  color: #111827;
+  letter-spacing: 0.01em;
+}
+
+.po-investment-card-text {
+  margin: 0.6rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #374151;
+}
+
+@media (max-width: 1199px) {
+  .po-investments-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .po-investments-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 /* Project Documents page — https://prestigeone.ae/project-documents/ */

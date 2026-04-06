@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 
 type FooterNavItem = {
   label: string;
@@ -22,7 +22,7 @@ function FooterNavLink({ label, href }: FooterNavItem) {
 
 const corporate: FooterNavItem[] = [
   { label: "About Prestige One", href: "/about-us" },
-  { label: "Invest in Prestige One", href: "#" },
+  { label: "Invest in Prestige One", href: "/investments" },
   { label: "Broker Registration", href: "/broker-registration" },
   { label: "Project Documents", href: "/project-documents" },
   { label: "Privacy Policy", href: "/privacy-policy" },
@@ -34,10 +34,10 @@ const corporate: FooterNavItem[] = [
 const areas: FooterNavItem[] = [
   { label: "Majan City", href: "#" },
   { label: "Dubai Maritime City", href: "/our-destinations/dubai-maritime-city" },
-  { label: "Barsha Heights", href: "#" },
-  { label: "Dubai Islands", href: "#" },
-  { label: "Dubai Sports City", href: "#" },
-  { label: "Jumeirah Village Circle (JVC)", href: "#" },
+  { label: "Barsha Heights", href: "/our-destinations/barsha-heights" },
+  { label: "Dubai Islands", href: "/our-destinations/dubai-islands" },
+  { label: "Dubai Sports City", href: "/our-destinations/dubai-sports-city" },
+  { label: "Jumeirah Village Circle (JVC)", href: "/our-destinations/jumeirah-village-circle" },
   { label: "Mohammed Bin Rashid City", href: "#" },
   { label: "Palm Jumeirah", href: "#" },
 ];
@@ -147,7 +147,7 @@ const FooterOne = () => {
           <div className="row align-items-center">
             <div className="col-6">
               <p className="mb-0 copyright text-start">
-                Copyright © {new Date().getFullYear()} Prestige One Developments. All rights reserved.
+                Copyright Â© {new Date().getFullYear()} Prestige One Developments. All rights reserved.
               </p>
             </div>
             <div className="col-6">
@@ -169,3 +169,4 @@ const FooterOne = () => {
 };
 
 export default FooterOne;
+

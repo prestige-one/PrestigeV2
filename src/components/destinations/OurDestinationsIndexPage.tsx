@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import ListItemExploreLink from "@/common/ListItemExploreLink";
 import ListPageExploreArrow from "@/common/ListPageExploreArrow";
@@ -16,7 +16,7 @@ const destinations: DestinationCard[] = [
   {
     title: "Dubai Maritime City",
     description:
-      "Waterfront district between Port Rashid and the Dubai skyline — connectivity, lifestyle, and Prestige One developments.",
+      "Waterfront district between Port Rashid and the Dubai skyline â€” connectivity, lifestyle, and Prestige One developments.",
     image: "/assets/img/v2/our-destinations/dubai-maritime.webp",
     href: "/our-destinations/dubai-maritime-city",
   },
@@ -24,29 +24,29 @@ const destinations: DestinationCard[] = [
     title: "Barsha Heights",
     description: "A well-connected urban hub with strong access to business corridors and city amenities.",
     image: "/assets/img/v2/our-destinations/barsha-heights.webp",
-    href: "https://prestigeone.ae/barsha-heights/",
+    href: "/our-destinations/barsha-heights",
   },
   {
     title: "Dubai Islands",
-    description: "Canal-front and island living with room to grow in one of Dubai’s emerging coastal zones.",
+    description: "Canal-front and island living with room to grow in one of Dubaiâ€™s emerging coastal zones.",
     image: "/assets/img/v2/our-destinations/dubai-Islands.webp",
-    href: "https://prestigeone.ae/dubai-islands/",
+    href: "/our-destinations/dubai-islands",
   },
   {
     title: "Jumeirah Village Circle",
     description: "A balanced community setting with strong appeal for families and long-term residents.",
     image: "/assets/img/v2/our-destinations/jumeirah-village-circle-jvc.webp",
-    href: "https://prestigeone.ae/jumeirah-village-circle/",
+    href: "/our-destinations/jumeirah-village-circle",
   },
   {
     title: "Dubai Sports City",
-    description: "Active living, major venues, and a clear lifestyle identity within Dubai’s sports district.",
+    description: "Active living, major venues, and a clear lifestyle identity within Dubaiâ€™s sports district.",
     image: "/assets/img/v2/our-destinations/dubai-sport-city.webp",
-    href: "https://prestigeone.ae/dubai-sports-city/",
+    href: "/our-destinations/dubai-sports-city",
   },
   {
     title: "Palm Jumeirah",
-    description: "Iconic island living and premium waterfront positioning on Dubai’s best-known archipelago.",
+    description: "Iconic island living and premium waterfront positioning on Dubaiâ€™s best-known archipelago.",
     image: "/assets/img/v2/our-destinations/palm-jumeira.webp",
     href: "https://prestigeone.ae/palm-jumeirah/",
   },
@@ -59,7 +59,7 @@ const destinations: DestinationCard[] = [
 ];
 
 const INTRO_COPY =
-  "Discover the Dubai communities where Prestige One builds — from waterfront districts to established residential corridors.";
+  "Discover the Dubai communities where Prestige One builds â€” from waterfront districts to established residential corridors.";
 
 export default function OurDestinationsIndexPage() {
   return (
@@ -106,3 +106,4 @@ export default function OurDestinationsIndexPage() {
     </>
   );
 }
+
