@@ -1,16 +1,18 @@
-
-import React from 'react';
-import Link from 'next/link';
-import Breacrumb from '@/common/Breacrumb';
-import Cta2Area from '../homes/home/Cta2Area';
-import SiteHeader from '@/layouts/SiteHeader';
-import SiteFooterBlock from '@/layouts/SiteFooterBlock';
+import React from "react";
+import Link from "next/link";
+import PageHero from "@/common/PageHero";
+import SiteHeader from "@/layouts/SiteHeader";
+import SiteFooterBlock from "@/layouts/SiteFooterBlock";
 
 const ErrorArea = () => {
   return (
     <>
       <SiteHeader />
-      <Breacrumb title="Error" subtitle="Error" />
+      <PageHero
+        kicker="Prestige One Developments"
+        title="Page not found"
+        description="The link you followed may be broken, or the page may have been removed."
+      />
       <div className="error-content text-center">
         <div className="divider"></div>
 
@@ -22,10 +24,10 @@ const ErrorArea = () => {
                 <img className="pb-2 light-mode-404" src="/assets/img/core-img/404-light.png" alt="" />
               </div>
               <div className="section-heading mt-5">
-                <h2 className="mb-4">Look Like You're Lost</h2>
-                <p>The link you followed probably broken or the page has been removed</p>
-                <Link href="/" className="btn btn-primary mt-5"><span>BACK TO HOME</span><span>BACK TO
-                  HOME</span></Link>
+                <Link href="/" className="btn btn-primary mt-4">
+                  <span>BACK TO HOME</span>
+                  <span>BACK TO HOME</span>
+                </Link>
               </div>
             </div>
           </div>
@@ -33,9 +35,7 @@ const ErrorArea = () => {
 
         <div className="divider"></div>
       </div>
-      <Cta2Area />
       <SiteFooterBlock />
-
     </>
   );
 };

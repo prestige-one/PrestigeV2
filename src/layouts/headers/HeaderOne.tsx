@@ -90,22 +90,32 @@ const HeaderOne = ({ style_2, onLightSurface }: HeaderOneProps) => {
                     onClick={() => openMobileMenu(item.title)}>{item.title}</Link>
                     {item.has_dropdown &&
                       <ul className="vorix-dd-menu" style={{ display: navTitle === item.title ? 'block' : 'none' }}>
-                        {item.sub_menus.map((sub_menu, index) => (
+                        {(item.sub_menus ?? []).map((sub_menu, index) => (
                           <li key={index} className="vorix-dd">
                             <Link href={sub_menu.link} 
                             onClick={() => openMobileMenu2(sub_menu.title)}
                             onMouseEnter={() =>  setNavTitle2(sub_menu.title)}
                             >{sub_menu.title}</Link>
 
-                            {'has_inner_dropdown' in sub_menu && sub_menu.has_inner_dropdown &&
-                              <ul className="vorix-dd-menu" style={{ display: navTitle2 === sub_menu.title ? 'block' : 'none' }}>
-                                {sub_menu?.inner_submenu?.map((inner_menu, inner_index) => (
-                                  <li key={inner_index}>
-                                    <Link href={inner_menu.link}>{inner_menu.title}</Link>
-                                  </li>
-                                ))}
-                              </ul>
-                            }
+                            {(() => {
+                              const sm = sub_menu as {
+                                has_inner_dropdown?: boolean;
+                                inner_submenu?: { link: string; title: string }[];
+                              };
+                              if (!sm.has_inner_dropdown || !sm.inner_submenu?.length) return null;
+                              return (
+                                <ul
+                                  className="vorix-dd-menu"
+                                  style={{ display: navTitle2 === sub_menu.title ? "block" : "none" }}
+                                >
+                                  {sm.inner_submenu.map((inner_menu, inner_index) => (
+                                    <li key={inner_index}>
+                                      <Link href={inner_menu.link}>{inner_menu.title}</Link>
+                                    </li>
+                                  ))}
+                                </ul>
+                              );
+                            })()}
                           </li>
                         ))}
                       </ul>

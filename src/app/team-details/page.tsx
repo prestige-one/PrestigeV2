@@ -1,12 +1,11 @@
- 
 import TeamDetails from "@/components/team-details";
 import Wrapper from "@/layouts/Wrapper";
+import { createPageMetadata } from "@/lib/site-meta";
 
-export const metadata = {
-	title: "Team Details Vorix - Creative Digital Agency Next js Template",
-	description: "Vorix - Creative Digital Agency HTML Template",
-	 
-};
+export const metadata = createPageMetadata({
+  title: "Team member",
+  description: "Team profile — Prestige One Developments.",
+});
 
 const index = () => {
 	return (

@@ -1,11 +1,12 @@
 import HiltonProjectPage from "@/components/projects/hilton-maritime-city/HiltonProjectPage";
 import Wrapper from "@/layouts/Wrapper";
+import { createPageMetadata } from "@/lib/site-meta";
 
-export const metadata = {
-  title: "Hilton Residences Dubai Maritime City | Prestige One Developments",
+export const metadata = createPageMetadata({
+  title: "Hilton Residences Dubai Maritime City",
   description:
-    "Branded luxury apartments in Dubai Maritime City. Explore amenities, surroundings, schools, hospitals, and register your interest.",
-};
+    "Branded luxury apartments in Dubai Maritime City — amenities, surroundings, schools, hospitals, and register your interest.",
+});
 
 const HiltonResidencesPage = () => {
   return (

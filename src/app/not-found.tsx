@@ -7,14 +7,10 @@ export const metadata = createPageMetadata({
   description: "The page you requested could not be found. Return to the Prestige One Developments homepage.",
 });
 
-
-
-const index = () => {
+export default function NotFound() {
   return (
     <Wrapper>
-      <ErrorArea />      
+      <ErrorArea />
     </Wrapper>
   );
-};
-
-export default index;
+}

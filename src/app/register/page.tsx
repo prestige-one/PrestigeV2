@@ -1,13 +1,11 @@
-
- 
-import Register from "@/components/register"; 
+import Register from "@/components/register";
 import Wrapper from "@/layouts/Wrapper";
+import { createPageMetadata } from "@/lib/site-meta";
 
-export const metadata = {
-	title: "Register Vorix - Creative Digital Agency Next js Template",
-	description: "Vorix - Creative Digital Agency HTML Template",
-	 
-};
+export const metadata = createPageMetadata({
+  title: "Register",
+  description: "Create an account with Prestige One Developments.",
+});
 
 const index = () => {
 	return (

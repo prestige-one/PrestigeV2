@@ -1,12 +1,11 @@
- 
 import Portfolio from "@/components/portfolio";
 import Wrapper from "@/layouts/Wrapper";
+import { createPageMetadata } from "@/lib/site-meta";
 
-export const metadata = {
-	title: "Portfolio Vorix - Creative Digital Agency Next js Template",
-	description: "Portfolio Vorix - Creative Digital Agency HTML Template",
-	 
-};
+export const metadata = createPageMetadata({
+  title: "Portfolio",
+  description: "Portfolio highlights from Prestige One Developments.",
+});
 
 const index = () => {
 	return (

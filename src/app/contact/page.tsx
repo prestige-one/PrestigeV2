@@ -1,12 +1,11 @@
- 
-import Contact from "@/components/contact";  
+import Contact from "@/components/contact";
 import Wrapper from "@/layouts/Wrapper";
+import { createPageMetadata } from "@/lib/site-meta";
 
-export const metadata = {
-	title: "Contact Vorix - Creative Digital Agency Next js Template",
-	description: "Vorix - Creative Digital Agency HTML Template",
-	 
-};
+export const metadata = createPageMetadata({
+  title: "Contact",
+  description: "Get in touch with Prestige One Developments — sales, partnerships, and general enquiries.",
+});
 
 const index = () => {
 	return (

@@ -1,11 +1,12 @@
- 
 import HomeOne from "@/components/homes/home";
 import Wrapper from "@/layouts/Wrapper";
+import { createPageMetadata } from "@/lib/site-meta";
 
-export const metadata = {
-	title: "Prestige One Developments | Luxury Real Estate",
-	description: "Prestige One Developments homepage featuring recent projects and premium residences.",
-};
+export const metadata = createPageMetadata({
+  title: "Home",
+  description:
+    "Featured projects and premium residences from Prestige One Developments across Dubai.",
+});
 
 const index = () => {
 	return (

@@ -1,12 +1,11 @@
- 
-import Faq from "@/components/faq";  
+import Faq from "@/components/faq";
 import Wrapper from "@/layouts/Wrapper";
+import { createPageMetadata } from "@/lib/site-meta";
 
-export const metadata = {
-	title: "Faq Vorix - Creative Digital Agency Next js Template",
-	description: "Vorix - Creative Digital Agency HTML Template",
-	 
-};
+export const metadata = createPageMetadata({
+  title: "FAQ",
+  description: "Frequently asked questions about Prestige One Developments and our projects.",
+});
 
 const index = () => {
 	return (

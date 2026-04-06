@@ -1,12 +1,11 @@
- 
-import Blog from "@/components/blog";  
+import Blog from "@/components/blog";
 import Wrapper from "@/layouts/Wrapper";
+import { createPageMetadata } from "@/lib/site-meta";
 
-export const metadata = {
-	title: "Blog Vorix - Creative Digital Agency Next js Template",
-	description: "Vorix - Creative Digital Agency HTML Template",
-	
-};
+export const metadata = createPageMetadata({
+  title: "Blog",
+  description: "News and updates from Prestige One Developments.",
+});
 
 const index = () => {
 	return (
