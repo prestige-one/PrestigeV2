@@ -5468,6 +5468,12 @@ form .btn {
 .light-mode .footer-card .social-nav a:hover, .light-mode .footer-card .social-nav a:focus {
   background-color: #ECC80B;
 }
+.light-mode .right-side-vorix-offcanvas .offcanvas-body .social-nav a svg {
+	fill: #000;
+}
+.light-mode .right-side-vorix-offcanvas .offcanvas-body .social-nav a:hover svg {
+	fill: #fff;
+}
 .light-mode .footer-wrapper {
   background-color: #FEFEFE;
 }
@@ -5500,29 +5506,28 @@ form .btn {
 }
 .light-mode .footer-bottom-nav a:hover,
 .light-mode .footer-bottom-nav a:focus {
-  color: #ECC80B;
+  color: #e2e2e2;
 }
 .light-mode .right-side-vorix-offcanvas {
-  background-color: #F6F5F3;
+  background-color: #000000;
 }
 .light-mode .right-side-vorix-offcanvas .offcanvas-body p {
-  color: #0E0E0E;
+  color: #ffffff;
 }
 .light-mode .right-side-vorix-offcanvas .offcanvas-body .contact-info > div p {
-  color: #0E0E0E;
+  color: #ffffff;
 }
 .light-mode .right-side-vorix-offcanvas .offcanvas-body .social-nav a {
   background-color: #FEFEFE;
 }
 .light-mode .right-side-vorix-offcanvas .offcanvas-body .social-nav a:hover, .light-mode .right-side-vorix-offcanvas .offcanvas-body .social-nav a:focus {
-  background-color: #ECC80B;
+  background-color: #e9e9e9;
 }
 .light-mode .right-side-vorix-offcanvas .offcanvas-body .contact-info > div .icon {
   background-color: #FEFEFE;
 }
 .light-mode .right-side-vorix-offcanvas .offcanvas-header .btn-close {
-  -webkit-filter: none;
-          filter: none;
+ 
   border: 1px solid rgba(26, 26, 26, 0.3);
 }
 .light-mode .mission-vision-img-container .experience {

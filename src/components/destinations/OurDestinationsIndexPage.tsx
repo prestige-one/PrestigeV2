@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import ListItemExploreLink from "@/common/ListItemExploreLink";
 import ListPageExploreArrow from "@/common/ListPageExploreArrow";
@@ -48,7 +48,7 @@ const destinations: DestinationCard[] = [
     title: "Palm Jumeirah",
     description: "Iconic island living and premium waterfront positioning on Dubaiâ€™s best-known archipelago.",
     image: "/assets/img/v2/our-destinations/palm-jumeira.webp",
-    href: "https://prestigeone.ae/palm-jumeirah/",
+    href: "/our-destinations/palm-jumeirah",
   },
   {
     title: "Mohammed Bin Rashid City",

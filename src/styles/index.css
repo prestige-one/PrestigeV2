@@ -94,6 +94,30 @@ label {
 .right-side-vorix-offcanvas .po-offcanvas-nav-content > .po-offcanvas-section-title {
 	margin-bottom: 0.35rem;
 	margin-top: 35px;
+	position: relative;
+	padding-left: 0.9rem;
+}
+
+/* Offices + Contact: white vertical accent with soft glow (shaded bar in front of title) */
+.right-side-vorix-offcanvas .po-offcanvas-nav-content > .po-offcanvas-section-title::before,
+.right-side-vorix-offcanvas .po-offcanvas-contact-heading::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0.1em;
+	bottom: 0.1em;
+	width: 3px;
+	border-radius: 2px;
+	background: linear-gradient(
+		180deg,
+		rgba(255, 255, 255, 0.35) 0%,
+		rgba(255, 255, 255, 0.95) 42%,
+		rgba(255, 255, 255, 0.5) 100%
+	);
+	box-shadow:
+		0 0 12px rgba(255, 255, 255, 0.45),
+		0 0 4px rgba(255, 255, 255, 0.65),
+		inset 0 0 6px rgba(255, 255, 255, 0.35);
 }
 
 .right-side-vorix-offcanvas .po-offcanvas-intro {
@@ -119,6 +143,8 @@ label {
 }
 
 .right-side-vorix-offcanvas .po-offcanvas-contact-heading {
+  position: relative;
+  padding-left: 0.9rem;
   margin-top: 1.25rem !important;
   margin-bottom: 0.65rem !important;
 }
@@ -243,7 +269,7 @@ h6,
   border-bottom: 1px solid rgba(14, 14, 14, 0.08);
 }
 
-/* Scrolled: solid white bar, dark nav (logo uses invert below — SVGs are white-filled) */
+/* Scrolled: solid white bar, dark nav + dark wordmark (see prestigeone_logo_oneline_dark-hr.svg) */
 .header-area.sticky-on,
 .header-area.sticky-on::after,
 .light-mode .header-area.sticky-on,
@@ -273,6 +299,16 @@ h6,
 .light-mode .header-area::after,
 .dark-mode .header-area::after {
   background: transparent !important;
+}
+
+/* Navbar is flex; .navbar-collapse has flex-grow:1 — without this the brand link shrinks and clips the logo */
+.header-area .navbar .navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  min-width: min-content;
+  width: 200px;
 }
 
 /* Main header logos: swap dark / light assets (avoid CSS filters — they can hide SVG wordmarks) */
@@ -305,7 +341,7 @@ h6,
   width: auto;
   max-width: min(240px, 42vw);
   height: auto;
-  max-height: 42px;
+  max-height: 90px;
   object-fit: contain;
 }
 
@@ -336,7 +372,7 @@ h6,
 	color: #000 !important;
 }
 
-/* Routes with a light hero under the header at scroll 0: same glass bar as home, dark nav + inverted logo */
+/* Routes with a light hero under the header at scroll 0: same glass bar as home, dark nav + dark wordmark */
 .header-area.header-on-light-surface .navbar-nav li > a,
 .header-area.header-on-light-surface .navbar-toggler,
 .header-area.header-on-light-surface .navbar-nav li .dropdown-toggler,

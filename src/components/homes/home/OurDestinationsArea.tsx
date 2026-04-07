@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import type { CSSProperties } from "react";
 import Link from "next/link";
@@ -33,7 +33,7 @@ const destinations = [
   },
   {
     title: "Palm Jumeirah",
-    link: "https://prestigeone.ae/palm-jumeirah/",
+    link: "/our-destinations/palm-jumeirah",
     image: "/assets/img/v2/our-destinations/palm-jumeira.webp",
   },
   {

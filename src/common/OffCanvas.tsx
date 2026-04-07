@@ -62,7 +62,7 @@ const OffCanvas = ({ openCanvas, setOpenCavas }: OffCanvasProps) => {
           <h4 className="text-white po-offcanvas-section-title">Reach out to us</h4>
           <p className="po-offcanvas-intro">{COMPANY_CONTACT.intro}</p>
 
-          <div className="nav-content po-offcanvas-nav-content">
+          <div className="nav-content po-offcanvas-nav-content mb-3">
             <h5 className="text-white po-offcanvas-section-title">Offices</h5>
             <div className="po-offcanvas-offices-list">
               {COMPANY_OFFICES.map((office) => (
@@ -75,7 +75,7 @@ const OffCanvas = ({ openCanvas, setOpenCavas }: OffCanvasProps) => {
             </div>
           </div>
 
-          <h5 className="text-white po-offcanvas-section-title po-offcanvas-contact-heading">Contact</h5>
+          <h5 className="text-white po-offcanvas-section-title po-offcanvas-contact-heading mt-3">Contact</h5>
 
           <div className="contact-info">
             <div>

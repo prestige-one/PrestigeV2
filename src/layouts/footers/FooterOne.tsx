@@ -147,7 +147,7 @@ const FooterOne = () => {
           <div className="row align-items-center">
             <div className="col-6">
               <p className="mb-0 copyright text-start">
-                Copyright Â© {new Date().getFullYear()} Prestige One Developments. All rights reserved.
+                Copyright © {new Date().getFullYear()} Prestige One Developments. All rights reserved.
               </p>
             </div>
             <div className="col-6">
