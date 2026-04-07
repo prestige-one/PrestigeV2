@@ -28,7 +28,7 @@ const projects: ProjectItem[] = [
     description:
       "Step into a more balanced Dubai lifestyle at Sanctuary by Prestige One, where modern living and commercial spaces come together in Meydan.",
     thumbnail: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/12123533/C1-0113.webp",
-    link: "https://prestigeone.ae/projects/sanctuary/",
+    link: "/projects/sanctuary",
     location: "Meydan Horizon",
   },
   {
@@ -44,14 +44,14 @@ const projects: ProjectItem[] = [
       "Berkeley Square North, located in Jumeirah Village Circle, stands apart from the rest. Designed with inspiration from London's classic architecture, it favors clean lines.",
     thumbnail:
       "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/07/09112539/Berkeley-Square-Facade-Night-View-3-scaled.webp",
-    link: "https://prestigeone.ae/projects/berkeley-square-north/",
+    link: "/projects/berkeley-square-north",
     location: "JVC",
   },
   {
     title: "Berkeley Square South",
     description: "Positioned within Jumeirah Village Circle, Berkeley Square South brings together elegance and beautiful design.",
     thumbnail: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/07/07161026/Berkeley-Square-Kids-Area-Night-scaled.webp",
-    link: "https://prestigeone.ae/projects/berkeley-square-south/",
+    link: "/projects/berkeley-square-south",
     location: "JVC",
   },
   {
@@ -59,7 +59,7 @@ const projects: ProjectItem[] = [
     description:
       "Luxury Canal Residences by Prestige One captures the rhythm of the waves in Dubai Islands, offering G+2P+12 canal-front living.",
     thumbnail: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/03/08085032/04-Facade-scaled.webp",
-    link: "https://prestigeone.ae/projects/luxury-canal-residences/",
+    link: "/projects/luxury-canal-residences",
     location: "Dubai Islands",
   },
   {

@@ -39,7 +39,7 @@ const areas: FooterNavItem[] = [
   { label: "Dubai Sports City", href: "/our-destinations/dubai-sports-city" },
   { label: "Jumeirah Village Circle (JVC)", href: "/our-destinations/jumeirah-village-circle" },
   { label: "Mohammed Bin Rashid City", href: "#" },
-  { label: "Palm Jumeirah", href: "#" },
+  { label: "Palm Jumeirah", href: "/our-destinations/palm-jumeirah" },
 ];
 
 const mediaCenter: FooterNavItem[] = [

@@ -78,8 +78,30 @@ const formatStatValue = (num: number, meta: StatMeta) => {
 const MissionVisionStatsSection = () => {
   const metas = useMemo(() => stats.map((s) => parseStatValue(s.value)), []);
   const [displayNums, setDisplayNums] = useState<number[]>(() => metas.map(() => 0));
+  const [hasEnteredViewport, setHasEnteredViewport] = useState(false);
+  const sectionRef = React.useRef<HTMLElement | null>(null);
 
   useEffect(() => {
+    const el = sectionRef.current;
+    if (!el || hasEnteredViewport) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          setHasEnteredViewport(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.25 },
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [hasEnteredViewport]);
+
+  useEffect(() => {
+    if (!hasEnteredViewport) return;
+
     const reduced = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
     if (reduced) {
       setDisplayNums(metas.map((m) => m.target));
@@ -102,10 +124,10 @@ const MissionVisionStatsSection = () => {
 
     raf = window.requestAnimationFrame(tick);
     return () => window.cancelAnimationFrame(raf);
-  }, [metas]);
+  }, [hasEnteredViewport, metas]);
 
   return (
-    <section className="po-mv-stats-section">
+    <section className="po-mv-stats-section" ref={sectionRef}>
       <div className="container">
         <div className="po-mv-wrapper">
           <div className="po-mv-top-grid">

@@ -4,7 +4,13 @@ import { usePathname } from "next/navigation";
 import FinalContactSection from "@/components/common/final-contact/FinalContactSection";
 import FooterOne from "@/layouts/footers/FooterOne";
 
-const PATHS_WITHOUT_FINAL_CONTACT = ["/projects/hilton-residences-dubai-maritime-city"];
+const PATHS_WITHOUT_FINAL_CONTACT = [
+  "/projects/hilton-residences-dubai-maritime-city",
+  "/projects/sanctuary",
+  "/projects/berkeley-square-north",
+  "/projects/berkeley-square-south",
+  "/projects/luxury-canal-residences",
+];
 
 function normalizePath(pathname: string) {
   if (pathname.length > 1 && pathname.endsWith("/")) {
