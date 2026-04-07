@@ -6,7 +6,7 @@ export default function ListItemExploreLink({ href, children }: { href: string; 
   const external = href.startsWith("http");
   if (external) {
     return (
-      <a className="po-list-item-btn" href={href} target="_blank" rel="noopener noreferrer">
+      <a className="po-list-item-btn" href={href} rel="noopener noreferrer">
         {children}
       </a>
     );

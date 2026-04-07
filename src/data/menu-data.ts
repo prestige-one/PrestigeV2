@@ -32,7 +32,7 @@ const menu_data: MenuItem[] = [
     id: 3,
     title: "Projects",
     link: "/projects",
-    has_dropdown: true,
+    has_dropdown: false,
     sub_menus: [
       { link: "#", title: "Sanctuary Hive by Prestige One" },
       { link: "/projects/sanctuary", title: "Sanctuary by Prestige One" },
@@ -67,6 +67,12 @@ const menu_data: MenuItem[] = [
       { link: "/our-destinations/palm-jumeirah", title: "Palm Jumeirah", }, 
       { link: "/our-destinations/mohammed-bin-rashid-city", title: "Mohammed Bin Rashid City", }, 
     ]
+  },
+  {
+    id: 5,
+    title: "Virtual Tour",
+    link: "/virtual-tour",
+    has_dropdown: false,
   },
 
 ]
