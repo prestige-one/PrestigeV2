@@ -19,8 +19,8 @@ type AmenityVideoRow = {
 };
 
 const HERO_VIDEO = "/assets/img/v2/project-features-videos/sanctuary-residential.mp4";
-const HILTON_FALLBACK_IMG =
-  "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/14144431/HILTON-NIGHT-VIEW-1.webp";
+const FALLBACK_IMG =
+  "/assets/img/v2/project-featured-images/Front-Exterior-3-scaled.webp";
 
 const SANCTUARY_LOCAL_IMG = "/assets/img/v2/project-featured-images/sanctuary";
 
@@ -41,44 +41,44 @@ const amenityVideos: AmenityVideoRow[] = [
     label: "Outdoor Cinema",
     video:
       "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2022/08/26080805/1115750_Cinema_Man_1280x720-1.mp4",
-    poster: HILTON_FALLBACK_IMG,
+    poster: FALLBACK_IMG,
   },
   {
     label: "Outdoor Kids' Play Area",
     video: "https://prestigeone.ae/wp-content/uploads/2022/08/5080670_Caucasian_Girl_1280x720.mp4",
-    poster: HILTON_FALLBACK_IMG,
+    poster: FALLBACK_IMG,
   },
   {
     label: "BBQ Area",
     video: "https://prestigeone.ae/wp-content/uploads/2022/08/1104331_1080p_4k_1280x720.mp4",
-    poster: HILTON_FALLBACK_IMG,
+    poster: FALLBACK_IMG,
   },
   {
     label: "Outdoor Fitness",
     video:
       "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/16115628/outdoor-gym.mp4",
-    poster: HILTON_FALLBACK_IMG,
+    poster: FALLBACK_IMG,
   },
   {
     label: "Swimming Pool & Kids' Pool",
     video: "https://prestigeone.ae/wp-content/uploads/2022/08/1470836_People_Leisure_1280x720.mp4",
-    poster: HILTON_FALLBACK_IMG,
+    poster: FALLBACK_IMG,
   },
   {
     label: "Skyline Infinity Pool",
     video:
       "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/12/25145038/Skyline-Infinity-Pool.mp4",
-    poster: HILTON_FALLBACK_IMG,
+    poster: FALLBACK_IMG,
   },
   {
     label: "Multi-Sports Court",
     video: "https://prestigeone.ae/wp-content/uploads/2022/08/1115557_Hobbies_Tennis_1280x720.mp4",
-    poster: HILTON_FALLBACK_IMG,
+    poster: FALLBACK_IMG,
   },
   {
     label: "Indoor Kids' Play Area",
     video: "https://prestigeone.ae/wp-content/uploads/2022/08/1114155_Pupil_Preschool_1280x720.mp4",
-    poster: HILTON_FALLBACK_IMG,
+    poster: FALLBACK_IMG,
   },
 ];
 
@@ -248,7 +248,7 @@ const SanctuaryProjectPage = () => {
 
       <section className="po-project-page-hero">
         <div className="po-project-page-hero-media">
-          <video ref={heroRef} className="po-project-page-hero-video" muted loop playsInline autoPlay preload="metadata" poster={HILTON_FALLBACK_IMG}>
+          <video ref={heroRef} className="po-project-page-hero-video" muted loop playsInline autoPlay preload="metadata" poster={FALLBACK_IMG}>
             <source src={HERO_VIDEO} type="video/mp4" />
           </video>
           <div className="po-project-page-hero-overlay" />
