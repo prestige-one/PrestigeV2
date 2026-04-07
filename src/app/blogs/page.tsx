@@ -8,10 +8,21 @@ export const metadata = createPageMetadata({
     "Read the latest blog posts and real-estate insights from Prestige One Developments.",
 });
 
-export default function BlogsRoute() {
+type BlogsRouteProps = {
+  searchParams?: Promise<{
+    page?: string | string[];
+  }>;
+};
+
+export default async function BlogsRoute({ searchParams }: BlogsRouteProps) {
+  const resolvedSearchParams = searchParams ? await searchParams : undefined;
+  const rawPage = Array.isArray(resolvedSearchParams?.page) ? resolvedSearchParams?.page[0] : resolvedSearchParams?.page;
+  const requestedPage = Number(rawPage ?? "1");
+  const currentPage = Number.isFinite(requestedPage) && requestedPage >= 1 ? Math.floor(requestedPage) : 1;
+
   return (
     <Wrapper>
-      <BlogListingsPage />
+      <BlogListingsPage currentPage={currentPage} />
     </Wrapper>
   );
 }

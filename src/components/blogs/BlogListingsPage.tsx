@@ -1,8 +1,4 @@
-"use client";
-
 import Link from "next/link";
-import { useMemo } from "react";
-import { useSearchParams } from "next/navigation";
 import ListItemExploreLink from "@/common/ListItemExploreLink";
 import ListPageExploreArrow from "@/common/ListPageExploreArrow";
 import { BLOG_POSTS } from "@/data/blogs";
@@ -12,21 +8,15 @@ import SiteHeader from "@/layouts/SiteHeader";
 const INTRO_COPY = "Read the latest insights, updates, and stories from Prestige One Developments.";
 const POSTS_PER_PAGE = 9;
 
-export default function BlogListingsPage() {
-  const searchParams = useSearchParams();
+type BlogListingsPageProps = {
+  currentPage: number;
+};
+
+export default function BlogListingsPage({ currentPage }: BlogListingsPageProps) {
   const totalPages = Math.max(1, Math.ceil(BLOG_POSTS.length / POSTS_PER_PAGE));
-  const requestedPage = Number(searchParams.get("page") ?? "1");
-  const currentPage =
-    Number.isFinite(requestedPage) && requestedPage >= 1
-      ? Math.min(Math.floor(requestedPage), totalPages)
-      : 1;
-
-  const visiblePosts = useMemo(() => {
-    const start = (currentPage - 1) * POSTS_PER_PAGE;
-    return BLOG_POSTS.slice(start, start + POSTS_PER_PAGE);
-  }, [currentPage]);
-
-  const pageNumbers = useMemo(() => Array.from({ length: totalPages }, (_, idx) => idx + 1), [totalPages]);
+  const start = (currentPage - 1) * POSTS_PER_PAGE;
+  const visiblePosts = BLOG_POSTS.slice(start, start + POSTS_PER_PAGE);
+  const pageNumbers = Array.from({ length: totalPages }, (_, idx) => idx + 1);
   const pageHref = (page: number) => (page <= 1 ? "/blogs" : `/blogs?page=${page}`);
 
   return (
