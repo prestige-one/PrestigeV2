@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 
 type FooterNavItem = {
   label: string;
@@ -49,12 +49,11 @@ const mediaCenter: FooterNavItem[] = [
   { label: "Industry News", href: "#" },
 ];
 
-const topProjects: FooterNavItem[] = [
-  { label: "Boulevard by prestige one", href: "#" },
-  { label: "Vista by prestige one", href: "#" },
-  { label: "Hilton by prestige one", href: "/projects/hilton-residences-dubai-maritime-city" },
-  { label: "Sanctuary by prestige one", href: "#" },
-  { label: "Coastal Haven by prestige one", href: "#" },
+const tools: FooterNavItem[] = [
+  { label: "MortgageCalculator", href: "/tools/mortgage-calculator" },
+  { label: "CommissionSplitCalculator", href: "/tools/commission-split-calculator" },
+  { label: "LeadRoiCalculator", href: "/tools/lead-roi-calculator" },
+  { label: "RentVsBuy", href: "/tools/rent-vs-buy" },
 ];
 
 const socialLinks: { href: string; label: string; iconClass: string }[] = [
@@ -126,9 +125,9 @@ const FooterOne = () => {
 
             <div className="col-12 col-md-6 col-lg-6 col-xl-3">
               <div className="footer-card">
-                <h5 className="mb-0">TOP SEARCHED PROJECTS</h5>
+                <h5 className="mb-0">OUR TOOLS</h5>
                 <ul className="footer-nav">
-                  {topProjects.map((item) => (
+                  {tools.map((item) => (
                     <li key={item.label}>
                       <FooterNavLink {...item} />
                     </li>
