@@ -75,7 +75,7 @@ const OffCanvas = ({ openCanvas, setOpenCavas }: OffCanvasProps) => {
             </div>
           </div>
 
-          <h5 className="text-white po-offcanvas-section-title po-offcanvas-contact-heading mt-3">Contact</h5>
+          <h5 className="text-white mt-3">&nbsp;</h5>
 
           <div className="contact-info">
             <div>
@@ -144,6 +144,10 @@ const OffCanvas = ({ openCanvas, setOpenCavas }: OffCanvasProps) => {
               </a>
             ))}
             </div>
+
+            <Link href="/contact" className="po-offcanvas-contact-btn" onClick={() => setOpenCavas(false)}>
+              Contact Us
+            </Link>
           </div>
         </div>
       </div>

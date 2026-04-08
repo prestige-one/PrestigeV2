@@ -45,7 +45,7 @@ const areas: FooterNavItem[] = [
 const mediaCenter: FooterNavItem[] = [
   { label: "Construction Updates", href: "/construction-updates" },
   { label: "Press Release", href: "#" },
-  { label: "Blog Posts", href: "#" },
+  { label: "Blog Posts", href: "/blogs" },
   { label: "Industry News", href: "#" },
 ];
 

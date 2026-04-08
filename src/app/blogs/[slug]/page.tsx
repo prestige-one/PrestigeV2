@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import ListPageExploreArrow from "@/common/ListPageExploreArrow";
 import { BLOG_POSTS } from "@/data/blogs";
 import SiteFooterBlock from "@/layouts/SiteFooterBlock";
 import SiteHeader from "@/layouts/SiteHeader";
 import Wrapper from "@/layouts/Wrapper";
+import { stripEmptyParagraphsFromHtml } from "@/lib/blog-html";
 import { createPageMetadata } from "@/lib/site-meta";
 
 type BlogDetailsPageProps = {
@@ -37,7 +37,10 @@ export default async function BlogDetailsPage({ params }: BlogDetailsPageProps) 
   const post = BLOG_POSTS.find((item) => item.slug === slug);
   if (!post) notFound();
 
-  const relatedPosts = BLOG_POSTS.filter((item) => item.slug !== post.slug).slice(0, 3);
+  const postIndex = BLOG_POSTS.findIndex((item) => item.slug === post.slug);
+  const prevPost = postIndex > 0 ? BLOG_POSTS[postIndex - 1] : null;
+  const nextPost = postIndex >= 0 && postIndex < BLOG_POSTS.length - 1 ? BLOG_POSTS[postIndex + 1] : null;
+  const contentHtml = stripEmptyParagraphsFromHtml(post.contentHtml);
 
   return (
     <Wrapper>
@@ -59,34 +62,43 @@ export default async function BlogDetailsPage({ params }: BlogDetailsPageProps) 
                 <img src={post.featuredImage} alt={post.title} loading="eager" />
               </div>
             ) : null}
-            <div className="po-blog-post-content-inner" dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
+            <div className="po-blog-post-content-inner" dangerouslySetInnerHTML={{ __html: contentHtml }} />
           </div>
         </section>
 
-        <section className="po-blog-post-related" aria-labelledby="related-posts-heading">
+        <section className="po-blog-post-related" aria-label="Post navigation">
           <div className="container">
-            <h2 id="related-posts-heading" className="po-blog-post-related-title">
-              Related posts
-            </h2>
-            <div className="po-list-page-grid list-page-grid">
-              {relatedPosts.map((item) => (
-                <article key={item.id} className="po-list-item-card item-card">
-                  <div className="po-list-item-media item-card-image">
-                    {item.featuredImage ? (
-                      <img src={item.featuredImage} alt={item.title} loading="lazy" />
-                    ) : (
-                      <div className="po-list-item-media-fallback" aria-hidden="true" />
-                    )}
-                  </div>
-                  <div className="po-list-item-body item-card-content">
-                    <h3 className="po-list-item-title">{item.title}</h3>
-                    <Link className="po-list-item-btn" href={`/blogs/${item.slug}`}>
-                      <span>Read more</span>
-                      <ListPageExploreArrow />
-                    </Link>
-                  </div>
+            <div className="po-blog-post-inline-nav">
+              {prevPost ? (
+                <article className="po-blog-post-inline-item">
+                  <p className="po-blog-post-inline-label">Previous post</p>
+                  <Link className="po-blog-post-inline-link" href={`/blogs/${prevPost.slug}`}>
+                    <span className="po-blog-post-inline-thumb">
+                      {prevPost.featuredImage ? (
+                        <img src={prevPost.featuredImage} alt={prevPost.title} loading="lazy" />
+                      ) : (
+                        <span className="po-list-item-media-fallback" aria-hidden="true" />
+                      )}
+                    </span>
+                    <span className="po-blog-post-inline-title">{prevPost.title}</span>
+                  </Link>
                 </article>
-              ))}
+              ) : null}
+              {nextPost ? (
+                <article className="po-blog-post-inline-item">
+                  <p className="po-blog-post-inline-label">Next post</p>
+                  <Link className="po-blog-post-inline-link" href={`/blogs/${nextPost.slug}`}>
+                    <span className="po-blog-post-inline-thumb">
+                      {nextPost.featuredImage ? (
+                        <img src={nextPost.featuredImage} alt={nextPost.title} loading="lazy" />
+                      ) : (
+                        <span className="po-list-item-media-fallback" aria-hidden="true" />
+                      )}
+                    </span>
+                    <span className="po-blog-post-inline-title">{nextPost.title}</span>
+                  </Link>
+                </article>
+              ) : null}
             </div>
           </div>
         </section>

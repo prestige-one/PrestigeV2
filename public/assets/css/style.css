@@ -924,12 +924,12 @@ picture.jarallax-img img {
 }
 @media only screen and (min-width:576px) {
   .right-side-vorix-offcanvas .offcanvas-body {
-    padding: 60px 40px;
+    padding: 30px 40px 40px;
   }
 }
 .right-side-vorix-offcanvas .offcanvas-body p {
 	color: #C8C8CD;
-	font-size: 15px;
+	font-size: 13px;
 	margin-bottom: 0;
 }
 .right-side-vorix-offcanvas .offcanvas-body .contact-info {

@@ -12,7 +12,7 @@ type ConstructionUpdateItem = {
 
 const CONSTRUCTION_UPDATES: ConstructionUpdateItem[] = [
   {
-    href: "https://prestigeone.ae/construction-update-seaside-by-prestige-one/",
+    href: "/construction-update-seaside-by-prestige-one/",
     pathSlug: "construction-update-seaside-by-prestige-one",
     image: "https://prestigeone.ae/wp-content/uploads/2024/03/seaside-banner-1.jpg",
   },
@@ -102,7 +102,12 @@ function ConstructionUpdateCard({ item }: { item: ConstructionUpdateItem }) {
         <p className="po-list-item-desc">
           Follow construction progress, major milestones, and quality milestones for this Prestige One development.
         </p>
-        <a className="po-list-item-btn" href={item.href} target="_blank" rel="noopener noreferrer">
+        <a
+          className="po-list-item-btn"
+          href={item.href}
+          target={item.href.startsWith("/") ? undefined : "_blank"}
+          rel={item.href.startsWith("/") ? undefined : "noopener noreferrer"}
+        >
           <span>Explore more</span>
           <ListPageExploreArrow />
         </a>
