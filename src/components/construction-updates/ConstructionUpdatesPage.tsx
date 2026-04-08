@@ -17,7 +17,7 @@ const CONSTRUCTION_UPDATES: ConstructionUpdateItem[] = [
     image: "https://prestigeone.ae/wp-content/uploads/2024/03/seaside-banner-1.jpg",
   },
   {
-    href: "https://prestigeone.ae/construction-update-hilton-residences-by-prestige-one/",
+    href: "/construction-update-hilton-residences-by-prestige-one/",
     pathSlug: "construction-update-hilton-residences-by-prestige-one",
     image:
       "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/14144431/HILTON-NIGHT-VIEW-1.webp",
@@ -47,7 +47,7 @@ const CONSTRUCTION_UPDATES: ConstructionUpdateItem[] = [
       "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/27164232/Front-Exterior-3-scaled.webp",
   },
   {
-    href: "https://prestigeone.ae/construction-update-vista-by-prestige-one/",
+    href: "/construction-update-vista-by-prestigeone/",
     pathSlug: "construction-update-vista-by-prestige-one",
     image: "https://prestigeone.ae/wp-content/uploads/2022/08/Website_images_23Feb-VISTA.jpg",
   },
@@ -64,7 +64,7 @@ const CONSTRUCTION_UPDATES: ConstructionUpdateItem[] = [
       "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/07/09112539/Berkeley-Square-Facade-Night-View-3-scaled.webp",
   },
   {
-    href: "https://prestigeone.ae/construction-update-place-by-prestige-one/",
+    href: "/construction-update-place-by-prestige-one/",
     pathSlug: "construction-update-place-by-prestige-one",
     image:
       "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2022/08/24175842/The-Place-Banner.webp",

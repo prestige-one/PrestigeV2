@@ -1223,10 +1223,12 @@ h2.po-destination-section-title {
   flex: 0 0 auto;
 }
 
-.po-cu-hero-meta-icon svg {
+.po-cu-hero-meta-icon svg,
+.po-cu-hero-meta-icon img {
   width: 17px;
   height: 17px;
   display: block;
+  filter: brightness(0) invert(1);
 }
 
 .po-cu-hero-meta-content {
@@ -1263,7 +1265,7 @@ h2.po-destination-section-title {
 }
 
 .po-cu-month-cover-grid {
-  margin-top: 1.2rem;
+  margin-top: 5.2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -1296,7 +1298,7 @@ h2.po-destination-section-title {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(8, 10, 14, 0.1) 28%, rgba(8, 10, 14, 0.48) 58%, rgba(8, 10, 14, 0.92) 100%);
+  background: linear-gradient(180deg, rgba(8, 10, 14, 0.1) 28%, rgba(8, 10, 14, 0.48) 85%, rgba(8, 10, 14, 0.92) 100%);
 }
 
 .po-cu-month-cover-label {
@@ -1379,16 +1381,16 @@ h2.po-destination-section-title {
 }
 
 .po-cu-lightbox {
-  position: fixed;
-  inset: 0;
-  z-index: 1100;
-  background: rgba(7, 14, 28, 0.46);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
+	position: fixed;
+	inset: 0;
+	z-index: 1100;
+	background: rgba(12, 13, 15, 0.81);
+	backdrop-filter: blur(60px);
+	-webkit-backdrop-filter: blur(10px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1rem;
 }
 
 .po-cu-lightbox-dialog {
@@ -1402,7 +1404,7 @@ h2.po-destination-section-title {
   width: 100%;
   max-height: calc(92vh - 5.4rem);
   object-fit: contain;
-  border-radius: 10px;
+  border-radius: 5px;
   display: block;
 }
 
@@ -1410,6 +1412,9 @@ h2.po-destination-section-title {
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 34px;
   height: 34px;
   border-radius: 50%;
@@ -1480,6 +1485,9 @@ h2.po-destination-section-title {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 38px;
   height: 38px;
   border-radius: 50%;
@@ -1498,32 +1506,46 @@ h2.po-destination-section-title {
   right: 0.6rem;
 }
 
+.po-cu-lightbox-close svg {
+  width: 16px;
+  height: 16px;
+}
+
+.po-cu-lightbox-nav svg {
+  width: 18px;
+  height: 18px;
+}
+
 .po-cu-techspec {
-  margin-top: 1.15rem;
+  margin-top: 1.4rem;
   background:
-    radial-gradient(120% 140% at 0% 0%, rgba(255, 255, 255, 0.08) 0%, transparent 48%),
-    linear-gradient(160deg, #0b0d10 0%, #0f1115 54%, #090a0d 100%);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 16px;
-  padding: 1.2rem 1.25rem;
+    radial-gradient(120% 150% at 0% 0%, rgba(210, 168, 83, 0.14) 0%, transparent 45%),
+    radial-gradient(130% 160% at 100% 100%, rgba(89, 128, 198, 0.14) 0%, transparent 46%),
+    linear-gradient(165deg, #090b0e 0%, #0d1014 58%, #07090b 100%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 18px;
+  padding: clamp(1.1rem, 2.2vw, 1.5rem);
   box-shadow:
-    0 22px 40px rgba(0, 0, 0, 0.24),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    0 24px 42px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.04);
 }
 
 .po-cu-techspec h2 {
-  margin: 0 0 0.9rem;
+  margin: 0 0 1.05rem;
   color: #fff;
-  font-size: 0.92rem;
-  letter-spacing: 0.16em;
+  font-size: clamp(0.78rem, 1.1vw, 0.9rem);
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 700;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
 }
 
 .po-cu-techspec-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.9rem;
+  gap: 1.2rem;
 }
 
 .po-cu-techspec-list {
@@ -1533,29 +1555,33 @@ h2.po-destination-section-title {
 }
 
 .po-cu-techspec-list li {
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 0.96rem;
-  line-height: 1.45;
-  padding: 0.52rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.96);
+  font-size: clamp(0.95rem, 1.15vw, 1.08rem);
+  font-weight: 500;
+  line-height: 1.42;
+  padding: 0.68rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   position: relative;
-  padding-left: 1.3rem;
+  padding-left: 1.55rem;
+  text-wrap: balance;
 }
 
 .po-cu-techspec-list li::before {
   content: "";
-  width: 8px;
-  height: 8px;
-  border: 2px solid rgba(255, 255, 255, 0.75);
+  width: 9px;
+  height: 9px;
+  border: 2px solid rgba(255, 255, 255, 0.86);
   border-radius: 50%;
   position: absolute;
   left: 0;
-  top: 0.92rem;
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.08);
+  top: 1rem;
+  box-shadow:
+    0 0 0 3px rgba(255, 255, 255, 0.1),
+    0 0 14px rgba(255, 255, 255, 0.14);
 }
 
 .po-cu-process {
-  margin-top: 6rem;
+  padding-top: 6rem !important;
   padding: 0;
   border: 0;
   background: transparent;
@@ -1592,12 +1618,13 @@ h2.po-destination-section-title {
 }
 
 .po-cu-process-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  border-top: 1px solid #e3e3e3;
-  border-left: 1px solid #e3e3e3;
-  background: #f6f6f6;
-  overflow: hidden;
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	border: 1px solid #e3e3e3;
+	border-bottom: 0;
+	background: #f6f6f6;
+	overflow: hidden;
+	border-radius: 5px;
 }
 
 .po-cu-process-card {
@@ -1632,15 +1659,22 @@ h2.po-destination-section-title {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #202226;
+  background: #434343;
   color: #d3af62;
-  margin-bottom: 0.85rem;
+  margin-bottom: 0.85rem;  
 }
 
-.po-cu-process-icon svg {
+.po-cu-process-icon svg,
+.po-cu-process-icon img {
   width: 24px;
-  height: 24px;
+  height: 24px; 
+  backface-visibility: hidden;
 }
+
+.po-cu-process-card:hover .po-cu-process-icon {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.14);
+}
+ 
 
 .po-cu-process-card h3 {
   margin: 0;
@@ -3261,10 +3295,13 @@ h2.po-destination-section-title {
 }
 
 .po-final-contact-head h2 {
-  margin: 0;
-  color: #fff;
-  font-size: clamp(1.35rem, 2.4vw, 2.4rem);
-  line-height: 1.12;
+	margin: 0;
+	color: #fff;
+	font-size: clamp(1.35rem,2.4vw,2.4rem);
+	line-height: 1.12;
+	background: -webkit-linear-gradient(#eee, #666);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
 .po-final-contact-meta {

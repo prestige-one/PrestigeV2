@@ -9,7 +9,94 @@ import {
   type GalleryMonth,
 } from "@/data/construction-update-common";
 
-const HERO_IMAGE = "/assets/img/v2/project-featured-images/seaside-featured-image.webp";
+const HERO_IMAGE =
+  "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/25103725/VISTA.webp";
+
+const VISTA_GALLERY: GalleryMonth[] = [
+  {
+    month: "February 2026",
+    images: [
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/18125349/vista-construction-updates-feb-2026-2.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/18125947/vista-construction-updates-feb-2026-11.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/18125344/vista-construction-updates-feb-2026-3.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/18125339/vista-construction-updates-feb-2026-4.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/18125334/vista-construction-updates-feb-2026-5.webp",
+    ],
+  },
+  {
+    month: "December 2025",
+    images: [
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/18132638/vista-construction-updates-dec-2025-3.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/18132646/vista-construction-updates-dec-2025-2.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/18132653/vista-construction-updates-dec-2025-1.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/18132633/vista-construction-updates-dec-2025-4.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/18132628/vista-construction-updates-dec-2025-5.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/18132624/vista-construction-updates-dec-2025-6.webp",
+    ],
+  },
+  {
+    month: "September 2025",
+    images: [
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/18133017/vista-construction-updates-sept-2025-1.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/18133007/vista-construction-updates-sept-2025-3.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/18133000/vista-construction-updates-sept-2025-4.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/18133012/vista-construction-updates-sept-2025-2.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/18133021/vista-construction-updates-sept-2025-5.webp",
+    ],
+  },
+  {
+    month: "August 2025",
+    images: [
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/29213005/2K6A6098-HDR.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/29213251/2K6A6125-HDR.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/29213230/2K6A6122-HDR.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/29213128/2K6A6113-HDR.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/29213113/2K6A6110-HDR.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/29213055/2K6A6107-HDR.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/29213041/2K6A6104-HDR.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/29213021/2K6A6101-HDR.webp",
+    ],
+  },
+  {
+    month: "January 2025",
+    images: [
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/11/10115345/2K6A6922-HDR-scaled.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/07/19101705/35.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/07/19101700/34.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/07/19101633/28.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/07/19101647/31.webp",
+    ],
+  },
+  {
+    month: "December 2023",
+    images: [
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/07/19101724/38.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/07/19101709/36.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/07/19101729/39.webp",
+    ],
+  },
+];
+
+const TECH_SPEC_COLUMNS: string[][] = [
+  [
+    "Average Daily Workforce: 600 workers",
+    "Estimated Electrical Cable Installation: 445 km (beyond Dubai to Abu Dhabi)",
+    "Projected Brickwork Area: 30,247 m2 (if stacked vertically, would reach 378 km high)",
+    "Construction Start Date: 6 October 2023",
+    "Estimated Rebar Length: 2,900 km (spanning far beyond Dubai to Muscat)",
+    "Rooftop Track Distance (Upon Completion): 52.6 laps = half a marathon",
+    "Planned Landscaped Area: 3,914 m2 (equal to 18 mini forests of 200 m2 each)",
+  ],
+  [
+    "Planned Concrete Utilization: 25,000 m3 (enough to fill 10 Olympic-sized swimming pools)",
+    "Planned Glass Panel Weight: 492,000 kg (about 1.25 times the weight of a Boeing 747)",
+    "Building Structure & Built-up Area: 1 Ground, 1 Podium, 14 Floors + Roof; Built-up Area: 276,600 sq ft",
+    "Workforce Nationalities Represented: Minimum 15",
+    "Projected Building Weight: Approx. 3,500 tons (combined structural materials)",
+    "Estimated Total Man-Hours: 131,000 hours (equivalent to 3,638 round trips to the moon)",
+    "Number of Elevators: 4 (travel a combined 1.18 km daily)",
+  ],
+];
 
 function LightboxCloseIcon() {
   return (
@@ -35,96 +122,10 @@ function LightboxArrowRightIcon() {
   );
 }
 
-const SEASIDE_GALLERY: GalleryMonth[] = [
-  {
-    month: "March 2026",
-    images: [
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/18165627/seaside-construction-updates-mar-2026-2.webp",
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/18165617/seaside-construction-updates-mar-2026-4.webp",
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/18165622/seaside-construction-updates-mar-2026-3.webp",
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/18165611/seaside-construction-updates-mar-2026-5.webp",
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/18165633/seaside-construction-updates-mar-2026-1.webp",
-    ],
-  },
-  {
-    month: "February 2026",
-    images: [
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/17144522/seaside-construction-updates-feb-2026-1.webp",
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/17144517/seaside-construction-updates-feb-2026-2.webp",
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/17144513/seaside-construction-updates-feb-2026-3.webp",
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/17144510/seaside-construction-updates-feb-2026-4.webp",
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/17144505/seaside-construction-updates-feb-2026-5.webp",
-    ],
-  },
-  {
-    month: "December 2025",
-    images: [
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/17153437/SEASIDE2.webp",
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/17153445/SEASIDE1.webp",
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/17153427/SEASIDE3.webp",
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/17153456/SEASIDE0.webp",
-    ],
-  },
-  {
-    month: "September 2025",
-    images: [
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/17150057/seaside-construction-updates-sep-2025-2.webp",
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/17150113/seaside-construction-updates-sep-2025-1.webp",
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/17150051/seaside-construction-updates-sep-2025-3.webp",
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/17150044/seaside-construction-updates-sep-2025-4.webp",
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/17150037/seaside-construction-updates-sep-2025-5.webp",
-    ],
-  },
-  {
-    month: "August 2025",
-    images: [
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/19173616/Construction-Update-Seaside-12-scaled.webp",
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/29212026/2K6A6161-HDR.webp",
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/29211948/2K6A6155-HDR.webp",
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/29211850/2K6A6143-HDR.webp",
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/19173555/Construction-Update-Seaside-1-scaled.webp",
-    ],
-  },
-  {
-    month: "April 2025",
-    images: [
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/15165930/2K6A7033-HDR-scaled.webp",
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/15165924/2K6A7013-HDR-scaled.webp",
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/15165918/2K6A6990-HDR-scaled.webp",
-    ],
-  },
-  {
-    month: "December 2024",
-    images: [
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/15165844/PONE1298-HDR-scaled.webp",
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/15165824/PONE1284-HDR-scaled.webp",
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/15165813/PONE1277-HDR-scaled.webp",
-    ],
-  },
-];
-
-const TECH_SPEC_COLUMNS: string[][] = [
-  [
-    "Planned Concrete Utilization: 6 Olympic-sized pools (~15,000 m3)",
-    "Planned Glass Panel Weight: 400,000 kg (~ weight of a Boeing 747)",
-    "Workforce Nationalities Represented: Minimum 15",
-    "Projected Building Weight: 3,300 tons",
-    "Estimated Total Man-Hours: 296,512",
-    "Number of Elevators: 3 -> 14.4 km daily travel",
-  ],
-  [
-    "Estimated Electrical Cable Installation: 225 km (enough to go Dubai -> Abu Dhabi -> Dubai)",
-    "Projected Brickwork Area: 25,600 m2 (stacked height 70 km - 8 x Mount Everest)",
-    "Estimated Rebar Length: 1,600 km (Dubai -> Cairo)",
-    "Rooftop Track Distance (Upon Completion): 170 m = 45 laps (full marathon = 105.5 laps)",
-    "Planned Landscaped Area: 1,100 m2 (5 mini forests)",
-  ],
-];
-
-export default function SeasideConstructionUpdatePage() {
-  const [activeMonth, setActiveMonth] = useState(SEASIDE_GALLERY[0].month);
+export default function VistaConstructionUpdatePage() {
+  const [activeMonth, setActiveMonth] = useState(VISTA_GALLERY[0].month);
   const activeGallery = useMemo(
-    () => SEASIDE_GALLERY.find((item) => item.month === activeMonth) ?? SEASIDE_GALLERY[0],
+    () => VISTA_GALLERY.find((item) => item.month === activeMonth) ?? VISTA_GALLERY[0],
     [activeMonth],
   );
   const [openedImageIndex, setOpenedImageIndex] = useState<number | null>(null);
@@ -148,14 +149,14 @@ export default function SeasideConstructionUpdatePage() {
             className="po-destination-hero-media"
             style={{ backgroundImage: `url(${HERO_IMAGE})` }}
             role="img"
-            aria-label="Construction Update: Seaside by Prestige One"
+            aria-label="Construction Update: Vista by Prestige One"
           />
           <div className="po-destination-hero-overlay" aria-hidden="true" />
           <div className="po-destination-hero-frame">
             <div className="container po-cu-hero-title-wrap">
               <p className="po-cu-hero-kicker">Construction Updates</p>
               <h1 id="construction-update-title" className="po-destination-hero-title po-cu-hero-title">
-                Construction Update: Seaside by Prestige One
+                Construction Update: Vista by Prestige One
               </h1>
             </div>
           </div>
@@ -168,8 +169,8 @@ export default function SeasideConstructionUpdatePage() {
                   </span>
                   <div className="po-cu-hero-meta-content">
                     <h3>Project</h3>
-                    <p> 
-                      <a href="/projects/seaside-by-prestige-one" target="_blank" rel="noopener noreferrer">
+                    <p>
+                      <a href="https://prestigeone.ae/projects/vista-by-prestige-one/" target="_blank" rel="noopener noreferrer">
                         View Project
                       </a>
                     </p>
@@ -182,10 +183,10 @@ export default function SeasideConstructionUpdatePage() {
                   <div className="po-cu-hero-meta-content">
                     <h3>Location</h3>
                     <p>
-                      <a href="/our-destinations/dubai-islands" target="_blank" rel="noopener noreferrer">
-                        Dubai Islands
+                      <a href="/our-destinations/dubai-sports-city" target="_blank" rel="noopener noreferrer">
+                        Dubai Sports City
                       </a>
-                      </p>
+                    </p>
                   </div>
                 </article>
                 <article className="po-cu-hero-meta-card">
@@ -195,8 +196,8 @@ export default function SeasideConstructionUpdatePage() {
                   <div className="po-cu-hero-meta-content">
                     <h3>Project Document</h3>
                     <p>
-                      <a href="https://prestigeone.ae/project-documents/seaside-spa-tcs/" target="_blank" rel="noopener noreferrer">
-                        View SPA T&amp;Cs
+                      <a href="/project-documents" target="_blank" rel="noopener noreferrer">
+                        View Documents
                       </a>
                     </p>
                   </div>
@@ -207,7 +208,7 @@ export default function SeasideConstructionUpdatePage() {
                   </span>
                   <div className="po-cu-hero-meta-content">
                     <h3>Completion Date</h3>
-                    <p>December 25, 2026</p>
+                    <p>To be announced</p>
                   </div>
                 </article>
               </div>
@@ -231,7 +232,7 @@ export default function SeasideConstructionUpdatePage() {
             </section>
 
             <div className="po-cu-month-cover-grid" aria-label="Construction update months">
-              {SEASIDE_GALLERY.map((month) => (
+              {VISTA_GALLERY.map((month) => (
                 <button
                   key={month.month}
                   type="button"
@@ -250,9 +251,8 @@ export default function SeasideConstructionUpdatePage() {
           </div>
         </section>
 
-
-      <section className="po-cu-detail-section mt-0 pt-0">
-        <div className="container">
+        <section className="po-cu-detail-section mt-0 pt-0">
+          <div className="container">
             <section className="po-cu-process" aria-labelledby="po-cu-process-title">
               <div className="po-cu-process-head">
                 <p className="po-cu-process-kicker">Work Process</p>
@@ -274,11 +274,8 @@ export default function SeasideConstructionUpdatePage() {
                 ))}
               </div>
             </section>
-         </div>
-      </section>
-
-
-
+          </div>
+        </section>
       </main>
 
       {openedImage ? (
