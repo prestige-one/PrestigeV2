@@ -13,7 +13,7 @@ const destinations = [
   },
   {
     title: "Mohammed Bin Rashid City",
-    link: "https://prestigeone.ae/mohammed-bin-rashid-city/",
+    link: "/our-destinations/mohammed-bin-rashid-city",
     image: "/assets/img/v2/our-destinations/mbr-city.webp",
   },
   {

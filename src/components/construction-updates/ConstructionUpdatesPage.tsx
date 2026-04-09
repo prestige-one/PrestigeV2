@@ -23,28 +23,34 @@ const CONSTRUCTION_UPDATES: ConstructionUpdateItem[] = [
       "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/14144431/HILTON-NIGHT-VIEW-1.webp",
   },
   {
-    href: "https://prestigeone.ae/construction-update-the-residence-by-prestige-one/",
+    href: "/construction-update-the-residence-by-prestige-one/",
     pathSlug: "construction-update-the-residence-by-prestige-one",
     image:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/07/07161026/Berkeley-Square-Kids-Area-Night-scaled.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/17155703/residence-construction-updates-feb-2026-4.webp",
   },
   {
-    href: "https://prestigeone.ae/construction-update-coastal-haven-by-prestige-harbour/",
+    href: "/construction-update-luxury-canal-residences-by-prestige-harbour/",
+    pathSlug: "construction-update-luxury-canal-residences-by-prestige-harbour",
+    image:
+      "/assets/img/v2/project-featured-images/luxury-canal.webp",
+  },
+  {
+    href: "/construction-update-coastal-haven-by-prestige-harbour/",
     pathSlug: "construction-update-coastal-haven-by-prestige-harbour",
     image:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/24094547/harbour-1.webp",
+      "/assets/img/v2/project-featured-images/Coastal-Haven.webp",
   },
   {
-    href: "https://prestigeone.ae/construction-update-the-boluevard-by-prestige-one/",
+    href: "/construction-update-the-boluevard-by-prestige-one/",
     pathSlug: "construction-update-the-boluevard-by-prestige-one",
     image:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/12/25132924/NIGHT-4c-scaled.webp",
+      "/assets/img/v2/project-featured-images/NIGHT-4c-scaled.webp",
   },
   {
-    href: "https://prestigeone.ae/construction-update-parkway-by-prestige-one/",
+    href: "/construction-update-parkway-by-prestige-one/",
     pathSlug: "construction-update-parkway-by-prestige-one",
     image:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/27164232/Front-Exterior-3-scaled.webp",
+      "/assets/img/v2/project-featured-images/Front-Exterior-3-scaled.webp",
   },
   {
     href: "/construction-update-vista-by-prestigeone/",
@@ -52,16 +58,16 @@ const CONSTRUCTION_UPDATES: ConstructionUpdateItem[] = [
     image: "https://prestigeone.ae/wp-content/uploads/2022/08/Website_images_23Feb-VISTA.jpg",
   },
   {
-    href: "https://prestigeone.ae/construction-update-the-waterway-by-prestige-one/",
+    href: "/construction-update-the-waterway-by-prestige-one/",
     pathSlug: "construction-update-the-waterway-by-prestige-one",
     image:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/03/08085032/04-Facade-scaled.webp",
+      "/assets/img/v2/project-featured-images/The-Waterway.webp",
   },
   {
-    href: "https://prestigeone.ae/construction-update-the-one-by-prestige-one/",
+    href: "/construction-update-the-one-by-prestige-one/",
     pathSlug: "construction-update-the-one-by-prestige-one",
     image:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/07/09112539/Berkeley-Square-Facade-Night-View-3-scaled.webp",
+      "/assets/img/v2/project-featured-images/Front-Exterior-3-scaled.webp",
   },
   {
     href: "/construction-update-place-by-prestige-one/",

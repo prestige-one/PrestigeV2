@@ -604,7 +604,7 @@ h6,
 
 .po-destination-hero-title {
   margin: 0;
-  max-width: 18ch;
+  max-width: 30ch;
   font-size: clamp(1.5rem, 3.2vw, 2.15rem);
   font-weight: 700;
   line-height: 1.1;
@@ -1270,6 +1270,19 @@ h2.po-destination-section-title {
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.85rem;
+}
+
+.po-cu-gallery-section {
+  margin-top: 1.2rem;
+}
+
+.po-cu-gallery-heading {
+  margin: 0;
+  text-align: center;
+  color: #fff;
+  font-size: clamp(1.25rem, 2.6vw, 1.9rem);
+  line-height: 1.2;
+  letter-spacing: 0.02em;
 }
 
 .po-cu-month-cover {
@@ -6453,5 +6466,16 @@ span.material-symbols-outlined {
 
   .po-blog-post-inline-title {
     font-size: clamp(0.6rem, 4.2vw, 1.15rem);
+  }
+}
+
+/* The Waterway: force 2-column gallery layout only */
+.po-project-page-gallery-two-col .po-project-page-gallery-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 767px) {
+  .po-project-page-gallery-two-col .po-project-page-gallery-grid {
+    grid-template-columns: 1fr;
   }
 }

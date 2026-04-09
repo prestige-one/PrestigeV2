@@ -38,7 +38,7 @@ const DESTINATION_CONTACT_ITEMS: ContactDetailCardItem[] = [
 const HERO_BG = "/assets/img/v2/our-destinations/dubai-maritime.webp";
 
 const INTRO_COPY =
-  "Dubai Maritime City is one of Dubai’s most forward-looking waterfront districts—an emerging hub where coastal living, modern infrastructure, and strategic connectivity come together. Surrounded by the sea on three sides and positioned between Port Rashid and the iconic Dubai skyline, it offers a balanced blend of lifestyle, business, and future-ready urban planning.";
+  "Dubai Maritime City is one of Dubai's most forward-looking waterfront districts—an emerging hub where coastal living, modern infrastructure, and strategic connectivity come together. Surrounded by the sea on three sides and positioned between Port Rashid and the iconic Dubai skyline, it offers a balanced blend of lifestyle, business, and future-ready urban planning.";
 
 type NearbyItem = {
   title: string;
@@ -90,7 +90,7 @@ const investReasons: InvestReasonItem[] = [
   {
     title: "Rising Waterfront Demand",
     description:
-      "A limited coastline makes waterfront property one of Dubai’s most sought-after investment categories.",
+      "A limited coastline makes waterfront property one of Dubai's most sought-after investment categories.",
     bullets: [
       "Scarce coastal supply across core Dubai",
       "Strong rental demand for sea-facing residences",
@@ -108,13 +108,7 @@ const investReasons: InvestReasonItem[] = [
     description:
       "Minutes from Downtown, DIFC, and DXB Airport — offering unmatched connectivity and convenience.",
     bullets: ["Quick access to business and finance hubs", "DXB within a short drive", "Major highways linking the wider city"],
-  },
-  {
-    title: "Future-Focused Masterplan",
-    description:
-      "Sustainability-led infrastructure, upgraded marinas, and new lifestyle zones position DMC as a long-term growth destination.",
-    bullets: ["Sustainability-led urban planning", "Marina and waterfront upgrades", "New lifestyle and leisure zones"],
-  },
+  }
 ];
 
 const nearbyAttractions: NearbyItem[] = [

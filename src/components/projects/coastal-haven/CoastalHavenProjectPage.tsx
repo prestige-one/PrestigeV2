@@ -18,10 +18,7 @@ type AmenityVideoRow = {
   poster?: string;
 };
 
-const HERO_IMG =
-  "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/07/07161026/Berkeley-Square-Kids-Area-Night-scaled.webp";
-const HILTON_FALLBACK_IMG =
-  "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/14144431/HILTON-NIGHT-VIEW-1.webp";
+const HERO_IMG = "/assets/img/v2/project-featured-images/Coastal-Haven.webp";
 
 const PDF = {
   brochure: "/project-documents",
@@ -29,7 +26,6 @@ const PDF = {
   factSheet: "/project-documents",
 };
 
-const MORE_DETAILS = "https://prestigeone.ae/projects/berkeley-square-south/";
 const CONSTRUCTION_UPDATES = "/construction-updates";
 
 const MAP_EMBED_SRC =
@@ -37,39 +33,33 @@ const MAP_EMBED_SRC =
 
 const amenityVideos: AmenityVideoRow[] = [
   {
-    label: "Indoor Kids's Play Area",
+    label: "Children's Adventure Park",
     video:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/07/11153418/indoor-play-area.mp4",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/24110021/5339572_Coll_wavebreak_Adventure_1280x720.mp4",
     poster: HERO_IMG,
   },
   {
-    label: "Mini Golf",
+    label: "Jacuzzi",
     video:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/19162717/2311733_Golf_Club_1280x720.mp4",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/19172606/4911200_Couple_Pool_1280x720.mp4",
     poster: HERO_IMG,
   },
   {
-    label: "Covered Football Court",
+    label: "Prestige Owners' Lounge",
     video:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/07/11152602/indoor-football.mp4",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/25090936/clublounge.mp4",
     poster: HERO_IMG,
   },
   {
-    label: "Courtyard Pool",
+    label: "Badminton Court",
     video:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/07/11152928/courtyard-pool.mp4",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/24104256/badminton-court.mp4",
     poster: HERO_IMG,
   },
   {
-    label: "Padel Court",
+    label: "Prestige Spa",
     video:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/07/10135932/padel-court.mp4",
-    poster: HERO_IMG,
-  },
-  {
-    label: "Prestige Fitness Center",
-    video:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/24103754/Fintess-center.mp4",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/19185604/5586861_Coll_wavebreak_Summertime_1280x720.mp4",
     poster: HERO_IMG,
   },
   {
@@ -79,86 +69,105 @@ const amenityVideos: AmenityVideoRow[] = [
     poster: HERO_IMG,
   },
   {
-    label: "Prestige One Clubhouse",
+    label: "Infinity Pool",
     video:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/25090936/clublounge.mp4",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/12/25145038/Skyline-Infinity-Pool.mp4",
+    poster: HERO_IMG,
+  },
+  {
+    label: "Prestige Fitness Centre",
+    video:
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/24103754/Fintess-center.mp4",
     poster: HERO_IMG,
   },
 ];
 
-const berkeleyGalleryItems: ProjectGalleryItem[] = [
+const galleryItems: ProjectGalleryItem[] = [
   {
-    src: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/07/08093454/Berkeley-Square-2BR-Living-Room-02-scaled.webp",
+    src: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/24113218/04-3-Bedroom-living-dining-scaled.webp",
     caption: "Living Area",
   },
   {
-    src: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/07/08093254/Berkeley-Square-kitchen.webp",
+    src: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/24114607/06-3-Bedroom-Kitchen-scaled.webp",
     caption: "Kitchen",
   },
   {
-    src: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/07/08093231/Berkeley-Square-3BR-Bathroom-scaled.webp",
+    src: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/24114641/Bathroom-scaled.webp",
     caption: "Bathroom",
   },
   {
-    src: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/07/08093300/Berkeley-Square-Podcast-Room-scaled.webp",
-    caption: "Podcast",
+    src: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/24115743/01-Game-Room-View-scaled.webp",
+    caption: "Game room",
   },
   {
-    src: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/07/08093312/Gym-4-scaled.webp",
+    src: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/24120710/03-Gym-scaled.webp",
     caption: "Gym",
   },
   {
-    src: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/07/08093318/Kids-play-area-1-scaled.webp",
+    src: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/24120736/04-Kids-Play-Area-scaled.webp",
     caption: "Little Explorers' Zone",
   },
 ];
 
-const berkeleyInteriorGallery = berkeleyGalleryItems.slice(0, 3);
-const berkeleyOutdoorGallery = berkeleyGalleryItems.slice(3, 6);
-const berkeleyFullWidthBuilding =
-  "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/07/08093239/Berkeley-Square-Birds-Eye-View-scaled.webp";
+const interiorGallery = galleryItems.slice(0, 3);
+const outdoorGallery = galleryItems.slice(3, 6);
+const fullWidthBuilding =
+  "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/24114928/02-Facade-scaled.webp";
 
 const surroundingsPlaces = [
   {
-    title: "Circle Mall",
-    text: "Moments away, offering fine grocers, dining options, and retail with ease.",
-    image: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/07/08094043/about.png",
+    title: "Al Mamzar Beach Park",
+    text: "Pristine beaches and lush parks for family fun.",
+    image:
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/24122058/blue-flag-beach-scaled.webp",
   },
   {
-    title: "Cinepolis Cinema",
-    text: "A premium theatre experience is just around the corner, with plush seating and curated film selection.",
+    title: "Dubai Islands Mall",
+    text: "A premier retail and dining hub with global brands.",
     image:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/07/08095101/1698216352131Circla-Mall-Deluxe-1120x400-1.jpg",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/24142034/Deira-mall-scaled.webp",
+  },
+  {
+    title: "Souk Al Marfa",
+    text: "A vibrant waterfront market for diverse shopping.",
+    image:
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/24142515/Souk-Al-Marfa-scaled.webp",
+  },
+  {
+    title: "Dubai Dolphinarium",
+    text: "Interactive dolphin and seal shows for all ages.",
+    image:
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/24142507/Dubai-Dolphinarium-scaled.webp",
   },
 ];
 
 const schools = [
   {
-    name: "JSS International School",
-    body: "A well-established Indian curriculum school offering CBSE education just minutes away.",
+    name: "Dubai International Academy",
+    body: "A leading IB curriculum school fostering global excellence.",
   },
   {
-    name: "Sunmarke School",
-    body: "A British curriculum school known for academic excellence and innovative learning.",
+    name: "GEMS Wellington Academy",
+    body: "Renowned for its academic achievements and holistic education.",
   },
   {
-    name: "Nord Anglia International School",
-    body: "Globally recognized with a premium British curriculum, located a short drive from JVC.",
+    name: "Deira International School",
+    body: "An established K-12 school offering the British curriculum with strong academics and modern campus facilities.",
   },
 ];
 
 const hospitals = [
   {
-    name: "Emirates Hospital Day Surgery & Medical Center",
-    body: "Specialist-led healthcare with a focus on outpatient procedures and family wellness.",
+    name: "King's College Hospital London",
+    body: "World-class healthcare with UK-trained specialists.",
   },
   {
-    name: "Right Health Karama Medical Centre",
-    body: "Affordable, quality healthcare is located within easy reach of Berkeley Square.",
+    name: "Mediclinic City Hospital",
+    body: "Comprehensive medical services with state-of-the-art technology.",
   },
   {
-    name: "Aster Clinic",
-    body: "Reliable and accessible medical services are available within the neighbourhood.",
+    name: "Dubai Hospital",
+    body: "A major multidisciplinary public hospital in Deira with emergency and specialist services close to Dubai Islands.",
   },
 ];
 
@@ -179,21 +188,6 @@ function ResourcePdfIcon({ className }: { className?: string }) {
         stroke="currentColor"
         strokeWidth="1.5"
         strokeLinecap="round"
-      />
-    </svg>
-  );
-}
-
-function ResourceExternalIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" width="26" height="26" aria-hidden>
-      <path
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M7 17L17 7M17 7H9M17 7v8"
       />
     </svg>
   );
@@ -222,7 +216,7 @@ function AmenityVideoTile({ label, video, poster }: AmenityVideoRow) {
   );
 }
 
-const BerkeleySquareSouthProjectPage = () => {
+const CoastalHavenProjectPage = () => {
   const [galleryIndex, setGalleryIndex] = useState<number | null>(null);
 
   return (
@@ -231,16 +225,16 @@ const BerkeleySquareSouthProjectPage = () => {
 
       <section className="po-project-page-hero">
         <div className="po-project-page-hero-media">
-          <img src={HERO_IMG} alt="Berkeley Square South" />
+          <img src={HERO_IMG} alt="Coastal Haven" />
           <div className="po-project-page-hero-overlay" />
         </div>
         <div className="po-project-page-hero-content">
           <p className="po-project-page-hero-eyebrow">
             <Link href="/projects">Projects</Link>
           </p>
-          <h1>Berkeley Square South</h1>
+          <h1>Coastal Haven</h1>
           <p className="po-project-page-hero-lead">
-            Designed for modern living with exceptional amenities, refined interiors, and seamless neighborhood access.
+            Refined waterfront residences inspired by the rhythm of island life.
           </p>
           <div className="po-project-page-hero-actions">
             <a className="po-project-page-btn po-project-page-btn--light" href="#register-interest">
@@ -284,31 +278,25 @@ const BerkeleySquareSouthProjectPage = () => {
                 <span className="po-project-page-resource-value">TBA</span>
               </span>
             </div>
-            <a href={MORE_DETAILS} target="_blank" rel="noopener noreferrer" className="po-project-page-resource-link">
-              <ResourceExternalIcon className="po-project-page-resource-icon" />
-              <span className="po-project-page-resource-copy">
-                <span className="po-project-page-resource-kicker">Visit</span>
-                <span className="po-project-page-resource-value">More details</span>
-              </span>
-            </a>
           </div>
         </div>
       </section>
 
       <section id="signature" className="po-project-page-signature">
         <div className="container">
-          <h2 className="po-project-page-signature-title">Not Just Well-Placed, Well-Chosen</h2>
+          <h2 className="po-project-page-signature-title">THE ERA OF COASTAL LIVING</h2>
           <p className="po-project-page-signature-text">
-            Berkeley Square South brings together thoughtful architecture, lifestyle amenities, and a connected setting in one
-            refined address. Every detail is considered to support modern routines while elevating everyday living.
+            Coastal Haven by Prestige Harbour is where the art of coastal living reaches new heights. With sweeping views of
+            the shimmering harbour, this G+2P+12 masterpiece is an example of modern luxury living. Every residence is crafted
+            to celebrate the serene beauty of the Gulf, offering a life that flows as effortlessly as the tides.
           </p>
         </div>
       </section>
 
-      <section className="po-project-page-amenities" aria-labelledby="berkeley-amenities-heading">
+      <section className="po-project-page-amenities" aria-labelledby="coastal-haven-amenities-heading">
         <div className="container po-project-page-amenities-intro">
-          <p className="po-project-page-section-kicker">Berkeley Square South</p>
-          <h2 id="berkeley-amenities-heading" className="po-project-page-section-title">
+          <p className="po-project-page-section-kicker">Coastal Haven</p>
+          <h2 id="coastal-haven-amenities-heading" className="po-project-page-section-title">
             Amenities
           </h2>
           <p className="po-project-page-section-sub">A curated collection of spaces for wellness, play, and social living.</p>
@@ -322,32 +310,32 @@ const BerkeleySquareSouthProjectPage = () => {
         </div>
       </section>
 
-      <section className="po-project-page-gallery-section" aria-labelledby="berkeley-interior-heading">
+      <section className="po-project-page-gallery-section" aria-labelledby="coastal-haven-interior-heading">
         <div className="container">
-          <h2 id="berkeley-interior-heading" className="po-project-page-gallery-title">
-            Quietly Placed, Clearly Considered
+          <h2 id="coastal-haven-interior-heading" className="po-project-page-gallery-title">
+            Luxury by the Coast
           </h2>
           <p className="po-project-page-gallery-lead">Internal features - refined layouts and premium finishes.</p>
           <div className="po-project-page-gallery-grid">
-            {berkeleyInteriorGallery.map((item, i) => (
+            {interiorGallery.map((item, i) => (
               <ProjectGalleryImageCard key={item.src} item={item} index={i} onOpen={setGalleryIndex} />
             ))}
           </div>
         </div>
       </section>
 
-      <section className="po-project-page-building-wide" aria-label="Berkeley Square South - building exterior">
-        <img src={berkeleyFullWidthBuilding} alt="Berkeley Square South - building" className="po-project-page-building-wide-img" loading="lazy" />
+      <section className="po-project-page-building-wide" aria-label="Coastal Haven - building exterior">
+        <img src={fullWidthBuilding} alt="Coastal Haven - building" className="po-project-page-building-wide-img" loading="lazy" />
       </section>
 
-      <section className="po-project-page-gallery-section po-project-page-gallery-section--compact" aria-labelledby="berkeley-outdoor-heading">
+      <section className="po-project-page-gallery-section po-project-page-gallery-section--compact" aria-labelledby="coastal-haven-outdoor-heading">
         <div className="container">
-          <h2 id="berkeley-outdoor-heading" className="po-project-page-gallery-title po-project-page-gallery-title--sm">
+          <h2 id="coastal-haven-outdoor-heading" className="po-project-page-gallery-title po-project-page-gallery-title--sm">
             Outdoor living
           </h2>
-          <p className="po-project-page-gallery-lead">Podcast room, gym, and little explorers' zone.</p>
+          <p className="po-project-page-gallery-lead">Game room, gym, and little explorers&apos; zone.</p>
           <div className="po-project-page-gallery-grid">
-            {berkeleyOutdoorGallery.map((item, i) => (
+            {outdoorGallery.map((item, i) => (
               <ProjectGalleryImageCard key={item.src} item={item} index={i + 3} onOpen={setGalleryIndex} />
             ))}
           </div>
@@ -355,20 +343,21 @@ const BerkeleySquareSouthProjectPage = () => {
       </section>
 
       <ProjectImageGalleryLightbox
-        items={berkeleyGalleryItems}
+        items={galleryItems}
         activeIndex={galleryIndex}
         onClose={() => setGalleryIndex(null)}
         onGoTo={setGalleryIndex}
       />
 
-      <section className="po-project-page-surroundings-intro" aria-labelledby="berkeley-surroundings-heading">
+      <section className="po-project-page-surroundings-intro" aria-labelledby="coastal-haven-surroundings-heading">
         <div className="container">
-          <h2 id="berkeley-surroundings-heading" className="po-project-page-surroundings-intro-title">
-            Surroundings That Echo the Quiet Within
+          <h2 id="coastal-haven-surroundings-heading" className="po-project-page-surroundings-intro-title">
+            THE EPITOME OF ISLAND LUXURY
           </h2>
           <p className="po-project-page-surroundings-intro-text">
-            Positioned in a well-connected neighborhood, Berkeley Square South places everyday essentials and leisure moments
-            within easy reach while preserving the calm and character of premium residential living.
+            Dubai Islands is the crown jewel of coastal living, an interconnected oasis of five islands where golden beaches,
+            lush landscapes, and world-class amenities meet. Designed as part of Dubai&apos;s 2040 Urban Master Plan, this
+            destination offers a seamless blend of tranquility and vibrancy, making it the ultimate coastal retreat.
           </p>
         </div>
       </section>
@@ -415,10 +404,10 @@ const BerkeleySquareSouthProjectPage = () => {
         </div>
       </section>
 
-      <section className="po-project-page-map" aria-label="Map: JVC, Dubai">
+      <section className="po-project-page-map" aria-label="Map: Dubai Islands, Dubai">
         <iframe
           src={MAP_EMBED_SRC}
-          title="Google Map - JVC, Dubai"
+          title="Google Map - Dubai Islands, Dubai"
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
@@ -449,7 +438,7 @@ const BerkeleySquareSouthProjectPage = () => {
         <div className="container">
           <h2 className="po-project-page-register-title">Have any questions? Let&apos;s connect.</h2>
           <p className="po-project-page-register-lead">Register your interest and our team will get back to you.</p>
-          <FinalContactForm defaultProject="Berkeley Square South" />
+          <FinalContactForm defaultProject="Coastal Haven" />
         </div>
       </section>
 
@@ -458,4 +447,5 @@ const BerkeleySquareSouthProjectPage = () => {
   );
 };
 
-export default BerkeleySquareSouthProjectPage;
+export default CoastalHavenProjectPage;
+

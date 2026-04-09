@@ -54,7 +54,7 @@ const destinations: DestinationCard[] = [
     title: "Mohammed Bin Rashid City",
     description: "A major growth corridor with long-term masterplan upside and strong connectivity across Dubai.",
     image: "/assets/img/v2/our-destinations/mbr-city.webp",
-    href: "https://prestigeone.ae/mohammed-bin-rashid-city/",
+    href: "/our-destinations/mohammed-bin-rashid-city",
   },
 ];
 

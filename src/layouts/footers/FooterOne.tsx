@@ -50,10 +50,10 @@ const mediaCenter: FooterNavItem[] = [
 ];
 
 const tools: FooterNavItem[] = [
-  { label: "MortgageCalculator", href: "/tools/mortgage-calculator" },
-  { label: "CommissionSplitCalculator", href: "/tools/commission-split-calculator" },
-  { label: "LeadRoiCalculator", href: "/tools/lead-roi-calculator" },
-  { label: "RentVsBuy", href: "/tools/rent-vs-buy" },
+  { label: "Mortgage Calculator", href: "/tools/mortgage-calculator" },
+  { label: "Commission Split Calculator", href: "/tools/commission-split-calculator" },
+  { label: "Lead Roi Calculator", href: "/tools/lead-roi-calculator" },
+  { label: "Rent Vs Buy", href: "/tools/rent-vs-buy" },
 ];
 
 const socialLinks: { href: string; label: string; iconClass: string }[] = [

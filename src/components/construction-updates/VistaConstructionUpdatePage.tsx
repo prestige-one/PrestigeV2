@@ -68,6 +68,110 @@ const VISTA_GALLERY: GalleryMonth[] = [
     ],
   },
   {
+    month: "December 2024",
+    images: [
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/11/10114904/PONE1195-HDR-scaled.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/11/10115340/2K6A6916-HDR-scaled.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/11/10114926/PONE1228-HDR-scaled.webp",
+    ],
+  },
+  {
+    month: "November 2024",
+    images: [
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/11/10113405/2K6A2809-HDR-scaled.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/07/19101531/16-1.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/11/22073150/2K6A9579-scaled.webp",
+    ],
+  },
+  {
+    month: "October 2024",
+    images: [
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/10134540/PONE0326-scaled.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/11/22072912/2K6A6841-scaled.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/07/19101424/3-1.webp",
+    ],
+  },
+  {
+    month: "September 2024",
+    images: [
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/11/22073157/2K6A9584-scaled.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/10134607/PONE0341-scaled.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/07/19101619/25-1.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/11/22072853/2K6A6837-scaled.webp",
+    ],
+  },
+  {
+    month: "August 2024",
+    images: [
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/11/22072902/2K6A6840-scaled.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/10134554/PONE0331-scaled.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/11/22073203/2K6A9592-scaled.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/07/19101643/30.webp",
+    ],
+  },
+  {
+    month: "July 2024",
+    images: [
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/07/19101422/2-1.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/11/10113358/2K6A2841-HDR-scaled.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/11/10114915/PONE1222-HDR-scaled.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/11/10115333/2K6A6900-HDR-scaled.webp",
+    ],
+  },
+  {
+    month: "June 2024",
+    images: [
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/07/19101429/4-1.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/07/19101454/9-1.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/07/19101511/12-1.webp",
+    ],
+  },
+  {
+    month: "May 2024",
+    images: [
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/07/19101449/8-1.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/07/19101438/6-1.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/07/19101459/10-1.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/07/19101443/7-1.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/07/19101505/11-1.webp",
+    ],
+  },
+  {
+    month: "April 2024",
+    images: [
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/07/19101536/17-1.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/07/19101546/19-1.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/07/19101628/27-1.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/07/19101541/18-1.webp",
+    ],
+  },
+  {
+    month: "March 2024",
+    images: [
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/07/19101550/20-1.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/07/19101655/33.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/07/19101719/37.webp",
+    ],
+  },
+  {
+    month: "February 2024",
+    images: [
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/07/19101624/26-1.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/07/19101601/22-1.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/07/19101616/24-1.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/07/19101555/21-1.webp",
+    ],
+  },
+  {
+    month: "January 2024",
+    images: [
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/11/10115345/2K6A6922-HDR-scaled.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/07/19101705/35.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/07/19101633/28.webp",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/07/19101647/31.webp",
+    ],
+  },
+  {
     month: "December 2023",
     images: [
       "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/07/19101724/38.webp",

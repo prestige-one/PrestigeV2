@@ -18,10 +18,10 @@ type AmenityVideoRow = {
   poster?: string;
 };
 
-const HERO_IMG =
-  "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/07/07161026/Berkeley-Square-Kids-Area-Night-scaled.webp";
-const HILTON_FALLBACK_IMG =
-  "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/14144431/HILTON-NIGHT-VIEW-1.webp";
+const HERO_VIDEO =
+  "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/24175446/waterway-by-prestige-one.mp4";
+const HERO_POSTER =
+  "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/19170015/Waterway-pic-2-scaled-2.webp";
 
 const PDF = {
   brochure: "/project-documents",
@@ -29,136 +29,140 @@ const PDF = {
   factSheet: "/project-documents",
 };
 
-const MORE_DETAILS = "https://prestigeone.ae/projects/berkeley-square-south/";
-const CONSTRUCTION_UPDATES = "/construction-updates";
-
-const MAP_EMBED_SRC =
-  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57726.250386632615!2d55.271532549999996!3d25.2742637!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f4384740a5241%3A0xe6d78cfd14c6ada3!2sMadinat%20Dubai%20Al%20Melaheyah%20-%20Dubai!5e0!3m2!1sen!2sae!4v1775290787017!5m2!1sen!2sae";
+const CONSTRUCTION_UPDATES = "/construction-update-the-waterway-by-prestige-one/";
+const MAP_EMBED_SRC = "https://www.google.com/maps?q=The+Waterway+by+Prestige+One&output=embed";
 
 const amenityVideos: AmenityVideoRow[] = [
   {
-    label: "Indoor Kids's Play Area",
-    video:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/07/11153418/indoor-play-area.mp4",
-    poster: HERO_IMG,
-  },
-  {
-    label: "Mini Golf",
-    video:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/19162717/2311733_Golf_Club_1280x720.mp4",
-    poster: HERO_IMG,
-  },
-  {
-    label: "Covered Football Court",
-    video:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/07/11152602/indoor-football.mp4",
-    poster: HERO_IMG,
-  },
-  {
-    label: "Courtyard Pool",
-    video:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/07/11152928/courtyard-pool.mp4",
-    poster: HERO_IMG,
-  },
-  {
-    label: "Padel Court",
-    video:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/07/10135932/padel-court.mp4",
-    poster: HERO_IMG,
-  },
-  {
-    label: "Prestige Fitness Center",
-    video:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/24103754/Fintess-center.mp4",
-    poster: HERO_IMG,
-  },
-  {
     label: "Outdoor Cinema",
     video:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/24105431/7022819_Couples_Love_1280x720.mp4",
-    poster: HERO_IMG,
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2022/08/26080805/1115750_Cinema_Man_1280x720-1.mp4",
+    poster: HERO_POSTER,
   },
   {
-    label: "Prestige One Clubhouse",
+    label: "Rock Climbing Wall",
     video:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/25090936/clublounge.mp4",
-    poster: HERO_IMG,
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/19164954/5946135_Man_Practice_1280x720.mp4",
+    poster: HERO_POSTER,
+  },
+  {
+    label: "Rooftop BBQ & Lounge Area",
+    video: "https://prestigeone.ae/wp-content/uploads/2022/08/1104331_1080p_4k_1280x720.mp4",
+    poster: HERO_POSTER,
+  },
+  {
+    label: "Rooftop Gym",
+    video: "https://prestigeone.ae/wp-content/uploads/2022/08/4730225_Fitness_Workout_1280x720.mp4",
+    poster: HERO_POSTER,
+  },
+  {
+    label: "Rooftop Swimming Pool",
+    video:
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/19164528/2082411_Back_View_1280x720.mp4",
+    poster: HERO_POSTER,
+  },
+  {
+    label: "2 X Outdoor Lounges With Water Features",
+    video:
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/19165139/6011933_Lifeguard_Pool_1280x720.mp4",
+    poster: HERO_POSTER,
+  },
+  {
+    label: "Men's/Women's Changing Rooms",
+    video:
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/25100248/4763869_Room_Dressing_1280x720-1.mp4",
+    poster: HERO_POSTER,
+  },
+  {
+    label: "Grand Lobby With Water Features",
+    video:
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/19165716/5068603_City_Travel_1280x720.mp4",
+    poster: HERO_POSTER,
   },
 ];
 
-const berkeleyGalleryItems: ProjectGalleryItem[] = [
+const galleryItems: ProjectGalleryItem[] = [
   {
-    src: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/07/08093454/Berkeley-Square-2BR-Living-Room-02-scaled.webp",
-    caption: "Living Area",
+    src: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/19165905/The-waterway-living.jpg",
+    caption: "Living",
   },
   {
-    src: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/07/08093254/Berkeley-Square-kitchen.webp",
-    caption: "Kitchen",
-  },
-  {
-    src: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/07/08093231/Berkeley-Square-3BR-Bathroom-scaled.webp",
+    src: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/19165858/The-waterway-bathroom.jpg",
     caption: "Bathroom",
   },
   {
-    src: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/07/08093300/Berkeley-Square-Podcast-Room-scaled.webp",
-    caption: "Podcast",
+    src: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/19165900/The-waterway-bedroom.jpg",
+    caption: "Bedroom",
   },
   {
-    src: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/07/08093312/Gym-4-scaled.webp",
-    caption: "Gym",
-  },
-  {
-    src: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/07/08093318/Kids-play-area-1-scaled.webp",
-    caption: "Little Explorers' Zone",
+    src: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/19165902/The-waterway-living-1.jpg",
+    caption: "Living",
   },
 ];
 
-const berkeleyInteriorGallery = berkeleyGalleryItems.slice(0, 3);
-const berkeleyOutdoorGallery = berkeleyGalleryItems.slice(3, 6);
-const berkeleyFullWidthBuilding =
-  "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/07/08093239/Berkeley-Square-Birds-Eye-View-scaled.webp";
+const primaryGallery = galleryItems.slice(0, 2);
+const secondaryGallery = galleryItems.slice(2, 4);
+const fullWidthBuilding =
+  "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/19170015/Waterway-pic-2-scaled-2.webp";
 
 const surroundingsPlaces = [
   {
-    title: "Circle Mall",
-    text: "Moments away, offering fine grocers, dining options, and retail with ease.",
-    image: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/07/08094043/about.png",
+    title: "Meydan Racecourse",
+    text: "The home of the Dubai World Cup, the world’s richest horse race, and a prestigious venue for horse racing enthusiasts.",
+    image:
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/24072437/shutterstock_92699545-scaled.webp",
   },
   {
-    title: "Cinepolis Cinema",
-    text: "A premium theatre experience is just around the corner, with plush seating and curated film selection.",
+    title: "Dubai Opera",
+    text: "A cultural hub nearby that hosts world-class performances including opera, ballet, theatre, and concerts.",
     image:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/07/08095101/1698216352131Circla-Mall-Deluxe-1120x400-1.jpg",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/25100939/dubai-expo-2020-2024-07-29-19-46-34-utc-scaled.webp",
+  },
+  {
+    title: "Dubai Design District (D3)",
+    text: "A trendy destination for creatives with art galleries, boutiques, and stylish cafes within a short drive.",
+    image:
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/24072448/shutterstock_1235200291-scaled.webp",
+  },
+  {
+    title: "Dubai Fountain",
+    text: "Around 15 minutes away, the world’s largest choreographed fountain show at the base of Burj Khalifa.",
+    image:
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/24072457/shutterstock_2281359821-scaled.webp",
+  },
+  {
+    title: "Ras Al Khor Wildlife Sanctuary",
+    text: "A nearby nature reserve offering a peaceful escape and a large flamingo population during winter.",
+    image:
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/24072453/shutterstock_2366505949-scaled.webp",
+  },
+  {
+    title: "Dubai Mall",
+    text: "A short drive away, this mega shopping destination offers luxury brands, dining, and top attractions.",
+    image:
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/24072501/shutterstock_2166905569-scaled.webp",
   },
 ];
 
 const schools = [
   {
-    name: "JSS International School",
-    body: "A well-established Indian curriculum school offering CBSE education just minutes away.",
+    name: "North London Collegiate School",
+    body: "Offers an IB curriculum and is known for rigorous academics and a strong emphasis on creativity.",
   },
   {
-    name: "Sunmarke School",
-    body: "A British curriculum school known for academic excellence and innovative learning.",
-  },
-  {
-    name: "Nord Anglia International School",
-    body: "Globally recognized with a premium British curriculum, located a short drive from JVC.",
+    name: "Hartland International School",
+    body: "Located nearby, Hartland offers a British curriculum and focuses on the holistic development of students.",
   },
 ];
 
 const hospitals = [
   {
-    name: "Emirates Hospital Day Surgery & Medical Center",
-    body: "Specialist-led healthcare with a focus on outpatient procedures and family wellness.",
+    name: "Meydan One Health Clinic",
+    body: "Located in the Meydan area, this clinic provides outpatient services and specialized treatment in a modern setting.",
   },
   {
-    name: "Right Health Karama Medical Centre",
-    body: "Affordable, quality healthcare is located within easy reach of Berkeley Square.",
-  },
-  {
-    name: "Aster Clinic",
-    body: "Reliable and accessible medical services are available within the neighbourhood.",
+    name: "King's College Hospital Dubai",
+    body: "A leading medical center offering high-quality healthcare with strong clinical standards and patient care.",
   },
 ];
 
@@ -179,21 +183,6 @@ function ResourcePdfIcon({ className }: { className?: string }) {
         stroke="currentColor"
         strokeWidth="1.5"
         strokeLinecap="round"
-      />
-    </svg>
-  );
-}
-
-function ResourceExternalIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" width="26" height="26" aria-hidden>
-      <path
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M7 17L17 7M17 7H9M17 7v8"
       />
     </svg>
   );
@@ -222,7 +211,7 @@ function AmenityVideoTile({ label, video, poster }: AmenityVideoRow) {
   );
 }
 
-const BerkeleySquareSouthProjectPage = () => {
+const WaterwayProjectPage = () => {
   const [galleryIndex, setGalleryIndex] = useState<number | null>(null);
 
   return (
@@ -231,16 +220,18 @@ const BerkeleySquareSouthProjectPage = () => {
 
       <section className="po-project-page-hero">
         <div className="po-project-page-hero-media">
-          <img src={HERO_IMG} alt="Berkeley Square South" />
+          <video className="po-project-page-hero-video" poster={HERO_POSTER} autoPlay muted loop playsInline preload="auto">
+            <source src={HERO_VIDEO} type="video/mp4" />
+          </video>
           <div className="po-project-page-hero-overlay" />
         </div>
         <div className="po-project-page-hero-content">
           <p className="po-project-page-hero-eyebrow">
             <Link href="/projects">Projects</Link>
           </p>
-          <h1>Berkeley Square South</h1>
+          <h1>The Waterway</h1>
           <p className="po-project-page-hero-lead">
-            Designed for modern living with exceptional amenities, refined interiors, and seamless neighborhood access.
+            Nature-inspired living in Meydan Horizon with elegant residences, rooftop amenities, and calming lagoon-facing views.
           </p>
           <div className="po-project-page-hero-actions">
             <a className="po-project-page-btn po-project-page-btn--light" href="#register-interest">
@@ -284,34 +275,28 @@ const BerkeleySquareSouthProjectPage = () => {
                 <span className="po-project-page-resource-value">TBA</span>
               </span>
             </div>
-            <a href={MORE_DETAILS} target="_blank" rel="noopener noreferrer" className="po-project-page-resource-link">
-              <ResourceExternalIcon className="po-project-page-resource-icon" />
-              <span className="po-project-page-resource-copy">
-                <span className="po-project-page-resource-kicker">Visit</span>
-                <span className="po-project-page-resource-value">More details</span>
-              </span>
-            </a>
           </div>
         </div>
       </section>
 
       <section id="signature" className="po-project-page-signature">
         <div className="container">
-          <h2 className="po-project-page-signature-title">Not Just Well-Placed, Well-Chosen</h2>
+          <h2 className="po-project-page-signature-title">AN ICONIC MASTERPIECE NEXT TO CRYSTAL LAGOONS</h2>
           <p className="po-project-page-signature-text">
-            Berkeley Square South brings together thoughtful architecture, lifestyle amenities, and a connected setting in one
-            refined address. Every detail is considered to support modern routines while elevating everyday living.
+            The Waterway by Prestige One, a G+20-floor building in Meydan Horizon, offers one and two-bedroom apartments that
+            bring relaxation to the forefront. Overlooking serene lagoon views, it is designed for those who seek peace and quiet
+            in a well-connected area. Life by the water is effortless, with leisure and recreation just moments away.
           </p>
         </div>
       </section>
 
-      <section className="po-project-page-amenities" aria-labelledby="berkeley-amenities-heading">
+      <section className="po-project-page-amenities" aria-labelledby="waterway-amenities-heading">
         <div className="container po-project-page-amenities-intro">
-          <p className="po-project-page-section-kicker">Berkeley Square South</p>
-          <h2 id="berkeley-amenities-heading" className="po-project-page-section-title">
+          <p className="po-project-page-section-kicker">The Waterway</p>
+          <h2 id="waterway-amenities-heading" className="po-project-page-section-title">
             Amenities
           </h2>
-          <p className="po-project-page-section-sub">A curated collection of spaces for wellness, play, and social living.</p>
+          <p className="po-project-page-section-sub">Elevated lifestyle amenities designed around wellness and social spaces.</p>
         </div>
         <div className="po-project-page-amenities-fullbleed">
           <div className="po-project-page-amenities-masonry">
@@ -322,53 +307,57 @@ const BerkeleySquareSouthProjectPage = () => {
         </div>
       </section>
 
-      <section className="po-project-page-gallery-section" aria-labelledby="berkeley-interior-heading">
+      <section className="po-project-page-gallery-section po-project-page-gallery-two-col" aria-labelledby="waterway-interior-heading">
         <div className="container">
-          <h2 id="berkeley-interior-heading" className="po-project-page-gallery-title">
-            Quietly Placed, Clearly Considered
+          <h2 id="waterway-interior-heading" className="po-project-page-gallery-title">
+            Make Nature Your Next-Door Neighbour
           </h2>
-          <p className="po-project-page-gallery-lead">Internal features - refined layouts and premium finishes.</p>
+          <p className="po-project-page-gallery-lead">Two-column gallery layout tailored for The Waterway project.</p>
           <div className="po-project-page-gallery-grid">
-            {berkeleyInteriorGallery.map((item, i) => (
+            {primaryGallery.map((item, i) => (
               <ProjectGalleryImageCard key={item.src} item={item} index={i} onOpen={setGalleryIndex} />
             ))}
           </div>
         </div>
       </section>
 
-      <section className="po-project-page-building-wide" aria-label="Berkeley Square South - building exterior">
-        <img src={berkeleyFullWidthBuilding} alt="Berkeley Square South - building" className="po-project-page-building-wide-img" loading="lazy" />
+      <section className="po-project-page-building-wide" aria-label="The Waterway - building exterior">
+        <img src={fullWidthBuilding} alt="The Waterway - building" className="po-project-page-building-wide-img" loading="lazy" />
       </section>
 
-      <section className="po-project-page-gallery-section po-project-page-gallery-section--compact" aria-labelledby="berkeley-outdoor-heading">
+      <section
+        className="po-project-page-gallery-section po-project-page-gallery-section--compact po-project-page-gallery-two-col"
+        aria-labelledby="waterway-outdoor-heading"
+      >
         <div className="container">
-          <h2 id="berkeley-outdoor-heading" className="po-project-page-gallery-title po-project-page-gallery-title--sm">
-            Outdoor living
+          <h2 id="waterway-outdoor-heading" className="po-project-page-gallery-title po-project-page-gallery-title--sm">
+            Refined private spaces
           </h2>
-          <p className="po-project-page-gallery-lead">Podcast room, gym, and little explorers' zone.</p>
+          <p className="po-project-page-gallery-lead">Bedroom and living views with warm material tones.</p>
           <div className="po-project-page-gallery-grid">
-            {berkeleyOutdoorGallery.map((item, i) => (
-              <ProjectGalleryImageCard key={item.src} item={item} index={i + 3} onOpen={setGalleryIndex} />
+            {secondaryGallery.map((item, i) => (
+              <ProjectGalleryImageCard key={item.src} item={item} index={i + 2} onOpen={setGalleryIndex} />
             ))}
           </div>
         </div>
       </section>
 
       <ProjectImageGalleryLightbox
-        items={berkeleyGalleryItems}
+        items={galleryItems}
         activeIndex={galleryIndex}
         onClose={() => setGalleryIndex(null)}
         onGoTo={setGalleryIndex}
       />
 
-      <section className="po-project-page-surroundings-intro" aria-labelledby="berkeley-surroundings-heading">
+      <section className="po-project-page-surroundings-intro" aria-labelledby="waterway-neighborhood-heading">
         <div className="container">
-          <h2 id="berkeley-surroundings-heading" className="po-project-page-surroundings-intro-title">
-            Surroundings That Echo the Quiet Within
+          <p className="po-project-page-section-kicker">About Meydan Horizon</p>
+          <h2 id="waterway-neighborhood-heading" className="po-project-page-surroundings-intro-title">
+            THE NEIGHBORHOOD
           </h2>
           <p className="po-project-page-surroundings-intro-text">
-            Positioned in a well-connected neighborhood, Berkeley Square South places everyday essentials and leisure moments
-            within easy reach while preserving the calm and character of premium residential living.
+            Meydan Horizon delivers a luxurious lifestyle with strong connectivity to nature and Dubai&apos;s key landmarks. The
+            community is minutes from Meydan Racecourse and offers easy access to Downtown, DIFC, top schools, and healthcare.
           </p>
         </div>
       </section>
@@ -415,10 +404,10 @@ const BerkeleySquareSouthProjectPage = () => {
         </div>
       </section>
 
-      <section className="po-project-page-map" aria-label="Map: JVC, Dubai">
+      <section className="po-project-page-map" aria-label="Map: The Waterway by Prestige One">
         <iframe
           src={MAP_EMBED_SRC}
-          title="Google Map - JVC, Dubai"
+          title="Google Map - The Waterway by Prestige One"
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
@@ -449,7 +438,7 @@ const BerkeleySquareSouthProjectPage = () => {
         <div className="container">
           <h2 className="po-project-page-register-title">Have any questions? Let&apos;s connect.</h2>
           <p className="po-project-page-register-lead">Register your interest and our team will get back to you.</p>
-          <FinalContactForm defaultProject="Berkeley Square South" />
+          <FinalContactForm defaultProject="The Waterway" />
         </div>
       </section>
 
@@ -458,4 +447,5 @@ const BerkeleySquareSouthProjectPage = () => {
   );
 };
 
-export default BerkeleySquareSouthProjectPage;
+export default WaterwayProjectPage;
+

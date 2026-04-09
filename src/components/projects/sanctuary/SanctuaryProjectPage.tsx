@@ -296,6 +296,13 @@ const SanctuaryProjectPage = () => {
                 <span className="po-project-page-resource-value">Fact sheet</span>
               </span>
             </a>
+            <div className="po-project-page-resource-link" aria-label="Completion date">
+              <ResourcePdfIcon className="po-project-page-resource-icon" />
+              <span className="po-project-page-resource-copy">
+                <span className="po-project-page-resource-kicker">Completion</span>
+                <span className="po-project-page-resource-value">TBA</span>
+              </span>
+            </div>
             <a href={MORE_DETAILS} target="_blank" rel="noopener noreferrer" className="po-project-page-resource-link">
               <ResourceExternalIcon className="po-project-page-resource-icon" />
               <span className="po-project-page-resource-copy">

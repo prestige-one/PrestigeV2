@@ -18,10 +18,7 @@ type AmenityVideoRow = {
   poster?: string;
 };
 
-const HERO_IMG =
-  "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/07/07161026/Berkeley-Square-Kids-Area-Night-scaled.webp";
-const HILTON_FALLBACK_IMG =
-  "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/14144431/HILTON-NIGHT-VIEW-1.webp";
+const HERO_IMG = "/assets/img/v2/project-featured-images/The-Place-Banner.webp";
 
 const PDF = {
   brochure: "/project-documents",
@@ -29,136 +26,142 @@ const PDF = {
   factSheet: "/project-documents",
 };
 
-const MORE_DETAILS = "https://prestigeone.ae/projects/berkeley-square-south/";
-const CONSTRUCTION_UPDATES = "/construction-updates";
-
-const MAP_EMBED_SRC =
-  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57726.250386632615!2d55.271532549999996!3d25.2742637!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f4384740a5241%3A0xe6d78cfd14c6ada3!2sMadinat%20Dubai%20Al%20Melaheyah%20-%20Dubai!5e0!3m2!1sen!2sae!4v1775290787017!5m2!1sen!2sae";
+const CONSTRUCTION_UPDATES = "/construction-update-the-one-by-prestige-one/";
+const MAP_EMBED_SRC = "https://www.google.com/maps?q=The+One+by+Prestige+One+Barsha+Heights&output=embed";
 
 const amenityVideos: AmenityVideoRow[] = [
   {
-    label: "Indoor Kids's Play Area",
+    label: "Reception Cafe",
     video:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/07/11153418/indoor-play-area.mp4",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/19171429/1111722_Cleaning_Rag_1280x720.mp4",
     poster: HERO_IMG,
   },
   {
-    label: "Mini Golf",
+    label: "Cafe Area",
     video:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/19162717/2311733_Golf_Club_1280x720.mp4",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/19171848/1117550_Drink_Drinking_1280x720.mp4",
     poster: HERO_IMG,
   },
   {
-    label: "Covered Football Court",
+    label: "Rooftop Cigar Lounge",
     video:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/07/11152602/indoor-football.mp4",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/19172150/6324180_People_Playing_1280x720.mp4",
     poster: HERO_IMG,
   },
   {
-    label: "Courtyard Pool",
-    video:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/07/11152928/courtyard-pool.mp4",
+    label: "Fitness Center",
+    video: "https://prestigeone.ae/wp-content/uploads/2022/08/4730225_Fitness_Workout_1280x720.mp4",
     poster: HERO_IMG,
   },
   {
-    label: "Padel Court",
+    label: "Yoga Area",
     video:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/07/10135932/padel-court.mp4",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/19171610/5123870_Person_People_1280x720.mp4",
     poster: HERO_IMG,
   },
   {
-    label: "Prestige Fitness Center",
+    label: "Botanical Garden",
     video:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/24103754/Fintess-center.mp4",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/26072549/5014578_Confident_Businessman_1280x720-1.mp4",
     poster: HERO_IMG,
   },
   {
-    label: "Outdoor Cinema",
+    label: "Virtual Golf Studio",
     video:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/24105431/7022819_Couples_Love_1280x720.mp4",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/19172436/6003789_Man_African-American_1280x720.mp4",
     poster: HERO_IMG,
   },
   {
-    label: "Prestige One Clubhouse",
+    label: "Wellness Spa",
     video:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/25090936/clublounge.mp4",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/19172606/4911200_Couple_Pool_1280x720.mp4",
     poster: HERO_IMG,
   },
 ];
 
-const berkeleyGalleryItems: ProjectGalleryItem[] = [
+const galleryItems: ProjectGalleryItem[] = [
   {
-    src: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/07/08093454/Berkeley-Square-2BR-Living-Room-02-scaled.webp",
-    caption: "Living Area",
+    src: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/15152456/4.webp",
+    caption: "Cafe Area",
   },
   {
-    src: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/07/08093254/Berkeley-Square-kitchen.webp",
-    caption: "Kitchen",
+    src: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/15152443/Owners-lounge_Final_4.webp",
+    caption: "Owners Lounge",
   },
   {
-    src: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/07/08093231/Berkeley-Square-3BR-Bathroom-scaled.webp",
-    caption: "Bathroom",
+    src: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/15152447/9th-Floor-Spa-2.webp",
+    caption: "Spa View",
   },
   {
-    src: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/07/08093300/Berkeley-Square-Podcast-Room-scaled.webp",
-    caption: "Podcast",
+    src: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/15152558/5.webp",
+    caption: "Reception Cafe",
   },
   {
-    src: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/07/08093312/Gym-4-scaled.webp",
+    src: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/15152435/PRE_ONE_GYM_F1.webp",
     caption: "Gym",
   },
   {
-    src: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/07/08093318/Kids-play-area-1-scaled.webp",
-    caption: "Little Explorers' Zone",
+    src: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/15152440/PRE_ONE_CIGAR_LOUNGE_F2-scaled.webp",
+    caption: "Cigar Lounge",
   },
 ];
 
-const berkeleyInteriorGallery = berkeleyGalleryItems.slice(0, 3);
-const berkeleyOutdoorGallery = berkeleyGalleryItems.slice(3, 6);
-const berkeleyFullWidthBuilding =
-  "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/07/08093239/Berkeley-Square-Birds-Eye-View-scaled.webp";
+const interiorGallery = galleryItems.slice(0, 3);
+const outdoorGallery = galleryItems.slice(3, 6);
+const fullWidthBuilding = "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/15064222/One_02-scaled.jpg";
 
 const surroundingsPlaces = [
   {
-    title: "Circle Mall",
-    text: "Moments away, offering fine grocers, dining options, and retail with ease.",
-    image: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/07/08094043/about.png",
+    title: "Dubai Internet City",
+    text: "A major tech and media hub located just minutes away.",
+    image:
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/26060400/dubai-internet-city-scaled.webp",
   },
   {
-    title: "Cinepolis Cinema",
-    text: "A premium theatre experience is just around the corner, with plush seating and curated film selection.",
+    title: "Dubai Marina",
+    text: "A vibrant waterfront community, perfect for after-work relaxation, reachable in 15 minutes.",
     image:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/07/08095101/1698216352131Circla-Mall-Deluxe-1120x400-1.jpg",
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/26060533/shutterstock_2474900723-scaled.webp",
+  },
+  {
+    title: "Jumeirah Beach",
+    text: "A scenic escape, just a 15-minute drive from The One.",
+    image:
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/26060727/shutterstock_2428390301-scaled.webp",
+  },
+  {
+    title: "Mall of the Emirates",
+    text: "A premier shopping destination, located approximately 10 minutes away.",
+    image:
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2022/08/24071624/mallfoemirates-scaled.webp",
+  },
+  {
+    title: "Dubai Miracle Garden",
+    text: "A stunning floral display, about 15 minutes away, showcasing over 150 million flowers in various designs.",
+    image:
+      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/24072755/shutterstock_2445800541-scaled.webp",
   },
 ];
 
 const schools = [
   {
-    name: "JSS International School",
-    body: "A well-established Indian curriculum school offering CBSE education just minutes away.",
+    name: "GEMS Dubai American Academy",
+    body: "A leading American curriculum school in Al Barsha with strong university pathways and broad co-curricular programs.",
   },
   {
-    name: "Sunmarke School",
-    body: "A British curriculum school known for academic excellence and innovative learning.",
+    name: "GEMS Wellington International School",
+    body: "A well-established British curriculum school in Al Sufouh, known for strong academics and modern learning facilities.",
   },
   {
-    name: "Nord Anglia International School",
-    body: "Globally recognized with a premium British curriculum, located a short drive from JVC.",
+    name: "American School of Dubai",
+    body: "An accredited US curriculum school in Al Barsha serving PK-12, recognized for student development and global readiness.",
   },
 ];
 
 const hospitals = [
   {
-    name: "Emirates Hospital Day Surgery & Medical Center",
-    body: "Specialist-led healthcare with a focus on outpatient procedures and family wellness.",
-  },
-  {
-    name: "Right Health Karama Medical Centre",
-    body: "Affordable, quality healthcare is located within easy reach of Berkeley Square.",
-  },
-  {
-    name: "Aster Clinic",
-    body: "Reliable and accessible medical services are available within the neighbourhood.",
+    name: "Saudi German Hospital Dubai",
+    body: "A major multi-specialty hospital near Barsha Heights, providing 24/7 emergency care and a full range of specialist services.",
   },
 ];
 
@@ -179,21 +182,6 @@ function ResourcePdfIcon({ className }: { className?: string }) {
         stroke="currentColor"
         strokeWidth="1.5"
         strokeLinecap="round"
-      />
-    </svg>
-  );
-}
-
-function ResourceExternalIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" width="26" height="26" aria-hidden>
-      <path
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M7 17L17 7M17 7H9M17 7v8"
       />
     </svg>
   );
@@ -222,7 +210,7 @@ function AmenityVideoTile({ label, video, poster }: AmenityVideoRow) {
   );
 }
 
-const BerkeleySquareSouthProjectPage = () => {
+const TheOneProjectPage = () => {
   const [galleryIndex, setGalleryIndex] = useState<number | null>(null);
 
   return (
@@ -231,16 +219,16 @@ const BerkeleySquareSouthProjectPage = () => {
 
       <section className="po-project-page-hero">
         <div className="po-project-page-hero-media">
-          <img src={HERO_IMG} alt="Berkeley Square South" />
+          <img src={HERO_IMG} alt="The One by Prestige One" />
           <div className="po-project-page-hero-overlay" />
         </div>
         <div className="po-project-page-hero-content">
           <p className="po-project-page-hero-eyebrow">
             <Link href="/projects">Projects</Link>
           </p>
-          <h1>Berkeley Square South</h1>
+          <h1>The One</h1>
           <p className="po-project-page-hero-lead">
-            Designed for modern living with exceptional amenities, refined interiors, and seamless neighborhood access.
+            A modern commercial destination in Barsha Heights designed for ambitious businesses and bold ideas.
           </p>
           <div className="po-project-page-hero-actions">
             <a className="po-project-page-btn po-project-page-btn--light" href="#register-interest">
@@ -284,34 +272,28 @@ const BerkeleySquareSouthProjectPage = () => {
                 <span className="po-project-page-resource-value">TBA</span>
               </span>
             </div>
-            <a href={MORE_DETAILS} target="_blank" rel="noopener noreferrer" className="po-project-page-resource-link">
-              <ResourceExternalIcon className="po-project-page-resource-icon" />
-              <span className="po-project-page-resource-copy">
-                <span className="po-project-page-resource-kicker">Visit</span>
-                <span className="po-project-page-resource-value">More details</span>
-              </span>
-            </a>
           </div>
         </div>
       </section>
 
       <section id="signature" className="po-project-page-signature">
         <div className="container">
-          <h2 className="po-project-page-signature-title">Not Just Well-Placed, Well-Chosen</h2>
+          <h2 className="po-project-page-signature-title">Building Legacies in Barsha Heights</h2>
           <p className="po-project-page-signature-text">
-            Berkeley Square South brings together thoughtful architecture, lifestyle amenities, and a connected setting in one
-            refined address. Every detail is considered to support modern routines while elevating everyday living.
+            The One by Prestige One introduces a refined commercial environment that blends hospitality-inspired design with
+            future-ready workspaces. From premium lounges and wellness amenities to a strategically connected location, this
+            address is crafted for professionals and enterprises that value presence, performance, and prestige.
           </p>
         </div>
       </section>
 
-      <section className="po-project-page-amenities" aria-labelledby="berkeley-amenities-heading">
+      <section className="po-project-page-amenities" aria-labelledby="the-one-amenities-heading">
         <div className="container po-project-page-amenities-intro">
-          <p className="po-project-page-section-kicker">Berkeley Square South</p>
-          <h2 id="berkeley-amenities-heading" className="po-project-page-section-title">
+          <p className="po-project-page-section-kicker">The One</p>
+          <h2 id="the-one-amenities-heading" className="po-project-page-section-title">
             Amenities
           </h2>
-          <p className="po-project-page-section-sub">A curated collection of spaces for wellness, play, and social living.</p>
+          <p className="po-project-page-section-sub">Curated spaces to elevate work-life balance for residents and visitors.</p>
         </div>
         <div className="po-project-page-amenities-fullbleed">
           <div className="po-project-page-amenities-masonry">
@@ -322,32 +304,32 @@ const BerkeleySquareSouthProjectPage = () => {
         </div>
       </section>
 
-      <section className="po-project-page-gallery-section" aria-labelledby="berkeley-interior-heading">
+      <section className="po-project-page-gallery-section" aria-labelledby="the-one-interior-heading">
         <div className="container">
-          <h2 id="berkeley-interior-heading" className="po-project-page-gallery-title">
-            Quietly Placed, Clearly Considered
+          <h2 id="the-one-interior-heading" className="po-project-page-gallery-title">
+            Building Legacies in Barsha Heights
           </h2>
-          <p className="po-project-page-gallery-lead">Internal features - refined layouts and premium finishes.</p>
+          <p className="po-project-page-gallery-lead">Signature interiors designed for comfort, status, and productivity.</p>
           <div className="po-project-page-gallery-grid">
-            {berkeleyInteriorGallery.map((item, i) => (
+            {interiorGallery.map((item, i) => (
               <ProjectGalleryImageCard key={item.src} item={item} index={i} onOpen={setGalleryIndex} />
             ))}
           </div>
         </div>
       </section>
 
-      <section className="po-project-page-building-wide" aria-label="Berkeley Square South - building exterior">
-        <img src={berkeleyFullWidthBuilding} alt="Berkeley Square South - building" className="po-project-page-building-wide-img" loading="lazy" />
+      <section className="po-project-page-building-wide" aria-label="The One - building exterior">
+        <img src={fullWidthBuilding} alt="The One - building" className="po-project-page-building-wide-img" loading="lazy" />
       </section>
 
-      <section className="po-project-page-gallery-section po-project-page-gallery-section--compact" aria-labelledby="berkeley-outdoor-heading">
+      <section className="po-project-page-gallery-section po-project-page-gallery-section--compact" aria-labelledby="the-one-outdoor-heading">
         <div className="container">
-          <h2 id="berkeley-outdoor-heading" className="po-project-page-gallery-title po-project-page-gallery-title--sm">
-            Outdoor living
+          <h2 id="the-one-outdoor-heading" className="po-project-page-gallery-title po-project-page-gallery-title--sm">
+            Distinctive lifestyle spaces
           </h2>
-          <p className="po-project-page-gallery-lead">Podcast room, gym, and little explorers' zone.</p>
+          <p className="po-project-page-gallery-lead">Reception cafe, gym, and cigar lounge.</p>
           <div className="po-project-page-gallery-grid">
-            {berkeleyOutdoorGallery.map((item, i) => (
+            {outdoorGallery.map((item, i) => (
               <ProjectGalleryImageCard key={item.src} item={item} index={i + 3} onOpen={setGalleryIndex} />
             ))}
           </div>
@@ -355,23 +337,11 @@ const BerkeleySquareSouthProjectPage = () => {
       </section>
 
       <ProjectImageGalleryLightbox
-        items={berkeleyGalleryItems}
+        items={galleryItems}
         activeIndex={galleryIndex}
         onClose={() => setGalleryIndex(null)}
         onGoTo={setGalleryIndex}
       />
-
-      <section className="po-project-page-surroundings-intro" aria-labelledby="berkeley-surroundings-heading">
-        <div className="container">
-          <h2 id="berkeley-surroundings-heading" className="po-project-page-surroundings-intro-title">
-            Surroundings That Echo the Quiet Within
-          </h2>
-          <p className="po-project-page-surroundings-intro-text">
-            Positioned in a well-connected neighborhood, Berkeley Square South places everyday essentials and leisure moments
-            within easy reach while preserving the calm and character of premium residential living.
-          </p>
-        </div>
-      </section>
 
       {surroundingsPlaces.map((place, index) => (
         <section
@@ -415,10 +385,10 @@ const BerkeleySquareSouthProjectPage = () => {
         </div>
       </section>
 
-      <section className="po-project-page-map" aria-label="Map: JVC, Dubai">
+      <section className="po-project-page-map" aria-label="Map: The One by Prestige One">
         <iframe
           src={MAP_EMBED_SRC}
-          title="Google Map - JVC, Dubai"
+          title="Google Map - The One by Prestige One"
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
@@ -449,7 +419,7 @@ const BerkeleySquareSouthProjectPage = () => {
         <div className="container">
           <h2 className="po-project-page-register-title">Have any questions? Let&apos;s connect.</h2>
           <p className="po-project-page-register-lead">Register your interest and our team will get back to you.</p>
-          <FinalContactForm defaultProject="Berkeley Square South" />
+          <FinalContactForm defaultProject="The One" />
         </div>
       </section>
 
@@ -458,4 +428,5 @@ const BerkeleySquareSouthProjectPage = () => {
   );
 };
 
-export default BerkeleySquareSouthProjectPage;
+export default TheOneProjectPage;
+

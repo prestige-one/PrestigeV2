@@ -20,7 +20,7 @@ const projects: ProjectItem[] = [
     description:
       "Sanctuary Hive offers well planned commercial properties in Meydan Horizon, Dubai. Ideal for businesses seeking visibility and connectivity.",
     thumbnail: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/12140526/C5-0113-hive-2-1.webp",
-    link: "https://prestigeone.ae/projects/sanctuary-hive-by-prestige-one/",
+    link: "/projects/sanctuary-hive-by-prestige-one/",
     location: "Meydan Horizon",
   },
   {
@@ -67,42 +67,42 @@ const projects: ProjectItem[] = [
     description:
       "Coastal Haven by Prestige Harbour defines the new era of coastal living in Dubai Islands, with G+2P+12 waterfront elegance.",
     thumbnail: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/24094547/harbour-1.webp",
-    link: "https://prestigeone.ae/projects/coastal-haven/",
+    link: "/projects/coastal-haven/",
     location: "Dubai Islands",
   },
   {
     title: "The Boulevard",
     description: "The Boulevard by Prestige One brings bold and ambitious boulevard living to DLRC, rising 18 floors.",
     thumbnail: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/12/25132924/NIGHT-4c-scaled.webp",
-    link: "https://prestigeone.ae/projects/the-boulevard-by-prestige-one/",
+    link: "/projects/the-boulevard-by-prestige-one/",
     location: "DLRC",
   },
   {
     title: "Parkway",
     description: "Parkway by Prestige One is a nature-inspired sanctuary in Meydan Horizon, rising 33 floors amidst lush surroundings.",
     thumbnail: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/27164232/Front-Exterior-3-scaled.webp",
-    link: "https://prestigeone.ae/projects/parkway-by-prestige-one/",
+    link: "/projects/parkway-by-prestige-one/",
     location: "Meydan Horizon",
   },
   {
     title: "Place",
     description: "Place by Prestige One is designed for active family living in Sports City, featuring 23 floors with contemporary residences.",
     thumbnail: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2022/08/24175842/The-Place-Banner.webp",
-    link: "https://prestigeone.ae/projects/place-by-prestige-one/",
+    link: "/projects/place-by-prestige-one/",
     location: "Dubai Sports City",
   },
   {
     title: "The One",
     description: "The One by Prestige One is a commercial hub in Barsha Heights, designed for visionaries within a G+14 development.",
     thumbnail: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/07/09112539/Berkeley-Square-Facade-Night-View-3-scaled.webp",
-    link: "https://prestigeone.ae/projects/the-one-by-prestige-one/",
+    link: "/projects/the-one-by-prestige-one/",
     location: "Barsha Heights",
   },
   {
     title: "Seaside",
     description: "Seaside by Prestige One offers a retreat along the sea in Dubai Islands, with G+12 waterfront living.",
     thumbnail: "https://prestigeone.ae/wp-content/uploads/2024/03/seaside-banner-1.jpg",
-    link: "https://prestigeone.ae/projects/seaside-by-prestige-one/",
+    link: "/projects/seaside-by-prestige-one/",
     location: "Dubai Islands",
   },
   {
@@ -110,21 +110,21 @@ const projects: ProjectItem[] = [
     description:
       "The Waterway by Prestige One, featuring 20 floors and beautiful waterfront homes brings the flow of water to life in Meydan Horizon.",
     thumbnail: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/03/08085032/04-Facade-scaled.webp",
-    link: "https://prestigeone.ae/projects/the-waterway-by-prestige-one/",
+    link: "/projects/the-waterway-by-prestige-one/",
     location: "Meydan Horizon",
   },
   {
     title: "Vista",
     description: "Vista by Prestige One combines sleek architecture with panoramic golf views in Sports City, standing at G+15.",
     thumbnail: "https://prestigeone.ae/wp-content/uploads/2022/08/Website_images_23Feb-VISTA.jpg",
-    link: "https://prestigeone.ae/projects/vista-by-prestige-one/",
+    link: "/projects/vista-by-prestige-one/",
     location: "Dubai Sports City",
   },
   {
     title: "The Residence",
     description: "The Residence by Prestige One offers modern luxury in a boutique G+5 low-rise setting in JVC.",
     thumbnail: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/07/07161026/Berkeley-Square-Kids-Area-Night-scaled.webp",
-    link: "https://prestigeone.ae/projects/the-residence-by-prestige-one/",
+    link: "/projects/the-residence-by-prestige-one/",
     location: "JVC",
   },
   {
@@ -132,7 +132,7 @@ const projects: ProjectItem[] = [
     description:
       "Prestige is an inherent trait, not merely an ambition. It flows as naturally as the tide-defining every aspect of existence.",
     thumbnail: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/31103307/luxe-villas.webp",
-    link: "https://prestigeone.ae/projects/luxe-villa-by-prestige-one/",
+    link: "/projects/luxe-villa-by-prestige-one/",
     location: "Palm Jumeirah",
   },
   {
@@ -140,7 +140,7 @@ const projects: ProjectItem[] = [
     description:
       "Explore your private escape into luxury at Seascape Villa by Prestige One, where the serene embrace of the sea welcomes you.",
     thumbnail: "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/31103156/seascape.webp",
-    link: "https://prestigeone.ae/projects/seascape-villa-by-prestige-one/",
+    link: "/projects/seascape-villa-by-prestige-one/",
     location: "Palm Jumeirah",
   },
 ];
