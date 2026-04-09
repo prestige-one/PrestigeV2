@@ -27,7 +27,10 @@ const PDF = {
 };
 
 const CONSTRUCTION_UPDATES = "/construction-update-the-parkway-by-prestige-one/";
+const LOCATION_DESTINATION = "/our-destinations/mohammed-bin-rashid-city/";
 const MAP_EMBED_SRC = "https://www.google.com/maps?q=The+Parkway+by+Prestige+One&output=embed";
+
+const PROJECT_WIDE_VIDEO = "/assets/img/v2/project-features-videos/Luxury-Canal-Residences-by-Prestige-One.mp4";
 
 const amenityVideos: AmenityVideoRow[] = [
   {
@@ -220,6 +223,44 @@ function ResourcePdfIcon({ className }: { className?: string }) {
   );
 }
 
+function ResourceExternalIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" width="26" height="26" aria-hidden>
+      <path
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M7 17L17 7M17 7H9M17 7v8"
+      />
+    </svg>
+  );
+}
+
+function CalendarPdfIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+    >
+      <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+      <line x1="16" y1="2" x2="16" y2="6" />
+      <line x1="8" y1="2" x2="8" y2="6" />
+      <line x1="3" y1="10" x2="21" y2="10" />
+    </svg>
+  );
+}
+
 function AmenityVideoTile({ label, video, poster }: AmenityVideoRow) {
   const ref = useRef<HTMLVideoElement>(null);
 
@@ -299,12 +340,19 @@ const ParkwayProjectPage = () => {
               </span>
             </a>
             <div className="po-project-page-resource-link" aria-label="Completion date">
-              <ResourcePdfIcon className="po-project-page-resource-icon" />
+              <CalendarPdfIcon className="po-project-page-resource-icon" />
               <span className="po-project-page-resource-copy">
                 <span className="po-project-page-resource-kicker">Completion</span>
                 <span className="po-project-page-resource-value">TBA</span>
               </span>
             </div>
+            <a href={LOCATION_DESTINATION} target="_blank" rel="noopener noreferrer" className="po-project-page-resource-link">
+              <ResourceExternalIcon className="po-project-page-resource-icon" />
+              <span className="po-project-page-resource-copy">
+                <span className="po-project-page-resource-kicker">Location</span>
+                <span className="po-project-page-resource-value">Mohammed Bin Rashid City, Dubai</span>
+              </span>
+            </a>
           </div>
         </div>
       </section>
@@ -377,6 +425,22 @@ const ParkwayProjectPage = () => {
         onClose={() => setGalleryIndex(null)}
         onGoTo={setGalleryIndex}
       />
+
+      <section className="po-project-page-wide-video" aria-label="The Parkway video">
+        <div className="container">
+          <video
+            className="po-project-page-wide-video-el"
+            poster={HERO_IMG}
+            muted
+            loop
+            playsInline
+            autoPlay
+            preload="metadata"
+          >
+            <source src={PROJECT_WIDE_VIDEO} type="video/mp4" />
+          </video>
+        </div>
+      </section>
 
       <section className="po-project-page-surroundings-intro" aria-labelledby="parkway-surroundings-heading">
         <div className="container">

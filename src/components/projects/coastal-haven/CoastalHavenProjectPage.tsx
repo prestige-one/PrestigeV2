@@ -26,10 +26,14 @@ const PDF = {
   factSheet: "/project-documents",
 };
 
+const MORE_DETAILS = "/our-destinations/dubai-islands/";
 const CONSTRUCTION_UPDATES = "/construction-updates";
 
 const MAP_EMBED_SRC =
-  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57726.250386632615!2d55.271532549999996!3d25.2742637!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f4384740a5241%3A0xe6d78cfd14c6ada3!2sMadinat%20Dubai%20Al%20Melaheyah%20-%20Dubai!5e0!3m2!1sen!2sae!4v1775290787017!5m2!1sen!2sae";
+  "https://www.google.com/maps?q=Luxury+Canal+Residences+by+Prestige+Harbour+Dubai+Islands&output=embed";
+
+const COASTAL_HAVEN_WIDE_VIDEO =
+  "/assets/img/v2/project-features-videos/Coastal-Haven-by-Prestige-Harbour.mp4";
 
 const amenityVideos: AmenityVideoRow[] = [
   {
@@ -193,6 +197,44 @@ function ResourcePdfIcon({ className }: { className?: string }) {
   );
 }
 
+function ResourceExternalIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" width="26" height="26" aria-hidden>
+      <path
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M7 17L17 7M17 7H9M17 7v8"
+      />
+    </svg>
+  );
+}
+
+function CalendarPdfIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+    >
+      <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+      <line x1="16" y1="2" x2="16" y2="6" />
+      <line x1="8" y1="2" x2="8" y2="6" />
+      <line x1="3" y1="10" x2="21" y2="10" />
+    </svg>
+  );
+}
+
 function AmenityVideoTile({ label, video, poster }: AmenityVideoRow) {
   const ref = useRef<HTMLVideoElement>(null);
 
@@ -272,12 +314,19 @@ const CoastalHavenProjectPage = () => {
               </span>
             </a>
             <div className="po-project-page-resource-link" aria-label="Completion date">
-              <ResourcePdfIcon className="po-project-page-resource-icon" />
+              <CalendarPdfIcon className="po-project-page-resource-icon" />
               <span className="po-project-page-resource-copy">
                 <span className="po-project-page-resource-kicker">Completion</span>
-                <span className="po-project-page-resource-value">TBA</span>
+                <span className="po-project-page-resource-value">November 2027</span>
               </span>
             </div>
+            <a href={MORE_DETAILS} target="_blank" rel="noopener noreferrer" className="po-project-page-resource-link">
+              <ResourceExternalIcon className="po-project-page-resource-icon" />
+              <span className="po-project-page-resource-copy">
+                <span className="po-project-page-resource-kicker">Location</span>
+                <span className="po-project-page-resource-value">Dubai Islands, Dubai</span>
+              </span>
+            </a>
           </div>
         </div>
       </section>
@@ -349,6 +398,22 @@ const CoastalHavenProjectPage = () => {
         onGoTo={setGalleryIndex}
       />
 
+      <section className="po-project-page-wide-video" aria-label="Coastal Haven video">
+        <div className="container">
+          <video
+            className="po-project-page-wide-video-el"
+            poster={HERO_IMG}
+            muted
+            loop
+            playsInline
+            autoPlay
+            preload="metadata"
+          >
+            <source src={COASTAL_HAVEN_WIDE_VIDEO} type="video/mp4" />
+          </video>
+        </div>
+      </section>
+
       <section className="po-project-page-surroundings-intro" aria-labelledby="coastal-haven-surroundings-heading">
         <div className="container">
           <h2 id="coastal-haven-surroundings-heading" className="po-project-page-surroundings-intro-title">
@@ -404,10 +469,10 @@ const CoastalHavenProjectPage = () => {
         </div>
       </section>
 
-      <section className="po-project-page-map" aria-label="Map: Dubai Islands, Dubai">
+      <section className="po-project-page-map" aria-label="Map: Coastal Haven by Prestige Harbour">
         <iframe
           src={MAP_EMBED_SRC}
-          title="Google Map - Dubai Islands, Dubai"
+          title="Coastal Haven by Prestige Harbour"
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"

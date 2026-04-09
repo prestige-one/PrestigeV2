@@ -26,7 +26,7 @@ const CONSTRUCTION_UPDATES: ConstructionUpdateItem[] = [
     href: "/construction-update-the-residence-by-prestige-one/",
     pathSlug: "construction-update-the-residence-by-prestige-one",
     image:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/17155703/residence-construction-updates-feb-2026-4.webp",
+      "/assets/img/v2/project-featured-images/THE-RESIDENCE.webp",
   },
   {
     href: "/construction-update-luxury-canal-residences-by-prestige-harbour/",

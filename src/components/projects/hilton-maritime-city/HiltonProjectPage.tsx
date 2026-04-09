@@ -16,6 +16,8 @@ import {
 } from "@/lib/parseHiltonAmenityVideosTxt";
 import { LocaleAmenityCard } from "@/components/projects/project-page/LocaleAmenityCard";
 
+const HERO_VIDEO = "/assets/img/v2/project-features-videos/Hilton-Residences-Dubai-Maritime-City.mp4";
+
 const HERO_IMG =
   "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/14144431/HILTON-NIGHT-VIEW-1.webp";
 const HERO_IMG_ALT =
@@ -438,6 +440,15 @@ const HiltonProjectPage = () => {
         onClose={() => setGalleryIndex(null)}
         onGoTo={setGalleryIndex}
       />
+
+
+      <section className="po-project-page-wide-video" aria-label="Hilton Residences Dubai Maritime City video">
+        <div className="container">
+        <video className="po-project-page-wide-video-el" muted loop playsInline autoPlay preload="metadata">
+          <source src={HERO_VIDEO} type="video/mp4" />
+        </video>
+        </div>
+      </section>
 
       <section className="po-project-page-surroundings-intro" aria-labelledby="hilton-surroundings-heading">
         <div className="container">

@@ -18,7 +18,12 @@ type AmenityVideoRow = {
   poster?: string;
 };
 
-const HERO_VIDEO = "/assets/img/v2/project-features-videos/sanctuary-residential.mp4";
+const HERO_VIDEO = "/assets/img/v2/project-features-videos/Sanctuary-Residential.mp4";
+
+const HERO_IMG =
+  "/assets/img/v2/project-featured-images/sanctuary-residential-exterior-view.webp";
+
+
 const FALLBACK_IMG =
   "/assets/img/v2/project-featured-images/Front-Exterior-3-scaled.webp";
 
@@ -30,7 +35,7 @@ const PDF = {
   factSheet: "/project-documents",
 };
 
-const MORE_DETAILS = "https://prestigeone.ae/projects/sanctuary/";
+const MORE_DETAILS = "https://sanctuarybyprestigeone.ae/";
 const CONSTRUCTION_UPDATES = "/construction-updates";
 
 const MAP_EMBED_SRC =
@@ -247,12 +252,16 @@ const SanctuaryProjectPage = () => {
       <SiteHeader />
 
       <section className="po-project-page-hero">
-        <div className="po-project-page-hero-media">
+       <div className="po-project-page-hero-media">
           <video ref={heroRef} className="po-project-page-hero-video" muted loop playsInline autoPlay preload="metadata" poster={FALLBACK_IMG}>
             <source src={HERO_VIDEO} type="video/mp4" />
           </video>
           <div className="po-project-page-hero-overlay" />
-        </div>
+        </div> 
+        {/*<div className="po-project-page-hero-media">
+          <img src={HERO_IMG} alt="Sanctuary by Prestige One" />
+          <div className="po-project-page-hero-overlay" />
+        </div>*/}
         <div className="po-project-page-hero-content">
           <p className="po-project-page-hero-eyebrow">
             <Link href="/projects">Projects</Link>
@@ -381,6 +390,14 @@ const SanctuaryProjectPage = () => {
         onClose={() => setGalleryIndex(null)}
         onGoTo={setGalleryIndex}
       />
+
+      <section className="po-project-page-wide-video" aria-label="Sanctuary by Prestige One video">
+        <div className="container">
+          <video className="po-project-page-wide-video-el" muted loop playsInline autoPlay preload="metadata">
+            <source src={HERO_VIDEO} type="video/mp4" />
+          </video>
+        </div>
+      </section>
 
       <section className="po-project-page-surroundings-intro" aria-labelledby="sanctuary-surroundings-heading">
         <div className="container">

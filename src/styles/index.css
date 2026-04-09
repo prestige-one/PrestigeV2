@@ -5132,7 +5132,7 @@ span.material-symbols-outlined {
 .po-project-page-hero-overlay {
 	position: absolute;
 	inset: 0;
-	background: linear-gradient( 180deg, rgba(0, 0, 0, 0.11) 0%, rgba(0, 0, 0, 0.05) 45%, rgba(0, 0, 0, 0.41) 100% );
+	background: linear-gradient(180deg,rgba(0,0,0,.11),rgba(0,0,0,.05) 35%,rgba(0, 0, 0, 0.69));
 }
 
 .po-project-page-hero-content {
@@ -5257,7 +5257,7 @@ span.material-symbols-outlined {
 
 .po-project-page-resource-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: clamp(1rem, 3vw, 2.75rem);
   align-items: center;
 }
@@ -6031,8 +6031,8 @@ span.material-symbols-outlined {
 .po-project-page-map iframe {
   display: block;
   width: 100%;
-  height: 500px;
-  min-height: 500px;
+  height: 600px;
+  min-height: 600px;
   border: 0;
 }
 
@@ -6070,8 +6070,7 @@ span.material-symbols-outlined {
 }
 
 .po-project-page-construction-title {
-	margin: 0;
-	max-width: min(100%, 38rem);
+	margin: 0; 
 	font-size: clamp(1.35rem, 3.2vw, 2rem);
 	font-weight: 700;
 	line-height: 1.25;
@@ -6114,6 +6113,7 @@ span.material-symbols-outlined {
     background: #f2f2f2;
     transform: translateY(-2px);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    color: #444;
   }
 }
 
@@ -6232,6 +6232,22 @@ span.material-symbols-outlined {
   .po-project-page-nearby-grid {
     grid-template-columns: 1fr;
   }
+}
+
+.po-project-page-wide-video {
+  padding: clamp(1.5rem, 3.2vw, 2.5rem) 0;
+  background: #fff;
+}
+ 
+
+.po-project-page-wide-video-el {
+	width: 100%;
+	height: auto;
+	display: block;
+	border-radius: 8px;
+	overflow: hidden;
+	border: 25px solid #404040;
+	box-shadow: 5px 10px 20px #737272;
 }
 
 .po-virtual-tour-section {
