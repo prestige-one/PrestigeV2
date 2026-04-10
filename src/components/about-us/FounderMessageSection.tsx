@@ -8,7 +8,7 @@ const FounderMessageSection = () => {
       <div className="container">
         <div className="po-founder-grid">
           <article className="po-founder-image-card">
-            <img src="/assets/img/v2/ceo-message.webp" alt="Ajmal Saifi - Founder & CEO" />
+            <img src="/assets/images/v2/pages/ceo-message.webp" alt="Ajmal Saifi - Founder & CEO" />
 
             <div className="po-founder-signature-card">
               <h3>Ajmal Saifi</h3>

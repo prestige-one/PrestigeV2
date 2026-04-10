@@ -10,41 +10,41 @@ const projectSlides = [
     title: "Exclusive Real Estate Regional Sponsor of the Argentina National Team",
     description: "",
     mediaType: "image",
-    mediaSrc: "/assets/img/v2/project-featured-images/AFA-sponsorship-1-1.webp",
+    mediaSrc: "/assets/images/v2/pages/AFA-sponsorship-1-1.webp",
   },
   {
     title: "Sanctuary Hive by Prestige One",
     description:
       "Sanctuary Hive offers well planned commercial properties in Meydan Horizon, Dubai. Ideal for businesses seeking visibility and connectivity.",
     mediaType: "image",
-    mediaSrc: "/assets/img/v2/project-featured-images/sanctuary-hive-2.webp",
+    mediaSrc: "/assets/images/v2/project-featured-images/sanctuary/sanctuary-hive-2.webp",
   },
   {
     title: "Sanctuary by Prestige One",
     description:
       "Step into a more balanced Dubai lifestyle at Sanctuary by Prestige One, where modern living and commercial spaces come together in Meydan",
-    mediaType: "video",
-    mediaSrc: "/assets/img/v2/project-features-videos/sanctuary-residential.mp4",
+    mediaType: "image",
+    mediaSrc: "/assets/images/v2/project-featured-images/sanctuary/sanctuary-residential-exterior-view.webp",
   },
   {
     title: "Hilton Residences Dubai Maritime City",
     description: "Life at Hilton Residences by Prestige One is a balance of elegance and ease.",
     mediaType: "image",
-    mediaSrc: "/assets/img/v2/project-featured-images/HILTON-NIGHT-VIEW-1.webp",
+    mediaSrc: "/assets/images/v2/project-featured-images/hilton/HILTON-NIGHT-VIEW-1.webp",
   },
   {
     title: "Berkeley Square North",
     description:
       "Berkeley Square North, located in Jumeirah Village Circle, stands apart from the rest. Designed with inspiration from London’s classic architecture, it favors clean lines",
     mediaType: "image",
-    mediaSrc: "/assets/img/v2/project-featured-images/Berkeley-Square-North.webp",
+    mediaSrc: "/assets/images/v2/project-featured-images/berkeley/Berkeley-Square-North.webp",
   },
   {
     title: "Berkeley Square South",
     description:
       "Positioned within Jumeirah Village Circle, Berkeley Square South brings together elegance and beautiful design.",
     mediaType: "image",
-    mediaSrc: "/assets/img/v2/project-featured-images/Berkeley-Square-South.webp",
+    mediaSrc: "/assets/images/v2/project-featured-images/berkeley/Berkeley-Square-South.webp",
   },
 ];
 

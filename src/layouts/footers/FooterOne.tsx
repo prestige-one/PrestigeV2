@@ -74,8 +74,8 @@ const FooterOne = () => {
             <div className="col-12 col-lg-3">
               <div className="footer-card footer-card-logo">
                 <Link href="/">
-                  <img className="dark-logo" src="/assets/img/v2/AFA-logo-400.webp" alt="Prestige One Developments" />
-                  <img className="light-logo" src="/assets/img/v2/AFA-logo-400.webp" alt="Prestige One Developments" />
+                  <img className="dark-logo" src="/assets/images/v2/pages/AFA-logo-400.webp" alt="Prestige One Developments" />
+                  <img className="light-logo" src="/assets/images/v2/pages/AFA-logo-400.webp" alt="Prestige One Developments" />
                 </Link>
                 <p className="mb-0">
                   Prestige One Developments creates premium residences and commercial destinations with a strong focus on design,

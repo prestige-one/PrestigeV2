@@ -11,7 +11,7 @@ const FinalContactSection = () => {
         <div className="row g-0">
           <div className="col-12 col-lg-3">
             <div className="po-final-contact-left">
-              <img src="/assets/img/v2/dubai-marina.webp" alt="Prestige One contact" />
+              <img src="/assets/images/v2/pages/dubai-marina.webp" alt="Prestige One contact" />
             </div>
           </div>
 

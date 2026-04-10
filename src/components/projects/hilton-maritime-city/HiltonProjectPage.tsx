@@ -16,7 +16,7 @@ import {
 } from "@/lib/parseHiltonAmenityVideosTxt";
 import { LocaleAmenityCard } from "@/components/projects/project-page/LocaleAmenityCard";
 
-const HERO_VIDEO = "/assets/img/v2/project-features-videos/Hilton-Residences-Dubai-Maritime-City.mp4";
+const HERO_VIDEO = "/assets/images/v2/project-features-videos/Hilton-Residences-Dubai-Maritime-City.mp4";
 
 const HERO_IMG =
   "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/14144431/HILTON-NIGHT-VIEW-1.webp";
@@ -118,8 +118,8 @@ const FALLBACK_AMENITY_VIDEOS: HiltonAmenityVideoRow[] = [
   },
 ];
 
-/** Local Hilton Renders — place files under public/assets/img/v2/project-featured-images/project-hilton/ */
-const HILTON_LOCAL_IMG = "/assets/img/v2/project-featured-images/project-hilton";
+/** Local Hilton Renders — under public/assets/images/v2/project-featured-images/hilton/ */
+const HILTON_LOCAL_IMG = "/assets/images/v2/project-featured-images/hilton";
 
 const hiltonGalleryItems: ProjectGalleryItem[] = [
   {

@@ -14,7 +14,7 @@ const AboutArea = () => {
               <div className="about-us-thumbnail po-about-media">
                 <div className="po-project-media">
                     <video autoPlay muted loop playsInline preload="metadata">
-                      <source src="/assets/img/v2/prestigeone_corporate_video.mp4" type="video/mp4" />
+                      <source src="/assets/images/v2/project-features-videos/prestigeone_corporate_video.mp4" type="video/mp4" />
                     </video> 
                 </div>
 
@@ -22,10 +22,10 @@ const AboutArea = () => {
                 <div className="top-content">
 
                   <div className="clients-images">
-                    <img src="/assets/img/v2/5.jpg" alt="" />
-                    <img src="/assets/img/v2/4.jpg" alt="" />
-                    <img src="/assets/img/v2/3.jpg" alt="" />
-                    <img src="/assets/img/v2/2.jpg" alt="" />
+                    <img src="/assets/images/v2/pages/5.jpg" alt="" />
+                    <img src="/assets/images/v2/pages/4.jpg" alt="" />
+                    <img src="/assets/images/v2/pages/3.jpg" alt="" />
+                    <img src="/assets/images/v2/pages/2.jpg" alt="" />
                   </div>
                   <h6 className="mb-0">2566+ More Then Clients Global Reviews</h6>
                 </div>

@@ -14,59 +14,59 @@ const documentItems = [
     title: "The Residence Project Documents",
     href: "https://prestigeone.ae/project-documents/the-residence-spa-tcs/",
     thumbnail:
-      "/assets/img/v2/project-featured-images/Berkeley-Square-Kids-Area-Night-scaled.webp",
+      "/assets/images/v2/project-featured-images/Berkeley-Square-Kids-Area-Night-scaled.webp",
   },
   {
     title: "Seaside Project Documents",
     href: "https://prestigeone.ae/project-documents/seaside-spa-tcs/",
-    thumbnail: "/assets/img/v2/project-featured-images/seaside-featured-image.webp",
+    thumbnail: "/assets/images/v2/project-featured-images/seaside-featured-image.webp",
   },
   {
     title: "Place Project Documents",
     href: "https://prestigeone.ae/project-documents/the-place-spa-tcs/",
-    thumbnail: "/assets/img/v2/project-featured-images/The-Place-Banner.webp",
+    thumbnail: "/assets/images/v2/project-featured-images/The-Place-Banner.webp",
   },
   {
     title: "The Waterway Project Documents",
     href: "https://prestigeone.ae/project-documents/the-waterway-spa-tcs/",
-    thumbnail: "/assets/img/v2/project-featured-images/04-Facade-scaled.webp",
+    thumbnail: "/assets/images/v2/project-featured-images/04-Facade-scaled.webp",
   },
   {
     title: "Parkway Project Documents",
     href: "https://prestigeone.ae/project-documents/parkway-spa-tcs/",
-    thumbnail: "/assets/img/v2/project-featured-images/Front-Exterior-3-scaled.webp",
+    thumbnail: "/assets/images/v2/project-featured-images/Front-Exterior-3-scaled.webp",
   },
   {
     title: "The One Project Documents",
     href: "https://prestigeone.ae/project-documents/the-one-spa-tcs/",
     thumbnail:
-      "/assets/img/v2/project-featured-images/Berkeley-Square-Facade-Night-View-3-scaled.webp",
+      "/assets/images/v2/project-featured-images/Berkeley-Square-Facade-Night-View-3-scaled.webp",
   },
   {
     title: "The Boulevard Project Documents",
     href: "https://prestigeone.ae/project-documents/the-boulevard-spa-tcs/",
-    thumbnail: "/assets/img/v2/project-featured-images/NIGHT-4c-scaled.webp",
+    thumbnail: "/assets/images/v2/project-featured-images/NIGHT-4c-scaled.webp",
   },
   {
     title: "Coastal Haven Project Documents",
     href: "https://prestigeone.ae/project-documents/coastal-haven-spa-tcs/",
-    thumbnail: "assets/img/v2/project-featured-images/harbour-1.webp",
+    thumbnail: "assets/images/v2/project-featured-images/harbour-1.webp",
   },
   {
     title: "Luxury Canal Project Documents",
     href: "https://prestigeone.ae/project-documents/luxury-canal-spa-tcs/",
-    thumbnail: "/assets/img/v2/project-featured-images/04-Facade-scaled.webp",
+    thumbnail: "/assets/images/v2/project-featured-images/04-Facade-scaled.webp",
   },
   {
     title: "Berkeley Square Project Documents",
     href: "https://prestigeone.ae/project-documents/berkeley-square-spa-tcs/",
     thumbnail:
-      "/assets/img/v2/project-featured-images/Berkeley-Square-Facade-Night-View-3-scaled.webp",
+      "/assets/images/v2/project-featured-images/Berkeley-Square-Facade-Night-View-3-scaled.webp",
   },
   {
     title: "Hilton Project Documents",
     href: "https://prestigeone.ae/project-documents/hilton-residences-dubai-maritime-city-spa-tcs/",
-    thumbnail: "assets/img/v2/project-featured-images/HILTON-NIGHT-VIEW-1.webp",
+    thumbnail: "assets/images/v2/project-featured-images/HILTON-NIGHT-VIEW-1.webp",
   },
 ];
 

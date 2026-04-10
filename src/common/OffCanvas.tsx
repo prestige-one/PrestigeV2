@@ -45,8 +45,8 @@ const OffCanvas = ({ openCanvas, setOpenCavas }: OffCanvasProps) => {
       >
         <div className="offcanvas-header">
           <Link href="/" className="navbar-brand m-0" onClick={() => setOpenCavas(false)} aria-label="Prestige One Developments home">
-            <img className="dark-logo" src="/assets/img/v2/prestigeone_logo_oneline_dark-hr.svg" alt="" />
-            <img className="light-logo" src="/assets/img/v2/prestigeone_logo_oneline_white-hr.svg" alt="Prestige One Developments" />
+            <img className="dark-logo" src="/assets/images/v2/pages/prestigeone_logo_oneline_dark-hr.svg" alt="" />
+            <img className="light-logo" src="/assets/images/v2/pages/prestigeone_logo_oneline_white-hr.svg" alt="Prestige One Developments" />
           </Link>
 
           <button

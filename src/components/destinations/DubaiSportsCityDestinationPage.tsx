@@ -35,7 +35,7 @@ const DESTINATION_CONTACT_ITEMS: ContactDetailCardItem[] = [
   },
 ];
 
-const HERO_BG = "/assets/img/v2/our-destinations/dubai-sport-city.webp";
+const HERO_BG = "/assets/images/v2/our-destinations/dubai-sport-city.webp";
 
 const INTRO_COPY =
   "Dubai Sports City is a dynamic destination where sport, lifestyle, and modern living meet. Built around world-class venues and active community spaces, it offers residents and investors strong connectivity, everyday convenience, and long-term growth potential within one of Dubai's most lifestyle-driven districts.";

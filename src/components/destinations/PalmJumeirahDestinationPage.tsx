@@ -35,7 +35,7 @@ const DESTINATION_CONTACT_ITEMS: ContactDetailCardItem[] = [
   },
 ];
 
-const HERO_BG = "/assets/img/v2/our-destinations/palm-jumeira.webp";
+const HERO_BG = "/assets/images/v2/our-destinations/palm-jumeira.webp";
 
 const INTRO_COPY =
   "Palm Jumeirah is Dubai’s celebrated island archipelago—an address defined by private beaches, resort-grade amenities, and uninterrupted sea views. With its own fronds and crescent, plus fast links to Dubai Marina and Sheikh Zayed Road, it remains one of the city’s most prestigious waterfront communities.";

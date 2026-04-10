@@ -35,7 +35,7 @@ const DESTINATION_CONTACT_ITEMS: ContactDetailCardItem[] = [
   },
 ];
 
-const HERO_BG = "/assets/img/v2/our-destinations/barsha-heights.webp";
+const HERO_BG = "/assets/images/v2/our-destinations/barsha-heights.webp";
 
 const INTRO_PARAGRAPHS = [
   "Previously known as Tecom, Barsha Heights is a community that includes a mix of residential buildings, commercial offices, serviced apartments, and hotels. This area offers an affordable lifestyle that’s a popular choice for both small businesses and people looking for a place to live and work in Dubai. Barsha Heights stands out for its central location and the way it combines living and working spaces together.",

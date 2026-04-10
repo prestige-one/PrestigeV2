@@ -18,10 +18,10 @@ export const metadata: Metadata = {
   description: SITE_DEFAULT_DESCRIPTION,
   icons: {
     icon: [
-      { url: "/assets/img/v2/favicon.ico", type: "image/png", sizes: "any" },
-      { url: "/assets/img/v2/favicon.png", type: "image/png", sizes: "any" },
+      { url: "/assets/images/v2/favicon.ico", type: "image/png", sizes: "any" },
+      { url: "/assets/images/v2/favicon.png", type: "image/png", sizes: "any" },
     ],
-    apple: "/assets/img/v2/favicon.png",
+    apple: "/assets/images/v2/favicon.png",
   },
 };
 
@@ -49,11 +49,11 @@ export default function RootLayout({
       <head>
         <link
           rel="icon"
-          href="/assets/img/v2/favicon.ico"
+          href="/assets/images/v2/favicon.ico"
           sizes="any"
           type="image/png"
         />
-        <link rel="apple-touch-icon" href="/assets/img/v2/favicon.png" />
+        <link rel="apple-touch-icon" href="/assets/images/v2/favicon.png" />
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"

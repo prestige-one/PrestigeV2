@@ -52,14 +52,6 @@ const HeaderOne = ({ style_2, onLightSurface }: HeaderOneProps) => {
 	};
 
 
-
- 
- 
-
- 
-
- 
-
   return (
     <>
       <header
@@ -69,8 +61,8 @@ const HeaderOne = ({ style_2, onLightSurface }: HeaderOneProps) => {
           <div className="container">
 
             <Link className="navbar-brand" href="/">
-              <img className="dark-logo" src="/assets/img/v2/prestigeone_logo_oneline_dark-hr.svg" alt="Prestige One Developments" />
-              <img className="light-logo" src="/assets/img/v2/prestigeone_logo_oneline_white-hr.svg" alt="Prestige One Developments" />
+              <img className="dark-logo" src="/assets/images/v2/pages/prestigeone_logo_oneline_dark-hr.svg" alt="Prestige One Developments" />
+              <img className="light-logo" src="/assets/images/v2/pages/prestigeone_logo_oneline_white-hr.svg" alt="Prestige One Developments" />
             </Link>
 
 

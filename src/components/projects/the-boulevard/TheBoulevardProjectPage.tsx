@@ -18,7 +18,7 @@ type AmenityVideoRow = {
   poster?: string;
 };
 
-const HERO_IMG = "/assets/img/v2/project-featured-images/NIGHT-4c-scaled.webp";
+const HERO_IMG = "/assets/images/v2/project-featured-images/NIGHT-4c-scaled.webp";
 
 const PDF = {
   brochure: "/project-documents",
@@ -32,7 +32,7 @@ const LOCATION_DESTINATION = "/our-destinations/mohammed-bin-rashid-city/";
 const MAP_EMBED_SRC =
   "https://maps.google.com/?cid=6376237623478448479&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYASAA&hl=en-US&source=embed";
 
-const PROJECT_WIDE_VIDEO = "/assets/img/v2/project-features-videos/Luxury-Canal-Residences-by-Prestige-One.mp4";
+const PROJECT_WIDE_VIDEO = "/assets/images/v2/project-features-videos/Luxury-Canal-Residences-by-Prestige-One.mp4";
 
 const amenityVideos: AmenityVideoRow[] = [
   {

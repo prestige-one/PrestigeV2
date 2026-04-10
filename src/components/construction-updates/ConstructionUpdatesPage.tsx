@@ -26,31 +26,31 @@ const CONSTRUCTION_UPDATES: ConstructionUpdateItem[] = [
     href: "/construction-update-the-residence-by-prestige-one/",
     pathSlug: "construction-update-the-residence-by-prestige-one",
     image:
-      "/assets/img/v2/project-featured-images/THE-RESIDENCE.webp",
+      "/assets/images/v2/project-featured-images/THE-RESIDENCE.webp",
   },
   {
     href: "/construction-update-luxury-canal-residences-by-prestige-harbour/",
     pathSlug: "construction-update-luxury-canal-residences-by-prestige-harbour",
     image:
-      "/assets/img/v2/project-featured-images/luxury-canal.webp",
+      "/assets/images/v2/project-featured-images/luxury-canal.webp",
   },
   {
     href: "/construction-update-coastal-haven-by-prestige-harbour/",
     pathSlug: "construction-update-coastal-haven-by-prestige-harbour",
     image:
-      "/assets/img/v2/project-featured-images/Coastal-Haven.webp",
+      "/assets/images/v2/project-featured-images/Coastal-Haven.webp",
   },
   {
     href: "/construction-update-the-boluevard-by-prestige-one/",
     pathSlug: "construction-update-the-boluevard-by-prestige-one",
     image:
-      "/assets/img/v2/project-featured-images/NIGHT-4c-scaled.webp",
+      "/assets/images/v2/project-featured-images/NIGHT-4c-scaled.webp",
   },
   {
     href: "/construction-update-parkway-by-prestige-one/",
     pathSlug: "construction-update-parkway-by-prestige-one",
     image:
-      "/assets/img/v2/project-featured-images/Front-Exterior-3-scaled.webp",
+      "/assets/images/v2/project-featured-images/Front-Exterior-3-scaled.webp",
   },
   {
     href: "/construction-update-vista-by-prestigeone/",
@@ -61,13 +61,13 @@ const CONSTRUCTION_UPDATES: ConstructionUpdateItem[] = [
     href: "/construction-update-the-waterway-by-prestige-one/",
     pathSlug: "construction-update-the-waterway-by-prestige-one",
     image:
-      "/assets/img/v2/project-featured-images/The-Waterway.webp",
+      "/assets/images/v2/project-featured-images/The-Waterway.webp",
   },
   {
     href: "/construction-update-the-one-by-prestige-one/",
     pathSlug: "construction-update-the-one-by-prestige-one",
     image:
-      "/assets/img/v2/project-featured-images/Front-Exterior-3-scaled.webp",
+      "/assets/images/v2/project-featured-images/Front-Exterior-3-scaled.webp",
   },
   {
     href: "/construction-update-place-by-prestige-one/",

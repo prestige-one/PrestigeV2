@@ -49,7 +49,7 @@ const DubaiDestinationsMap = () => {
 
   return (
     <div className="po-dubai-map">
-      <img src="/assets/img/v2/prestige-map.webp" alt="Dubai destinations map" />
+      <img src="/assets/images/v2/pages/prestige-map.webp" alt="Dubai destinations map" />
       <div
         className={`po-map-blink-marker po-map-jump-marker ${isOfficeOpen ? "is-open" : "is-closed"}`}
         style={{ top: "56%", right: "60%" }}

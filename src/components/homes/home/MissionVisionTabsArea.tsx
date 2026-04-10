@@ -24,7 +24,7 @@ const MissionVisionTabsArea = () => {
         <div className="row g-4 g-lg-5 align-items-center po-values-main-row">
           <div className="col-12 col-lg-5">
             <div className="po-values-left-image">
-              <img src="/assets/img/v2/project-featured-images/marina-plaza.jpg" alt="Prestige One developments" />
+              <img src="/assets/images/v2/pages/marina-plaza.jpg" alt="Prestige One developments" />
             </div>
           </div>
 

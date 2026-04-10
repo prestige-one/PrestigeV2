@@ -5,20 +5,20 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 
 const projectLogos = [
-  { name: "Berkeley Square North/South", file: "Berkeley-Square-North-South-Logo-Options-02-1-scaled.webp-1.webp" },
-  { name: "Berkeley Square", file: "Berkeley-Square-North-South-Logo-Options-02-1-scaled.webp.webp" },
-  { name: "Coastal Haven", file: "Coastal-Haven-Final-Logo.webp" },
+  { name: "Berkeley Square North", file: "Berkeley-Square-North-Logo.webp" },
+  { name: "Berkeley Square South", file: "Berkeley-Square-South-Logo.webp" },
+  { name: "Coastal Haven", file: "Coastal-Haven-Logo.webp" },
   { name: "Hilton", file: "hilton.webp" },
-  { name: "Lux Canal", file: "Lux.-canal-White-logo2x.webp" },
-  { name: "Parkway", file: "Parkway-1-scaled.webp.webp" },
-  { name: "Place", file: "Place-Logo-2025-white.webp" },
-  { name: "Residence", file: "RESIDENCE_white_trans.webp" },
-  { name: "Sanctuary Hive", file: "Sanctuary-Hive-white.webp" },
-  { name: "Sanctuary Residential", file: "Sanctuary-residential-white.webp" },
+  { name: "Lux Canal", file: "Lux.-canal.webp" },
+  { name: "Parkway", file: "Parkway.webp" },
+  { name: "Place", file: "Place-Logo.webp" },
+  { name: "Residence", file: "RESIDENCE.webp" },
+  { name: "Sanctuary Hive", file: "Sanctuary-Hive.webp" },
+  { name: "Sanctuary Residential", file: "Sanctuary-residential.webp" },
   { name: "Seaside", file: "seaside.webp" },
   { name: "The Boulevard", file: "The-Bodulevard.webp" },
-  { name: "The One", file: "TheOne.webp.webp" },
-  { name: "Vista", file: "VISTA_white_trans.webp" },
+  { name: "The One", file: "The-One.webp" },
+  { name: "Vista", file: "VISTA.webp" },
   { name: "Waterway", file: "waterway.webp" },
 ];
 
@@ -45,7 +45,7 @@ const LogoSliderArea = () => {
             <SwiperSlide key={logo.file}>
               <div className="po-logo-card">
                 <img
-                  src={`/assets/img/v2/web-logos/${logo.file}`}
+                  src={`/assets/images/v2/web-logos/${logo.file}`}
                   alt={logo.name}
                 />
               </div>

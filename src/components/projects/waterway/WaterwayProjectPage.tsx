@@ -33,7 +33,7 @@ const CONSTRUCTION_UPDATES = "/construction-update-the-waterway-by-prestige-one/
 const LOCATION_DESTINATION = "/our-destinations/mohammed-bin-rashid-city/";
 const MAP_EMBED_SRC = "https://www.google.com/maps?q=The+Waterway+by+Prestige+One&output=embed";
 
-const PROJECT_WIDE_VIDEO = "/assets/img/v2/project-features-videos/Luxury-Canal-Residences-by-Prestige-One.mp4";
+const PROJECT_WIDE_VIDEO = "/assets/images/v2/project-features-videos/Luxury-Canal-Residences-by-Prestige-One.mp4";
 
 const amenityVideos: AmenityVideoRow[] = [
   {

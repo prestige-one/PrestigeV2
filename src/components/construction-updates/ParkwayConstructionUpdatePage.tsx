@@ -9,7 +9,7 @@ import {
   type GalleryMonth,
 } from "@/data/construction-update-common";
 
-const HERO_IMAGE = "/assets/img/v2/project-featured-images/Front-Exterior-3-scaled.webp";
+const HERO_IMAGE = "/assets/images/v2/project-featured-images/Front-Exterior-3-scaled.webp";
 
 const PARKWAY_GALLERY: GalleryMonth[] = [
   {

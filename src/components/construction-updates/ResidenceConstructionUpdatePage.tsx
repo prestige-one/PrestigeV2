@@ -10,7 +10,7 @@ import {
 } from "@/data/construction-update-common";
 
 const HERO_IMAGE =
-  "assets/img/v2/project-featured-images/THE-RESIDENCE.webp";
+  "assets/images/v2/project-featured-images/THE-RESIDENCE.webp";
 
 const RESIDENCE_GALLERY: GalleryMonth[] = [
   {

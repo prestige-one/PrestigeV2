@@ -18,16 +18,16 @@ type AmenityVideoRow = {
   poster?: string;
 };
 
-const HERO_VIDEO = "/assets/img/v2/project-features-videos/Sanctuary-Residential.mp4";
+const HERO_VIDEO = "/assets/images/v2/project-features-videos/Sanctuary-Residential.mp4";
 
 const HERO_IMG =
-  "/assets/img/v2/project-featured-images/sanctuary-residential-exterior-view.webp";
+  "/assets/images/v2/project-featured-images/sanctuary-residential-exterior-view.webp";
 
 
 const FALLBACK_IMG =
-  "/assets/img/v2/project-featured-images/Front-Exterior-3-scaled.webp";
+  "/assets/images/v2/project-featured-images/Front-Exterior-3-scaled.webp";
 
-const SANCTUARY_LOCAL_IMG = "/assets/img/v2/project-featured-images/sanctuary";
+const SANCTUARY_LOCAL_IMG = "/assets/images/v2/project-featured-images/sanctuary";
 
 const PDF = {
   brochure: "/project-documents",

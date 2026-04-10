@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Link from "next/link";
 import { useEffect, useRef } from "react";
@@ -35,7 +35,7 @@ const DESTINATION_CONTACT_ITEMS: ContactDetailCardItem[] = [
   },
 ];
 
-const HERO_BG = "/assets/img/v2/our-destinations/dubai-Islands.webp";
+const HERO_BG = "/assets/images/v2/our-destinations/dubai-Islands.webp";
 
 const INTRO_COPY =
   "Dubai Islands is a masterfully designed waterfront destination, featuring a collection of islands each offering a unique charm. With serene beaches, luxury resorts, and stunning ocean views, this coastal retreat promises an unmatched lifestyle. Dubai Islands provides a perfect blend of leisure, entertainment, and natural beauty, making it a prestigious address for those seeking tranquility along the water.";

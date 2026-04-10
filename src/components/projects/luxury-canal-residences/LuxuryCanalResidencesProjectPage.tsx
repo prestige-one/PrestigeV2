@@ -116,7 +116,7 @@ const outdoorGallery = galleryItems.slice(3, 6);
 const fullWidthBuilding =
   "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2025/02/24114928/02-Facade-scaled.webp";
 const LUXURY_CANAL_WIDE_VIDEO =
-  "/assets/img/v2/project-features-videos/Luxury-Canal-Residences-by-Prestige-One.mp4";
+  "/assets/images/v2/project-features-videos/Luxury-Canal-Residences-by-Prestige-One.mp4";
 
 const surroundingsPlaces = [
   {

@@ -18,7 +18,7 @@ type AmenityVideoRow = {
   poster?: string;
 };
 
-const HERO_IMG = "/assets/img/v2/project-featured-images/The-Place-Banner.webp";
+const HERO_IMG = "/assets/images/v2/project-featured-images/The-Place-Banner.webp";
 
 const PDF = {
   brochure: "/project-documents",
@@ -30,7 +30,7 @@ const CONSTRUCTION_UPDATES = "/construction-update-place-by-prestige-one/";
 const LOCATION_DESTINATION = "/our-destinations/dubai-sports-city/";
 const MAP_EMBED_SRC = "https://www.google.com/maps?q=Place+by+Prestige+One+Dubai+Sports+City&output=embed";
 
-const PROJECT_WIDE_VIDEO = "/assets/img/v2/project-features-videos/Luxury-Canal-Residences-by-Prestige-One.mp4";
+const PROJECT_WIDE_VIDEO = "/assets/images/v2/project-features-videos/Luxury-Canal-Residences-by-Prestige-One.mp4";
 
 const amenityVideos: AmenityVideoRow[] = [
   {
@@ -140,7 +140,7 @@ const surroundingsPlaces = [
   {
     title: "Jumeirah Beach Residence (JBR)",
     text: "A 25-minute drive takes you to JBR, a popular beachfront area with cafes, shopping, and family-friendly activities.",
-    image: "/assets/img/v2/Jumeirah-Beach-Residence.webp",
+    image: "/assets/images/v2/Jumeirah-Beach-Residence.webp",
   },
 ];
 

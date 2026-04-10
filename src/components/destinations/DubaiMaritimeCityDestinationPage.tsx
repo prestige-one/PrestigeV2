@@ -35,7 +35,7 @@ const DESTINATION_CONTACT_ITEMS: ContactDetailCardItem[] = [
   },
 ];
 
-const HERO_BG = "/assets/img/v2/our-destinations/dubai-maritime.webp";
+const HERO_BG = "/assets/images/v2/our-destinations/dubai-maritime.webp";
 
 const INTRO_COPY =
   "Dubai Maritime City is one of Dubai's most forward-looking waterfront districts—an emerging hub where coastal living, modern infrastructure, and strategic connectivity come together. Surrounded by the sea on three sides and positioned between Port Rashid and the iconic Dubai skyline, it offers a balanced blend of lifestyle, business, and future-ready urban planning.";

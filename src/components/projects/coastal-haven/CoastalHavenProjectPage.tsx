@@ -18,7 +18,7 @@ type AmenityVideoRow = {
   poster?: string;
 };
 
-const HERO_IMG = "/assets/img/v2/project-featured-images/Coastal-Haven.webp";
+const HERO_IMG = "/assets/images/v2/project-featured-images/Coastal-Haven.webp";
 
 const PDF = {
   brochure: "/project-documents",
@@ -33,7 +33,7 @@ const MAP_EMBED_SRC =
   "https://www.google.com/maps?q=Luxury+Canal+Residences+by+Prestige+Harbour+Dubai+Islands&output=embed";
 
 const COASTAL_HAVEN_WIDE_VIDEO =
-  "/assets/img/v2/project-features-videos/Coastal-Haven-by-Prestige-Harbour.mp4";
+  "/assets/images/v2/project-features-videos/Coastal-Haven-by-Prestige-Harbour.mp4";
 
 const amenityVideos: AmenityVideoRow[] = [
   {

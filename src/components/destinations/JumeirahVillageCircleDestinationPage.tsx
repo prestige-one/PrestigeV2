@@ -35,7 +35,7 @@ const DESTINATION_CONTACT_ITEMS: ContactDetailCardItem[] = [
   },
 ];
 
-const HERO_BG = "/assets/img/v2/our-destinations/jumeirah-village-circle-jvc.webp";
+const HERO_BG = "/assets/images/v2/our-destinations/jumeirah-village-circle-jvc.webp";
 
 const INTRO_COPY =
   "Jumeirah Village Circle (JVC) is a well-rounded residential community known for its village-style layout, green pockets, and strong family appeal. With convenient access to major highways and everyday amenities nearby, JVC continues to attract residents and investors seeking balance, connectivity, and long-term value in central Dubai.";

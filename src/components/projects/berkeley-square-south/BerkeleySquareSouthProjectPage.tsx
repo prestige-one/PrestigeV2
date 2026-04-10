@@ -32,7 +32,7 @@ const PDF = {
 const LOCATION_DESTINATION = "/our-destinations/jumeirah-village-circle/";
 const CONSTRUCTION_UPDATES = "/construction-updates";
 
-const PROJECT_WIDE_VIDEO = "/assets/img/v2/project-features-videos/Luxury-Canal-Residences-by-Prestige-One.mp4";
+const PROJECT_WIDE_VIDEO = "/assets/images/v2/project-features-videos/Luxury-Canal-Residences-by-Prestige-One.mp4";
 
 const MAP_EMBED_SRC =
   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57726.250386632615!2d55.271532549999996!3d25.2742637!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f4384740a5241%3A0xe6d78cfd14c6ada3!2sMadinat%20Dubai%20Al%20Melaheyah%20-%20Dubai!5e0!3m2!1sen!2sae!4v1775290787017!5m2!1sen!2sae";

@@ -18,7 +18,7 @@ type AmenityVideoRow = {
   poster?: string;
 };
 
-const HERO_IMG = "/assets/img/v2/project-featured-images/The-Place-Banner.webp";
+const HERO_IMG = "/assets/images/v2/project-featured-images/The-Place-Banner.webp";
 
 const PDF = {
   brochure: "/project-documents",
@@ -30,7 +30,7 @@ const CONSTRUCTION_UPDATES = "/construction-update-the-one-by-prestige-one/";
 const LOCATION_DESTINATION = "/our-destinations/barsha-heights/";
 const MAP_EMBED_SRC = "https://www.google.com/maps?q=The+One+by+Prestige+One+Barsha+Heights&output=embed";
 
-const PROJECT_WIDE_VIDEO = "/assets/img/v2/project-features-videos/Luxury-Canal-Residences-by-Prestige-One.mp4";
+const PROJECT_WIDE_VIDEO = "/assets/images/v2/project-features-videos/Luxury-Canal-Residences-by-Prestige-One.mp4";
 
 const amenityVideos: AmenityVideoRow[] = [
   {

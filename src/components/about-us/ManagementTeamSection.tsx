@@ -6,12 +6,12 @@ const members = [
   {
     name: "Sulaiman Saifi",
     role: "Vice Chairman",
-    image: "/assets/img/v2/Sulaiman_Saifi-740x850-1.webp",
+    image: "/assets/images/v2/pages/Sulaiman_Saifi.webp",
   },
   {
     name: "Ajmal Saifi",
     role: "CEO",
-    image: "/assets/img/v2/Ajmal-CEO-short-new-740x850-1.webp",
+    image: "/assets/images/v2/pages/Ajmal-CEO.webp",
   },
 ];
 

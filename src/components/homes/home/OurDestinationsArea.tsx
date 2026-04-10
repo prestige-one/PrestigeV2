@@ -9,42 +9,42 @@ const destinations = [
   {
     title: "Dubai Maritime City",
     link: "https://prestigeone.ae/dubai-maritime-city/",
-    image: "/assets/img/v2/our-destinations/dubai-maritime.webp",
+    image: "/assets/images/v2/our-destinations/dubai-maritime.webp",
   },
   {
     title: "Mohammed Bin Rashid City",
     link: "/our-destinations/mohammed-bin-rashid-city",
-    image: "/assets/img/v2/our-destinations/mbr-city.webp",
+    image: "/assets/images/v2/our-destinations/mbr-city.webp",
   },
   {
     title: "Dubai Islands",
     link: "/our-destinations/dubai-islands",
-    image: "/assets/img/v2/our-destinations/dubai-Islands.webp",
+    image: "/assets/images/v2/our-destinations/dubai-Islands.webp",
   },
   {
     title: "Jumeirah Village Circle",
     link: "/our-destinations/jumeirah-village-circle",
-    image: "/assets/img/v2/our-destinations/jumeirah-village-circle-jvc.webp",
+    image: "/assets/images/v2/our-destinations/jumeirah-village-circle-jvc.webp",
   },
   {
     title: "Dubai Sports City",
     link: "/our-destinations/dubai-sports-city",
-    image: "/assets/img/v2/our-destinations/dubai-sport-city.webp",
+    image: "/assets/images/v2/our-destinations/dubai-sport-city.webp",
   },
   {
     title: "Palm Jumeirah",
     link: "/our-destinations/palm-jumeirah",
-    image: "/assets/img/v2/our-destinations/palm-jumeira.webp",
+    image: "/assets/images/v2/our-destinations/palm-jumeira.webp",
   },
   {
     title: "Barsha Heights",
     link: "/our-destinations/barsha-heights",
-    image: "/assets/img/v2/our-destinations/barsha-heights.webp",
+    image: "/assets/images/v2/our-destinations/barsha-heights.webp",
   },
   {
     title: "Dubai Land Residence Complex",
     link: "https://prestigeone.ae/dlrc/",
-    image: "/assets/img/v2/our-destinations/DLRC.webp",
+    image: "/assets/images/v2/our-destinations/DLRC.webp",
   },
 ];
 
