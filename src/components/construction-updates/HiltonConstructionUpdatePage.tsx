@@ -9,8 +9,7 @@ import {
   type GalleryMonth,
 } from "@/data/construction-update-common";
 
-const HERO_IMAGE =
-  "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/14144431/HILTON-NIGHT-VIEW-1.webp";
+const HERO_IMAGE = "/assets/images/v2/project-featured-images/hilton/HILTON-NIGHT-VIEW-1.webp";
 
 const HILTON_GALLERY: GalleryMonth[] = [
   {

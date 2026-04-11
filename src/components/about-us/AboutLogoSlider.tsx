@@ -8,7 +8,7 @@ const projectLogos = [
   { name: "Berkeley Square South", file: "Berkeley-Square-South-Logo.webp" },
   { name: "Coastal Haven", file: "Coastal-Haven-Logo.webp" },
   { name: "Hilton", file: "hilton.webp" },
-  { name: "Lux Canal", file: "Lux.-canal.webp" },
+  { name: "Lux Canal", file: "Lux-canal.webp" },
   { name: "Parkway", file: "Parkway.webp" },
   { name: "Place", file: "Place-Logo.webp" },
   { name: "Residence", file: "RESIDENCE.webp" },

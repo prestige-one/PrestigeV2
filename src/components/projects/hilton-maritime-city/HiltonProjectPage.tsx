@@ -10,18 +10,20 @@ import {
   ProjectImageGalleryLightbox,
   type ProjectGalleryItem,
 } from "@/components/projects/project-page/ProjectImageGalleryLightbox";
-import {
-  parseHiltonAmenityVideosTxt,
-  type HiltonAmenityVideoRow,
-} from "@/lib/parseHiltonAmenityVideosTxt";
 import { LocaleAmenityCard } from "@/components/projects/project-page/LocaleAmenityCard";
+
+type HiltonAmenityVideoRow = {
+  label: string;
+  video: string;
+  poster: string;
+  videoWidth: number;
+  videoHeight: number;
+};
 
 const HERO_VIDEO = "/assets/images/v2/project-features-videos/Hilton-Residences-Dubai-Maritime-City.mp4";
 
-const HERO_IMG =
-  "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/14144431/HILTON-NIGHT-VIEW-1.webp";
-const HERO_IMG_ALT =
-  "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/12140403/HILTON-NIGHT-VIEW-900.webp";
+const HERO_IMG = "/assets/images/v2/project-featured-images/hilton/HILTON-NIGHT-VIEW-1.webp";
+const HERO_IMG_ALT = "/assets/images/v2/project-featured-images/hilton/HILTON-NIGHT-VIEW-900.webp";
 
 const PDF = {
   brochure:
@@ -34,38 +36,38 @@ const PDF = {
 
 const MORE_DETAILS = "https://hiltonresidencesdubaimaritimecity.ae/";
 const CONSTRUCTION_UPDATES =
-  "https://prestigeone.ae/construction-update-hilton-residences-by-prestige-one/";
+  "/construction-update-hilton-residences-by-prestige-one";
 
 const DMC_MAP_EMBED_SRC =
   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57726.250386632615!2d55.271532549999996!3d25.2742637!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f4384740a5241%3A0xe6d78cfd14c6ada3!2sMadinat%20Dubai%20Al%20Melaheyah%20-%20Dubai!5e0!3m2!1sen!2sae!4v1775290787017!5m2!1sen!2sae";
 
-/** Default list if `/data/hilton-amenities-videos.txt` is missing or empty. */
-const FALLBACK_AMENITY_VIDEOS: HiltonAmenityVideoRow[] = [
+/** Hilton amenity loop videos + poster frames (source of truth for this page). */
+const HILTON_AMENITY_VIDEOS: HiltonAmenityVideoRow[] = [
   {
     label: "Outdoor Cinema",
     video:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2022/08/26080805/1115750_Cinema_Man_1280x720-1.mp4",
+      "https://xyrfjwu7qspaj5zr.public.blob.vercel-storage.com/prestigeone/videos/1115750_Cinema_Man_1280x720-1.mp4",
     poster: HERO_IMG,
     videoWidth: 1280,
     videoHeight: 720,
   },
   {
     label: "Outdoor Kids’ Play Area",
-    video: "https://prestigeone.ae/wp-content/uploads/2022/08/5080670_Caucasian_Girl_1280x720.mp4",
+    video: "https://xyrfjwu7qspaj5zr.public.blob.vercel-storage.com/prestigeone/videos/5080670_Caucasian_Girl_1280x720.mp4",
     poster: HERO_IMG,
     videoWidth: 1280,
     videoHeight: 720,
   },
   {
     label: "BBQ Deck",
-    video: "https://prestigeone.ae/wp-content/uploads/2022/08/1104331_1080p_4k_1280x720.mp4",
+    video: "https://xyrfjwu7qspaj5zr.public.blob.vercel-storage.com/prestigeone/videos/1104331_1080p_4k_1280x720.mp4",
     poster: HERO_IMG,
     videoWidth: 1280,
     videoHeight: 720,
   },
   {
     label: "Fitness Center",
-    video: "https://prestigeone.ae/wp-content/uploads/2022/08/4730225_Fitness_Workout_1280x720.mp4",
+    video: "https://xyrfjwu7qspaj5zr.public.blob.vercel-storage.com/prestigeone/videos/4730225_Fitness_Workout_1280x720.mp4",
     poster: HERO_IMG,
     videoWidth: 1280,
     videoHeight: 720,
@@ -73,7 +75,7 @@ const FALLBACK_AMENITY_VIDEOS: HiltonAmenityVideoRow[] = [
   {
     label: "City View",
     video:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/16103247/city-view.mp4",
+      "https://xyrfjwu7qspaj5zr.public.blob.vercel-storage.com/prestigeone/videos/city-view.mp4",
     poster: HERO_IMG,
     videoWidth: 1920,
     videoHeight: 1080,
@@ -81,21 +83,21 @@ const FALLBACK_AMENITY_VIDEOS: HiltonAmenityVideoRow[] = [
   {
     label: "Infinity Skyline Pool",
     video:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/12/25145038/Skyline-Infinity-Pool.mp4",
+      "https://xyrfjwu7qspaj5zr.public.blob.vercel-storage.com/prestigeone/videos/Skyline-Infinity-Pool.mp4",
     poster: HERO_IMG_ALT,
     videoWidth: 1920,
     videoHeight: 1080,
   },
   {
     label: "Multi-Sports Court",
-    video: "https://prestigeone.ae/wp-content/uploads/2022/08/1115557_Hobbies_Tennis_1280x720.mp4",
+    video: "https://xyrfjwu7qspaj5zr.public.blob.vercel-storage.com/prestigeone/videos/1115557_Hobbies_Tennis_1280x720.mp4",
     poster: HERO_IMG,
     videoWidth: 1280,
     videoHeight: 720,
   },
   {
     label: "Running Track",
-    video: "https://prestigeone.ae/wp-content/uploads/2022/08/1115348_Woman_Indoor_1280x720.mp4",
+    video: "https://xyrfjwu7qspaj5zr.public.blob.vercel-storage.com/prestigeone/videos/1115348_Woman_Indoor_1280x720.mp4",
     poster: HERO_IMG,
     videoWidth: 1280,
     videoHeight: 720,
@@ -103,7 +105,7 @@ const FALLBACK_AMENITY_VIDEOS: HiltonAmenityVideoRow[] = [
   {
     label: "Indoor Play Area",
     video:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/16103831/Coworkers_play-ping-pong.mp4",
+      "https://xyrfjwu7qspaj5zr.public.blob.vercel-storage.com/prestigeone/videos/Coworkers_play-ping-pong.mp4",
     poster: HERO_IMG_ALT,
     videoWidth: 1920,
     videoHeight: 1080,
@@ -111,7 +113,7 @@ const FALLBACK_AMENITY_VIDEOS: HiltonAmenityVideoRow[] = [
   {
     label: "Transportation",
     video:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/16111538/transport1.mp4",
+      "https://xyrfjwu7qspaj5zr.public.blob.vercel-storage.com/prestigeone/videos/transport.mp4",
     poster: HERO_IMG,
     videoWidth: 1920,
     videoHeight: 1080,
@@ -156,26 +158,22 @@ const surroundingsPlaces = [
   {
     title: "Mall of the Emirates",
     text: "Just 15 minutes away, this iconic shopping mall features a mix of luxury retail, fine dining, and Ski Dubai.",
-    image:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2022/08/24071624/mallfoemirates-scaled.webp",
+    image: "/assets/images/v2/locations/mall-of-the-emirates.webp",
   },
   {
     title: "Dubai International Airport (DXB)",
     text: "~ 10-15 Minutes away",
-    image:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/14142038/dubai-airport-scaled-1.webp",
+    image: "/assets/images/v2/locations/airport-dubai.webp",
   },
   {
     title: "Downtown Dubai",
     text: "~ 5-10 Minutes away",
-    image:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/14153946/futuristic-landscape-dubai1.webp",
+    image: "/assets/images/v2/locations/futuristic-landscape-dubai1.webp",
   },
   {
     title: "Jumeirah Beach Residence (JBR)",
     text: "A 10-15 minute drive takes you to JBR, a popular beachfront area with cafés, shopping, and family-friendly activities.",
-    image:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2022/08/20113532/WhatsApp-Image-2024-09-20-at-5.01.04%E2%80%AFPM.jpeg",
+    image: "/assets/images/v2/locations/jumeira-residence-beach.webp",
   },
 ];
 
@@ -280,22 +278,7 @@ function AmenityVideoTile({ label, video, poster }: HiltonAmenityVideoRow) {
 }
 
 const HiltonProjectPage = () => {
-  const [amenityVideos, setAmenityVideos] = useState<HiltonAmenityVideoRow[]>(FALLBACK_AMENITY_VIDEOS);
   const [galleryIndex, setGalleryIndex] = useState<number | null>(null);
-
-  useEffect(() => {
-    let cancelled = false;
-    void fetch("/data/hilton-amenities-videos.txt")
-      .then((res) => (res.ok ? res.text() : Promise.reject(new Error("no txt"))))
-      .then((text) => {
-        const parsed = parseHiltonAmenityVideosTxt(text);
-        if (!cancelled && parsed.length > 0) setAmenityVideos(parsed);
-      })
-      .catch(() => {});
-    return () => {
-      cancelled = true;
-    };
-  }, []);
 
   return (
     <>
@@ -390,7 +373,7 @@ const HiltonProjectPage = () => {
         </div>
         <div className="po-project-page-amenities-fullbleed">
           <div className="po-project-page-amenities-masonry">
-            {amenityVideos.map((item, index) => (
+            {HILTON_AMENITY_VIDEOS.map((item, index) => (
               <AmenityVideoTile key={`${item.label}-${index}`} {...item} />
             ))}
           </div>

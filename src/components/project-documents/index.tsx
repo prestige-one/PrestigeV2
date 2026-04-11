@@ -7,66 +7,66 @@ import SiteFooterBlock from "@/layouts/SiteFooterBlock";
 const documentItems = [
   {
     title: "Vista Project Documents",
-    href: "https://prestigeone.ae/project-documents/vista-spa-tcs/",
-    thumbnail: "https://prestigeone.ae/wp-content/uploads/2022/08/Website_images_23Feb-VISTA.jpg",
+    href: "/project-documents/vista-spa-tcs/",
+    thumbnail: "/assets/images/v2/project-featured-images/vista/vista.webp",
   },
   {
     title: "The Residence Project Documents",
-    href: "https://prestigeone.ae/project-documents/the-residence-spa-tcs/",
+    href: "/project-documents/the-residence-spa-tcs/",
     thumbnail:
-      "/assets/images/v2/project-featured-images/Berkeley-Square-Kids-Area-Night-scaled.webp",
+      "/assets/images/v2/project-featured-images/residence/THE-RESIDENCE.webp",
   },
   {
     title: "Seaside Project Documents",
-    href: "https://prestigeone.ae/project-documents/seaside-spa-tcs/",
-    thumbnail: "/assets/images/v2/project-featured-images/seaside-featured-image.webp",
+    href: "/project-documents/seaside-spa-tcs/",
+    thumbnail: "/assets/images/v2/project-featured-images/seaside/seaside-featured-image.webp",
   },
   {
     title: "Place Project Documents",
-    href: "https://prestigeone.ae/project-documents/the-place-spa-tcs/",
-    thumbnail: "/assets/images/v2/project-featured-images/The-Place-Banner.webp",
+    href: "/project-documents/the-place-spa-tcs/",
+    thumbnail: "/assets/images/v2/project-featured-images/place/The-Place-Banner.webp",
   },
   {
     title: "The Waterway Project Documents",
-    href: "https://prestigeone.ae/project-documents/the-waterway-spa-tcs/",
-    thumbnail: "/assets/images/v2/project-featured-images/04-Facade-scaled.webp",
+    href: "/project-documents/the-waterway-spa-tcs/",
+    thumbnail: "/assets/images/v2/project-featured-images/waterway/Waterway-pic-2.webp",
   },
   {
     title: "Parkway Project Documents",
-    href: "https://prestigeone.ae/project-documents/parkway-spa-tcs/",
-    thumbnail: "/assets/images/v2/project-featured-images/Front-Exterior-3-scaled.webp",
+    href: "/project-documents/parkway-spa-tcs/",
+    thumbnail: "/assets/images/v2/project-featured-images/parkway/parkway.webp",
   },
   {
     title: "The One Project Documents",
-    href: "https://prestigeone.ae/project-documents/the-one-spa-tcs/",
+    href: "/project-documents/the-one-spa-tcs/",
     thumbnail:
-      "/assets/images/v2/project-featured-images/Berkeley-Square-Facade-Night-View-3-scaled.webp",
+      "/assets/images/v2/project-featured-images/one/the-one.webp",
   },
   {
     title: "The Boulevard Project Documents",
-    href: "https://prestigeone.ae/project-documents/the-boulevard-spa-tcs/",
-    thumbnail: "/assets/images/v2/project-featured-images/NIGHT-4c-scaled.webp",
+    href: "/project-documents/the-boulevard-spa-tcs/",
+    thumbnail: "/assets/images/v2/project-featured-images/boulevard/boulevard.webp",
   },
   {
     title: "Coastal Haven Project Documents",
-    href: "https://prestigeone.ae/project-documents/coastal-haven-spa-tcs/",
-    thumbnail: "assets/images/v2/project-featured-images/harbour-1.webp",
+    href: "/project-documents/coastal-haven-spa-tcs/",
+    thumbnail: "/assets/images/v2/project-featured-images/coastal-haven/Coastal-Haven.webp",
   },
   {
     title: "Luxury Canal Project Documents",
-    href: "https://prestigeone.ae/project-documents/luxury-canal-spa-tcs/",
-    thumbnail: "/assets/images/v2/project-featured-images/04-Facade-scaled.webp",
+    href: "/project-documents/luxury-canal-spa-tcs/",
+    thumbnail: "/assets/images/v2/project-featured-images/luxury-canal/luxury-canal.webp",
   },
   {
     title: "Berkeley Square Project Documents",
-    href: "https://prestigeone.ae/project-documents/berkeley-square-spa-tcs/",
+    href: "/project-documents/berkeley-square-spa-tcs/",
     thumbnail:
-      "/assets/images/v2/project-featured-images/Berkeley-Square-Facade-Night-View-3-scaled.webp",
+      "/assets/images/v2/project-featured-images/berkeley/Berkeley-Square-North.webp",
   },
   {
     title: "Hilton Project Documents",
-    href: "https://prestigeone.ae/project-documents/hilton-residences-dubai-maritime-city-spa-tcs/",
-    thumbnail: "assets/images/v2/project-featured-images/HILTON-NIGHT-VIEW-1.webp",
+    href: "/project-documents/hilton-residences-dubai-maritime-city-spa-tcs/",
+    thumbnail: "/assets/images/v2/project-featured-images/hilton/HILTON-NIGHT-VIEW-1.webp",
   },
 ];
 
@@ -93,12 +93,7 @@ const ProjectDocumentsPage = () => {
           <ul className="po-project-docs-list">
             {documentItems.map((item) => (
               <li key={item.href} className="po-project-docs-item">
-                <a
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="po-project-docs-link"
-                >
+                <a href={item.href} className="po-project-docs-link">
                   <span className="po-project-docs-thumb-wrap">
                     <img
                       src={item.thumbnail}

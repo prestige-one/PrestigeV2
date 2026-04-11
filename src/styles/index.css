@@ -4968,11 +4968,11 @@ span.material-symbols-outlined {
 }
 
 .po-project-docs-hero-inner h1 {
-  margin: 0;
-  color: #ffffff;
-  font-size: clamp(2rem, 5vw, 3.25rem);
-  letter-spacing: 0.04em;
-  font-weight: 700;
+	margin: 0;
+	color: #ffffff;
+	font-size: clamp(2rem, 3vw, 3rem);
+	letter-spacing: 0.04em;
+	font-weight: 700;
 }
 
 .po-project-docs-hero-inner > p {
@@ -5097,6 +5097,108 @@ span.material-symbols-outlined {
   .po-project-docs-cta {
     font-size: 0.72rem;
   }
+}
+
+/* Project document hub — /project-documents/[slug]/ */
+.po-project-docs-hub-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center; 
+  gap: 1rem 1.75rem;
+  margin: clamp(1.5rem, 4vw, 2rem) 0 0;
+}
+
+.po-project-docs-hub-pdf-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: #0e0e0e;
+  border-radius: 8px;
+  text-decoration: none;
+  border: 1px solid #0e0e0e;
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease,
+    border-color 0.25s ease;
+}
+
+.po-project-docs-hub-pdf-btn:hover {
+  background: #2a2a2a;
+  border-color: #2a2a2a;
+  color: #ffffff !important;
+  transform: translateY(-1px);
+}
+
+.po-project-docs-hub-prose .po-bo-bg {
+  background: none !important;
+  color: #000 !important;
+  text-decoration: underline;
+}
+
+.po-project-docs-hub-pending {
+  margin: 0;
+  max-width: 28rem;
+  font-size: 0.95rem;
+  color: #555;
+  text-align: center;
+}
+
+.po-project-docs-hub-cta-row .po-project-docs-hub-back-link {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0e0e0e !important;
+  background: none !important;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  white-space: nowrap;
+}
+
+.po-project-docs-hub-cta-row .po-project-docs-hub-back-link:hover {
+  color: #000000 !important;
+}
+
+.po-project-docs-hub-body {
+  padding: clamp(2.5rem, 6vw, 4rem) 0 clamp(4rem, 9vw, 6rem);
+  background: #fafafa;
+}
+
+.po-project-docs-hub-prose {
+  max-width: 720px;
+  margin: 0 auto;
+  color: #1a1a1a;
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+  line-height: 1.7;
+}
+
+.po-project-docs-hub-prose h2 {
+  margin: 2rem 0 0.75rem;
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #0e0e0e;
+}
+
+.po-project-docs-hub-prose h2:first-child {
+  margin-top: 0;
+}
+
+.po-project-docs-hub-prose p {
+  margin: 0 0 1rem;
+}
+
+.po-project-docs-hub-prose a {
+	color: #fff !important;
+	font-weight: 600;
+	text-decoration: underline;
+	text-underline-offset: 3px;
+	background: rgba(0, 0, 0, 0.92);
+	text-decoration: none;
 }
 
 /*

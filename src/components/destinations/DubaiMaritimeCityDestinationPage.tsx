@@ -53,30 +53,28 @@ type AccessFacilityItem = {
   video: string;
 };
 
+const DMC_VIDEOS_BASE = "/assets/downloaded/videos";
+
 const accessFacilities: AccessFacilityItem[] = [
   {
     title: "Transportation in Dubai Maritime City",
     body: "Dubai Maritime City enjoys smooth access via Sheikh Rashid Road and is well-connected to key transport corridors linking the district to the rest of Dubai. Residents benefit from short travel times to major business hubs, public transport links in surrounding areas, and the city’s expanding road network that makes commuting efficient and predictable.",
-    video:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/13151759/transport.mp4",
+    video: `${DMC_VIDEOS_BASE}/transport.mp4`,
   },
   {
     title: "Healthcare Establishments Near DMC",
     body: "Dubai Maritime City is closely connected to major hospitals and clinics in nearby districts, including Rashid Hospital and International Modern Hospital. With essential healthcare services just minutes away, residents enjoy quick access to reliable medical care.",
-    video:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/13151814/health-care.mp4",
+    video: `${DMC_VIDEOS_BASE}/health-care.mp4`,
   },
   {
     title: "Mosques & Churches",
     body: "The surrounding areas of Port Rashid, Jumeirah, and Bur Dubai provide easy access to several mosques, including Jumeirah Mosque and community mosques within minutes. Churches in Oud Metha and Jebel Ali are reachable through the city’s main highways, ensuring residents have diverse worship options close by.",
-    video:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/13151826/Mosques.mp4",
+    video: `${DMC_VIDEOS_BASE}/Mosques.mp4`,
   },
   {
     title: "Schools Near DMC",
     body: "Dubai Maritime City is surrounded by established educational zones, with schools such as GEMS Winchester, New Academy School, and Dubai Gem School all within a short drive. The proximity to Jumeirah and Bur Dubai gives families access to a wide selection of nurseries, primary, and secondary institutions.",
-    video:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/13151738/schools.mp4",
+    video: `${DMC_VIDEOS_BASE}/schools.mp4`,
   },
 ];
 
@@ -115,62 +113,53 @@ const nearbyAttractions: NearbyItem[] = [
   {
     title: "Museum of the Future",
     time: "~12 minutes",
-    image:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/13113547/museum-of-the-1024x768-1.jpg",
+    image: "/assets/images/v2/pages/pages-internal-images/museum-of-the.webp",
   },
   {
     title: "Dubai Frame",
     time: "~8 minutes",
-    image:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/13150602/dubai-frame-3.webp",
+    image: "/assets/images/v2/locations/dubai-frame-3.webp",
   },
   {
     title: "Dubai International Airport (DXB)",
     time: "~15 minutes",
-    image:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/13113544/airport-1024x768-1.jpg",
+    image: "/assets/images/v2/locations/airport-dubai.webp",
   },
   {
     title: "Mall of the Emirates",
     time: "~20 minutes",
-    image:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/17074703/mall-of-the-emirates.webp",
+    image: "/assets/images/v2/locations/mall-of-the-emirates.webp",
   },
   {
     title: "Palm Jumeirah",
     time: "~25 minutes",
-    image:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/13150842/palm-jumeirah.webp",
+    image: "/assets/images/v2/locations/palm-jumeirah.webp",
   },
   {
     title: "Dubai Marina",
     time: "~25 minutes",
-    image:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/13150339/dubai-marina-1024x768-1-1.webp",
+    image: "/assets/images/v2/locations/dubai-marina-1024x768-1-1.webp",
   },
   {
     title: "Gold Souk & Old Dubai",
     time: "~12 minutes",
-    image:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/13150345/architecture-1815863_1280.webp",
+    image: "/assets/images/v2/locations/architecture-1815863_1280.webp",
   },
   {
     title: "City Walk",
     time: "~9 minutes",
     image:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/13150342/business-partners-team-walking-down-discussing-work-1.webp",
+      "/assets/images/v2/pages/pages-internal-images/business-partners-team-walking-down-discussing-work-1.webp",
   },
   {
     title: "Jumeirah Mosque",
     time: "~8 minutes",
-    image:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2026/03/13150348/look-from-afar-awesome-buildings-shekh-zayed-grand-mosque-1.webp",
+    image: "/assets/images/v2/locations/look-from-afar-awesome-buildings-shekh-zayed-grand-mosque-1.webp",
   },
   {
     title: "Burj Khalifa & Dubai Mall",
     time: "~15 minutes",
-    video:
-      "https://s3.me-central-1.amazonaws.com/files.prestigeone.ae/wp-content/uploads/2024/09/13115148/6600778_Architecture_Cityscape_1280x720.mp4",
+    video: `${DMC_VIDEOS_BASE}/dubai-city-road-with-buildings-and-futuristic-arch-2023-11-27-04-59-19-utc_compressed.mp4`,
   },
 ];
 
